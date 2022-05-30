@@ -31,7 +31,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
     - name: MkDocs Link Check
-      uses: byrnereese/github-action-mkdocs-link-check@v1
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
         use-verbose-mode: 'yes'
         folder-path: 'docs/'
