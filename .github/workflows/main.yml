@@ -16,6 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: Set Up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.9.7
     - name: Update pip
       run: |
         pip install -U wheel
