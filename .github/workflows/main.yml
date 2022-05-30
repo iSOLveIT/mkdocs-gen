@@ -45,9 +45,8 @@ jobs:
         requirements: 'requirements.txt'
         configfile: 'mkdocs.yml'
     - name: Add PHP index file
-      with:
-        path: ${{ steps.mkdocs-build.outputs.dir }}
       run: |
+        cd ${{ steps.mkdocs-build.outputs.dir }}
         echo "<?php header( 'Location: /index.html' ) ;  ?>" > index.php
     - name: Push changes
       uses: ad-m/github-push-action@master
