@@ -9,7 +9,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: 'indigo'
-      accent: 'deep orange'
+      accent: 'lime'
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
