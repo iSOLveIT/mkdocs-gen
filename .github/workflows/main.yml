@@ -45,10 +45,11 @@ jobs:
         folder-path: 'docs/'
     - name: Build MkDocs
       uses: iSOLveIT/mkdocs-notes@main
-      documentation_path: docs/
-      requirements_path: requirements.txt
-      target_branch: docs-build
-      mkdocs_version: 1.3
+      with:
+        documentation_path: docs/
+        requirements_path: requirements.txt
+        target_branch: docs-build
+        mkdocs_version: 1.3
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
