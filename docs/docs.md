@@ -52,19 +52,19 @@ Python virtual environment and install MkDocs.
 
 Set up the Python virtual environment using this command:
 
-```bash
+``` bash
 python --m venv <folder_name(e.g: .virenv)>
 ```
 
 Install MkDocs using this command:
 
-```bash
+``` bash
 pip install mkdocs
 ```
 
 With MkDocs installed, you can run the command,
 
-```bash
+``` bash title="Create a new MkDocs project"
 mkdocs new <project_directory>
 ```
 
@@ -89,7 +89,7 @@ After you have set up the source directory for the documentation, you
 can use the command below to run the built-in development server
 provided by MkDocs.
 
-```bash
+``` bash title="Run the built-in development server"
 mkdocs serve
 ```
 
@@ -99,7 +99,7 @@ the documentation build files.
 
 To generate the documentation build files, you can run this command:
 
-```bash
+``` bash title="Build the MkDocs documentation"
 mkdocs build
 ```
 
@@ -254,7 +254,7 @@ documentation directory.
 
 A minimal navigation configuration could look like this:
 
-```yaml
+``` yaml
 nav:
 	- 'index.md'
 	- 'about.md'
@@ -264,7 +264,7 @@ or
 
 With user-defined titles
 
-```yaml
+``` yaml
 nav:
 	- Home: 'index.md'
 	- About: 'about.md'
@@ -273,12 +273,13 @@ nav:
 After configuring pages and navigation, you can test the documentation
 by executing the command below to start the built-in development server:
 
-```bash
+``` bash title="Run built-in development server"
 mkdocs serve
 ```
+!!! note
 
-**NOTE:** The development server will not start successfully if there is
-an error in the source files.
+    The development server will not start successfully if there is
+    an error in the source files.
 
 ### Updating an old document
 
@@ -290,9 +291,11 @@ After making the changes, execute the command below to start the
 built-in development server:
 
 
-```bash
+``` bash title="Run built-in development server"
 mkdocs serve
 ```
 
-**NOTE:** The development server will not start successfully if there is
-an error in the source files.
+!!! note
+
+    The development server will not start successfully if there is
+    an error in the source files.
