@@ -11,7 +11,7 @@ below:
 
 -   Source code - [https://github.com/iSOLveIT/mkdocs-gen](https://github.com/iSOLveIT/mkdocs-gen)
 
--   Website - [https://mkdocs-gen.herokuapp.com](https://mkdocs-gen.herokuapp.com)
+-   Website - [https://resources.breadboardmates.com](https://resources.breadboardmates.com/)
 
 Topics covered in this document are:
 
