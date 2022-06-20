@@ -357,6 +357,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#creating-the-structure-of-a-document" class="md-nav__link">
+    Creating the structure of a document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#starting-a-new-document" class="md-nav__link">
     Starting a new document
   </a>
@@ -366,6 +373,13 @@
           <li class="md-nav__item">
   <a href="#updating-an-old-document" class="md-nav__link">
     Updating an old document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serving-images-in-a-document" class="md-nav__link">
+    Serving images in a document
   </a>
   
 </li>
@@ -512,6 +526,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#creating-the-structure-of-a-document" class="md-nav__link">
+    Creating the structure of a document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#starting-a-new-document" class="md-nav__link">
     Starting a new document
   </a>
@@ -521,6 +542,13 @@
           <li class="md-nav__item">
   <a href="#updating-an-old-document" class="md-nav__link">
     Updating an old document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serving-images-in-a-document" class="md-nav__link">
+    Serving images in a document
   </a>
   
 </li>
@@ -620,7 +648,7 @@ configuration values.</p>
 <p>The <strong>mkdocs.yml</strong> contains the MkDocs configurations, where you can
 configure all aspects of how MkDocs reads your sources and builds your
 documentation.</p>
-<p><img alt="Source directory for a MkDocs documentation" src="../_static/conf.png" /></p>
+<p><img alt="Source directory for a MkDocs documentation" src="../img/conf.png" /></p>
 <p><em>Fig. 1: Source directory for a MkDocs documentation</em></p>
 <p>MkDocs reads its contents from files with the extension <code>.MD</code> which you
 have referenced in the <strong>mkdocs.yml</strong> file. These <code>.MD</code> files contain
@@ -662,8 +690,8 @@ action from the GitHub Marketplace.</p>
 <p>Workflows are defined by a YAML file checked in your repository and are
 triggered either manually or by an event in the repository. Below is an
 example of a GitHub Action workflow.</p>
-<p><img alt="GitHub Action workflow YAML file" src="../_static/workflow.png" /></p>
-<p><em>Fig. 2: A YAML file for a GitHub Action workflow</em></p>
+<p><img alt="GitHub Action workflow YAML file" src="../img/workflow.png" />
+<em>Fig. 2: A YAML file for a GitHub Action workflow</em></p>
 <h4 id="using-github-workflow-to-automate-build-and-test-process-for-our-documentation"><strong>Using GitHub workflow to automate build and test process for our documentation</strong></h4>
 <p>For us to build and test the documentation, we will configure two (2)
 GitHub Actions workflows and store them under the
@@ -694,6 +722,59 @@ the <strong>docs-build</strong> branch. The <strong>docs-build</strong> branch i
 hosting platform copies the documentation build files to update the
 documentation website.</p>
 <h2 id="maintaining-documentation"><strong>MAINTAINING DOCUMENTATION</strong></h2>
+<h3 id="creating-the-structure-of-a-document">Creating the structure of a document</h3>
+<p>Markdown lets you add structural elements to your document, such as <strong>headings</strong> (<code>h1</code>, <code>h2</code>, <code>h3</code> etc.). 
+The hashes move lower-level headings further to the right, so they appear indented. 
+There are a few ways to add headings in Markdown. 
+The recommended one is to prefix a heading with hashes <strong>#</strong>, one for each level of heading:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gh"># Heading 1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="gu">## Heading 2</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="gu">### Heading 3</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>And this is a paragraph.
+</code></pre></div>
+Sections of a document can be separated using <strong>horizontal rules</strong> (<code>&lt;hr /&gt;</code>), or lines. 
+You create these in Markdown using three (or more) hyphens <code>-</code>, asterisks <code>*</code>, underscores <code>_</code>or equals <code>=</code> signs. 
+Place them alone on a line, with blank lines on either side:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gh">Brief introduction.</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="gh">===</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="gh"># Chapter 1</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="gu">Lots of text.</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="gu">---</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="gh"># Chapter 2</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="gu">Some more text</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="gu">---</span>
+</code></pre></div>
+<p><strong>Lists</strong> are another important structural element. 
+Unordered lists (<code>&lt;ul&gt;</code>) are created by beginning the line with an asterisk <code>*</code>, plus <code>+</code> symbol, or hyphen <code>-</code>, 
+followed by a space or tab, then the text.</p>
+<p>Ordered lists (<code>&lt;ol&gt;</code>) are numbers followed by periods. The numbers don't necessarily have to be in order.
+Below is an example of an unordered and ordered lists</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gu">### Unordered List</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">*</span> this is an
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">*</span> unordered list
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>+ this is another
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>+ unordered list
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="gu">### Ordered List</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">1.</span> this is an
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">2.</span> ordered
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">3.</span> list
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">1.</span> and so 
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="k">1.</span> is this too
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to start a line with a number and a period without starting a list, 
+you need to escape the period with a backslash \: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>2020\. A year we&#39;ll never forget.
+</code></pre></div>
+</div>
+<p>Finally, paragraphs of normal text are separated by one or more blank lines:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>This will be formatted as an HTML paragraph.
+</code></pre></div>
 <h3 id="starting-a-new-document">Starting a new document</h3>
 <p>MkDocs uses regular Markdown (<code>.md</code>) files as the source for its
 documentation. We place these Markdown files in the documentation
@@ -702,39 +783,39 @@ alongside the <strong>mkdocs.yml</strong> configuration file.</p>
 <p>All Markdown files included in your documentation directory will be
 rendered in the built site, regardless of any settings.</p>
 <p>The simplest project you can create will look something like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdocs.yml
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docs/
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    index.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdocs.yml
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>docs/
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    index.md
 </code></pre></div>
 <p>You can also create multipage documentation, by creating several
 Markdown files:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdocs.yml
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docs/
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    index.md
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    about.md
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    changelog.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdocs.yml
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>docs/
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    index.md
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    about.md
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    changelog.md
 </code></pre></div>
 <p>The file layout you use determines the URLs that are used for the
 generated pages. Given the above layout, pages would be generated for
 the following URLs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>/about/
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>/changelog/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>/about/
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>/changelog/
 </code></pre></div>
 <p>You can also include your Markdown files in nested directories if that
 better suits your documentation layout.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docs/
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    index.md
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    user-guide/getting-started.md
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    user-guide/configuration-options.md
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    changelog.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docs/
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    index.md
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    user-guide/getting-started.md
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    user-guide/configuration-options.md
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    changelog.md
 </code></pre></div>
 <p>Source files inside nested directories will cause pages to be generated
 with nested URLs, like so:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>/user-guide/getting-started/
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>/user-guide/configuration-options/
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>/changelog/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>/user-guide/getting-started/
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>/user-guide/configuration-options/
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>/changelog/
 </code></pre></div>
 <p>After creating the Markdown files in your documentation directory, you
 must configure pages and navigation in the <strong>mkdocs.yml</strong> file.</p>
@@ -744,19 +825,19 @@ the structure of that menu. If not provided, the navigation will be
 automatically created by discovering all the Markdown files in the
 documentation directory.</p>
 <p>A minimal navigation configuration could look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;index.md&#39;</span><span class="w"></span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;about.md&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;index.md&#39;</span><span class="w"></span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;about.md&#39;</span><span class="w"></span>
 </code></pre></div>
 <p>or</p>
 <p>With user-defined titles</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.md&#39;</span><span class="w"></span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;about.md&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.md&#39;</span><span class="w"></span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">About</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;about.md&#39;</span><span class="w"></span>
 </code></pre></div>
 <p>After configuring pages and navigation, you can test the documentation
 by executing the command below to start the built-in development server:</p>
-<div class="highlight"><span class="filename">Run built-in development server</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdocs serve
+<div class="highlight"><span class="filename">Run built-in development server</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mkdocs serve
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -769,12 +850,33 @@ an error in the source files.</p>
 configuration file (<strong>mkdocs.yml</strong>) is intact.</p>
 <p>After making the changes, execute the command below to start the
 built-in development server:</p>
-<div class="highlight"><span class="filename">Run built-in development server</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mkdocs serve
+<div class="highlight"><span class="filename">Run built-in development server</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mkdocs serve
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The development server will not start successfully if there is
 an error in the source files.</p>
+</div>
+<h3 id="serving-images-in-a-document">Serving images in a document</h3>
+<p>In MkDocs, images are served from the <strong>img</strong> folder in the <strong>docs</strong> directory. 
+You can then link an image in a source file by using the relative path to that image. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is not compulsory to store the images under the <strong>img</strong> folder. 
+You can decide to store your images in any folder, but the folder should be in the <strong>docs</strong> directory.</p>
+</div>
+<p>The code below shows how to add an image using the Markdown syntax:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&lt;![Alt text](relative_path_to_image)&gt;
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>![<span class="nt">Example of an image</span>](<span class="na">img/example.png</span>)
+</code></pre></div>
+<img alt="Example of an image" src="../img/example.png" /></p>
+<p><em>Fig. 3: Output of the code above</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To properly maintain images for large documentation sources, it will be appropriate to divide your 
+images into parts and store them in separate sub-folders under the <strong>img</strong> folder. 
+For example, all images for the homepage should be stored in the folder called <em>homepage</em> and images for 
+the about section should be stored in the folder called <em>about</em>.</p>
 </div>
 
               
