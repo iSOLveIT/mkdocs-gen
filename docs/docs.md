@@ -52,19 +52,19 @@ Python virtual environment and install MkDocs.
 
 Set up the Python virtual environment using this command:
 
-``` bash
+```bash
 python --m venv <folder_name(e.g: .virenv)>
 ```
 
 Install MkDocs using this command:
 
-``` bash
+```bash
 pip install mkdocs
 ```
 
 With MkDocs installed, you can run the command,
 
-``` bash title="Create a new MkDocs project"
+```bash title="Create a new MkDocs project"
 mkdocs new <project_directory>
 ```
 
@@ -76,7 +76,7 @@ The **mkdocs.yml** contains the MkDocs configurations, where you can
 configure all aspects of how MkDocs reads your sources and builds your
 documentation.
 
-![Source directory for a MkDocs documentation](_static/conf.png)
+![Source directory for a MkDocs documentation](img/conf.png)
 
 *Fig. 1: Source directory for a MkDocs documentation*
 
@@ -89,7 +89,7 @@ After you have set up the source directory for the documentation, you
 can use the command below to run the built-in development server
 provided by MkDocs.
 
-``` bash title="Run the built-in development server"
+```bash title="Run the built-in development server"
 mkdocs serve
 ```
 
@@ -99,7 +99,7 @@ the documentation build files.
 
 To generate the documentation build files, you can run this command:
 
-``` bash title="Build the MkDocs documentation"
+```bash title="Build the MkDocs documentation"
 mkdocs build
 ```
 
@@ -139,8 +139,7 @@ Workflows are defined by a YAML file checked in your repository and are
 triggered either manually or by an event in the repository. Below is an
 example of a GitHub Action workflow.
 
-![GitHub Action workflow YAML file](_static/workflow.png)
-
+![GitHub Action workflow YAML file](img/workflow.png)
 *Fig. 2: A YAML file for a GitHub Action workflow*
 
 #### **Using GitHub workflow to automate build and test process for our documentation**
@@ -183,6 +182,79 @@ documentation website.
 
 ## **MAINTAINING DOCUMENTATION**
 
+### Creating the structure of a document
+
+Markdown lets you add structural elements to your document, such as **headings** (`h1`, `h2`, `h3` etc.). 
+The hashes move lower-level headings further to the right, so they appear indented. 
+There are a few ways to add headings in Markdown. 
+The recommended one is to prefix a heading with hashes **#**, one for each level of heading:
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+
+And this is a paragraph.
+
+```
+Sections of a document can be separated using **horizontal rules** (`<hr />`), or lines. 
+You create these in Markdown using three (or more) hyphens `-`, asterisks `*`, underscores `_`or equals `=` signs. 
+Place them alone on a line, with blank lines on either side:
+
+```markdown
+
+Brief introduction.
+===
+# Chapter 1
+Lots of text.
+---
+# Chapter 2
+Some more text
+---
+
+```
+
+**Lists** are another important structural element. 
+Unordered lists (`<ul>`) are created by beginning the line with an asterisk `*`, plus `+` symbol, or hyphen `-`, 
+followed by a space or tab, then the text.
+
+Ordered lists (`<ol>`) are numbers followed by periods. The numbers don't necessarily have to be in order.
+Below is an example of an unordered and ordered lists
+
+```markdown
+
+### Unordered List
+* this is an
+* unordered list
+
++ this is another
++ unordered list
+
+### Ordered List
+1. this is an
+2. ordered
+3. list
+   
+1. and so 
+1. is this too
+
+```
+
+!!! note
+
+    If you want to start a line with a number and a period without starting a list, 
+    you need to escape the period with a backslash \: 
+
+    ```markdown
+    2020\. A year we'll never forget.
+    ```
+
+Finally, paragraphs of normal text are separated by one or more blank lines:
+
+```markdown
+
+This will be formatted as an HTML paragraph.
+```
 ### Starting a new document
 
 MkDocs uses regular Markdown (`.md`) files as the source for its
@@ -254,7 +326,7 @@ documentation directory.
 
 A minimal navigation configuration could look like this:
 
-``` yaml
+```yaml
 nav:
 	- 'index.md'
 	- 'about.md'
@@ -264,7 +336,7 @@ or
 
 With user-defined titles
 
-``` yaml
+```yaml
 nav:
 	- Home: 'index.md'
 	- About: 'about.md'
@@ -273,7 +345,7 @@ nav:
 After configuring pages and navigation, you can test the documentation
 by executing the command below to start the built-in development server:
 
-``` bash title="Run built-in development server"
+```bash title="Run built-in development server"
 mkdocs serve
 ```
 !!! note
@@ -291,7 +363,7 @@ After making the changes, execute the command below to start the
 built-in development server:
 
 
-``` bash title="Run built-in development server"
+```bash title="Run built-in development server"
 mkdocs serve
 ```
 
@@ -299,3 +371,31 @@ mkdocs serve
 
     The development server will not start successfully if there is
     an error in the source files.
+
+### Serving images in a document
+In MkDocs, images are served from the **img** folder in the **docs** directory. 
+You can then link an image in a source file by using the relative path to that image. 
+
+!!! note
+
+    It is not compulsory to store the images under the **img** folder. 
+    You can decide to store your images in any folder, but the folder should be in the **docs** directory.
+
+The code below shows how to add an image using the Markdown syntax:
+
+```markdown
+
+<![Alt text](relative_path_to_image)>
+![Example of an image](img/example.png)
+
+```
+![Example of an image](img/example.png)
+
+*Fig. 3: Output of the code above*
+
+!!! tip
+
+    To properly maintain images for large documentation sources, it will be appropriate to divide your 
+    images into parts and store them in separate sub-folders under the **img** folder. 
+    For example, all images for the homepage should be stored in the folder called *homepage* and images for 
+    the about section should be stored in the folder called *about*.
