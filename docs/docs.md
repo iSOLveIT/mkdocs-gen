@@ -77,8 +77,8 @@ configure all aspects of how MkDocs reads your sources and builds your
 documentation.
 
 ![Source directory for a MkDocs documentation](img/conf.png)
+<p style="text-align:center"><i>Fig. 1: Source directory for a MkDocs documentation</i></p>
 
-*Fig. 1: Source directory for a MkDocs documentation*
 
 MkDocs reads its contents from files with the extension `.MD` which you
 have referenced in the **mkdocs.yml** file. These `.MD` files contain
@@ -140,7 +140,8 @@ triggered either manually or by an event in the repository. Below is an
 example of a GitHub Action workflow.
 
 ![GitHub Action workflow YAML file](img/workflow.png)
-*Fig. 2: A YAML file for a GitHub Action workflow*
+<p style="text-align:center"><i>Fig. 2: A YAML file for a GitHub Action workflow</i></p>
+
 
 #### **Using GitHub workflow to automate build and test process for our documentation**
 
@@ -390,8 +391,7 @@ The code below shows how to add an image using the Markdown syntax:
 
 ```
 ![Example of an image](img/example.png)
-
-*Fig. 3: Output of the code above*
+<p style="text-align:center"><i>Fig. 3: Output of the code above</i></p>
 
 !!! tip
 
@@ -399,3 +399,29 @@ The code below shows how to add an image using the Markdown syntax:
     images into parts and store them in separate sub-folders under the **img** folder. 
     For example, all images for the homepage should be stored in the folder called *homepage* and images for 
     the about section should be stored in the folder called *about*.
+
+### How to generate a PDF for a specific page in the documentation
+To generate a PDF for a specific page, you need to add the MkDocs PDF Export Plugin to your MkDocs project.
+
+The MkDocs PDF Export Plugin is a plugin to export content pages as PDF files. 
+Before installing the plugin, you need to have some packages, which the 
+[plugin’s documentation](https://github.com/zhaoterryy/mkdocs-pdf-export-plugin) explain.
+
+Install the package with pip:
+```bash
+pip install mkdocs-pdf-export-plugin
+```
+
+Enable the plugin in your `mkdocs.yml`:
+```yaml
+plugins:
+    - search
+    - pdf-export
+
+```
+
+When you build the documentation, you will see a download button, as described in Fig. 4 below, 
+for every page in your MkDocs project.
+
+![PDF download button for index page](img/mkdocs_pdf.png)
+<p style="text-align:center"><i>Fig. 4: PDF download button for index page</i></p>
