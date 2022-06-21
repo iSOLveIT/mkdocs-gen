@@ -1,8 +1,11 @@
-site_name: Markdown Docs Sample
-site_url: https://example.com/
+site_name: Breadboard Mates Resources
+site_url: https://resources.breadboardmates.com/
 nav:
   - Home: README.md
   - Docs: docs.md
+  - Mates Controller:
+    - Arduino: arduino-mates-controller-library.md
+    - Python: python-mates-controller-library.md
 theme:
   name: material
   palette:
