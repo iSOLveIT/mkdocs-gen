@@ -24,7 +24,7 @@ jobs:
         fetch-depth: 0 # otherwise, you will fail to push refs to destination repo
     - name: Required packages for WeasyPrint
       run: |
-        apt install python3-pip libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0 libffi-dev libjpeg-dev libopenjp2-7-dev
+        sudo apt install libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0 libffi-dev libjpeg-dev libopenjp2-7-dev
     - name: Update pip
       run: |
         pip install -U wheel
