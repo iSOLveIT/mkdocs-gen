@@ -272,7 +272,7 @@ value: int
 #### Example: 
     mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50) # Set value of MediaGaugeB0 to 50
 
-**Note:** _All applicable widget types are listed in [here](src/includes/MatesWidgets.md)._
+**Note:** _All applicable widget types are listed in [here](mates/widgets.md)._
 
 <br/>
 

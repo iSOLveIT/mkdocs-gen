@@ -433,7 +433,7 @@ This function can be used to set the 16-bit integer _value_ of the widget specif
 #### Example: 
     mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50); // Set value of MediaGaugeB0 to 50
 
-**Note 1:** _All applicable widget types are listed in [here](src/includes/MatesWidgets.md)._
+**Note 1:** _All applicable widget types are listed in [here](mates/widgets.md)._
 
 **Note 2:** _This function is not applicable to **Int32** and **Float** LedDigits_
 
@@ -455,7 +455,7 @@ This function can be used to query the value of the widget specified by _type_ a
 #### Example: 
     int16_t widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4); // Query the current value of MediaLed4
 
-**Note 1:** _All applicable widget types are listed in [here](src/includes/MatesWidgets.md)._
+**Note 1:** _All applicable widget types are listed in [here](mates/widgets.md)._
 
 **Note 2:** _This function is not applicable to **Int32** and **Float** LedDigits_
 
@@ -1043,7 +1043,7 @@ This function can be used to print the version number of the library and the com
 
 ### **getError()**
 
-This function can be used to investigate errors that occurred while controlling the display module. Detailed information of the possible errors is discussed in [here](src/includes/MatesErrors.md).
+This function can be used to investigate errors that occurred while controlling the display module. Detailed information of the possible errors is discussed in [here](mates/errors.md).
 
 #### Example:
     // Checks the last error that occurred
