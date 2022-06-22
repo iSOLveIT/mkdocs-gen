@@ -1,10 +1,10 @@
-# Introduction
+## Introduction
 
 Mates Studio is an Integrated Development Environment design to be used with Breadboard Mates products. This software application is developed for Windows PCs.
 
 The application includes multiple environments that users can utilize to design and develop simple and complex GUI applications for their prototyping needs.
 
-## [Commander](commander.md)
+### [Commander](commander.md)
 
 This environment allows users to select and utilize different page designs/layouts from a built-in collection provided by the Breadboard Mates team and its community. This allows users to quickly produce nice looking GUI applications in seconds.
 
@@ -12,7 +12,7 @@ This output program features an easy-to-use-and-understand Mates Serial Command 
 
 This also includes a simple to use interface that allows users to simulate a microcontroller controlling the display programmed with a Commander project.
 
-## [Architect](architect.md)
+### [Architect](architect.md)
 
 This environment provides users with a lot more flexibility with their projects by providing the ability to design their custom page layouts using a collection of configurable graphical widgets. This allows users to create unique widget and page designs that can be saved for future use.
 
@@ -20,7 +20,7 @@ Saved widget configurations can be loaded and used in Architect, Genius and Buil
 
 Like the Commander environment, Architect utilizes the same command protocol and host controller simulator.
 
-## [Genius](genius.md)
+### [Genius](genius.md)
 
 This environment provides users with the ability to not only design their own widget and page layouts but also to write their own program to directly control how the widgets in the display will behave. This also allows users to design custom features/functionality that they need which Commander and Architect environments is not able to provide.
 
@@ -28,13 +28,13 @@ Saved widget configurations can be loaded and used in Architect, Genius and Buil
 
 Unlike Commander and Architect environments, this environment does not include the Mates Serial Command protocol
 
-## [Builder](builder.md)
+### [Builder](builder.md)
 
 _This environment is currently under development._
 
 This environment will provide users with similar capabilities as the Genius environment. The main difference between Genius and Builder is simply the method of programming the display. While Genius allows user to write their own code, this environment allows users to design their project flow using graphical programming in the form of blocks.
 
-# System Requirements
+## System Requirements
 
 Mates Studio is currently available for 64-bit Windows PCs. Here are the requirements for installing the application:
 - Windows 7 and later are supported, older operating systems are not supported (and do not work). Please note that the ARM version of Windows is not supported.
@@ -42,7 +42,7 @@ Mates Studio is currently available for 64-bit Windows PCs. Here are the require
 - At least 300 MB of storage space
 - Minimum 1GB of RAM
 
-# Installing the Application
+## Installing the Application
 
 Mates Studio can be installed for all users (system wide) or only for the current user.
 
@@ -70,9 +70,9 @@ After successfully installing Mates Studio, the installer will prompt to optiona
 
 Tick `Run Mates Studio` to launch Mates Studio after installation if desired.
 
-# Creating a New Project
+## Creating a New Project
 
-## Selecting the Target Product Configuration
+### Selecting the Target Product Configuration
 
 When the application opens, it will show the splash screen followed by the setup window.
 
@@ -88,15 +88,15 @@ By clicking on the preview, the project orientation can be set.
 
 After selecting the product and desired orientation, continue by clicking on the `CONFIRM` button.
 
-## Selecting the Target Environment
+### Selecting the Target Environment
 
 After confirming the product, the target environment needs to be selected to start a new project.
 
-![Select Environment](img/select-environment.jpg)
+![Select Environment](img/select-enviroment.jpg)
 
-# Opening Projects
+## Opening Projects
 
-## Browsing Recent Projects
+### Browsing Recent Projects
 
 While in the setup window, recent projects can be browsed by clicking on the Browse Recent Projects button.
 
@@ -116,7 +116,7 @@ By clicking on the preview, the other project pages can be browsed.
 
 After confirming the project, it can be opened by clicking on the CONFIRM button.
 
-## Browsing the Computer
+### Browsing the Computer
 
 While in the setup window, the computer can be browsed for projects by clicking on the Browse Computer button.
 
