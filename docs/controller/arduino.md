@@ -1,6 +1,3 @@
-![BBM Logo](img/bbm-logo.png)
-
-
 # **Mates Controller Arduino Library**
 
 This is an Arduino Library developed to be used with Mates Studio's Commander and Architect Environments. This library is aimed to be simple enough to learn for beginners and feature-rich for experienced developers.
@@ -433,7 +430,7 @@ This function can be used to set the 16-bit integer _value_ of the widget specif
 #### Example: 
     mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50); // Set value of MediaGaugeB0 to 50
 
-**Note 1:** _All applicable widget types are listed in [here](mates/widgets.md)._
+**Note 1:** _All applicable widget types are listed in [here](keywords/widgets.md)._
 
 **Note 2:** _This function is not applicable to **Int32** and **Float** LedDigits_
 
@@ -1043,7 +1040,7 @@ This function can be used to print the version number of the library and the com
 
 ### **getError()**
 
-This function can be used to investigate errors that occurred while controlling the display module. Detailed information of the possible errors is discussed in [here](mates/errors.md).
+This function can be used to investigate errors that occurred while controlling the display module. Detailed information of the possible errors is discussed in [here](keywords/errors.md).
 
 #### Example:
     // Checks the last error that occurred

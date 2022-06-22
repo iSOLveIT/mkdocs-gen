@@ -3,9 +3,14 @@ site_url: https://resources.breadboardmates.com/
 nav:
   - Home: README.md
   - Docs: docs.md
-  - Mates Controller:
-    - Arduino: arduino-mates-controller-library.md
-    - Python: python-mates-controller-library.md
+  - Mates Studio: studio/manual.md
+    - Commander: studio/commander.md
+    - Architect: studio/architect.md
+    - Genius: studio/genius.md
+    - Builder: studio/builder.md
+  - Mates Controller Libraries: controller/libraries.md
+    - Arduino: controller/arduino.md
+    - Python: controller/python.md
 theme:
   name: material
   palette:

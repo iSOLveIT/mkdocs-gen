@@ -1,6 +1,3 @@
-![BBM Logo](img/bbm-logo.png)
-
-
 # Python Mates Controller Library
 
 This is an Python Library developed to be used with Mates Studio's Commander and Architect Environments and Python supported devices. This library is aimed to be simple enough to learn for beginners and feature-rich for experienced developers.
@@ -272,7 +269,7 @@ value: int
 #### Example: 
     mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50) # Set value of MediaGaugeB0 to 50
 
-**Note:** _All applicable widget types are listed in [here](mates/widgets.md)._
+**Note:** _All applicable widget types are listed in [here](keywords/widgets.md)._
 
 <br/>
 
