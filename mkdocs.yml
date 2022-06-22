@@ -3,7 +3,8 @@ site_url: https://resources.breadboardmates.com/
 nav:
   - Home: README.md
   - Docs: docs.md
-  - Mates Studio: studio/manual.md
+  - Mates Studio: 
+    - Setup: studio/manual.md
     - Commander: studio/commander.md
     - Architect: studio/architect.md
     - Genius: studio/genius.md
