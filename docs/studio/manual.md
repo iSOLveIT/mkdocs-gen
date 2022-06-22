@@ -92,7 +92,7 @@ After selecting the product and desired orientation, continue by clicking on the
 
 After confirming the product, the target environment needs to be selected to start a new project.
 
-![Select Environment](img/select-enviroment.jpg)
+![Select Environment](img/select-environment.jpg)
 
 ## Opening Projects
 
