@@ -452,7 +452,7 @@ This function can be used to query the value of the widget specified by _type_ a
 #### Example: 
     int16_t widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4); // Query the current value of MediaLed4
 
-**Note 1:** _All applicable widget types are listed in [here](mates/widgets.md)._
+**Note 1:** _All applicable widget types are listed in [here](keywords/widgets.md)._
 
 **Note 2:** _This function is not applicable to **Int32** and **Float** LedDigits_
 
