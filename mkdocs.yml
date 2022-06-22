@@ -8,7 +8,7 @@ nav:
     - Architect: studio/architect.md
     - Genius: studio/genius.md
     - Builder: studio/builder.md
-  - Mates Controller Libraries: controller/libraries.md
+  - Mates Controller Libraries:
     - Arduino: controller/arduino.md
     - Python: controller/python.md
 theme:
