@@ -60,7 +60,9 @@ def resetModule():
 MatesController mates = MatesController("COM10", resetFunction=resetModule,debugStream=output_file, debugFileLength=0) 
 ```
 
-**Note:** _If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library._
+!!!note
+
+    If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library.
 
 ## Methods
 
@@ -90,7 +92,7 @@ Closes opened serial port.
 
 **Args**:
 
-void.
+void
 
 !!!hint "Return"
 
@@ -151,7 +153,7 @@ backlightValue: int
 
 - intensity of backlight. Value must be between 0 and 15, and within the uint8 datatype range.
 
-!!!hint "Return": 
+!!!hint "Return"
 
     boolean response indicating command success or failure.
 
@@ -203,9 +205,9 @@ value: int
     the value the corresponding widget will be set to.
     Value must exist within the int16 datatype range.
 
-!!!hint "Return": 
+!!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
     mates.setWidgetValueById(MediaGaugeB0, 50) # Set value of MediaGaugeB0 to 50
@@ -255,7 +257,9 @@ value: int
     mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50) # Set value of MediaGaugeB0 to 50
 ```
 
-**Note:** _All applicable widget types are listed in [here](keywords/widgets.md)._
+!!!note
+
+    All applicable widget types are listed in [here](keywords/widgets.md).
 
 
 ### getWidgetValueByIndex(widgetType, widgetIndex)
@@ -280,7 +284,9 @@ widgetIndex: int
 widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4) # Query the current value of MediaLed4
 ```
 
-**Note:** _This function is not applicable to **Int32** and **Float** LedDigits_
+!!!note
+
+    This function is not applicable to _Int32_ and _Float_ LedDigits
 
 
 ### setLedDigitsShortValue(widgetIndex, value)
@@ -306,7 +312,9 @@ Values must be within the int16 datatype range.
 mates.setLedDigitsShortValue(2, 50) # Set value of LedDigits2 to 50
 ```
 
-**Note:** _This function is only applicable for **Int16** LedDigits_
+!!!note
+
+    This function is only applicable for _Int16_ LedDigits
 
 
 ### setLedDigitsLongValue(widgetIndex, value)
@@ -331,7 +339,9 @@ value: int, float
 mates.setLedDigitsLongValue(2, 50) # Set value of LedDigits2 to 50
 ```
 
-**Note:** _This function is only applicable for **Int32** LedDigits_
+!!!note
+
+    This function is only applicable for _Int32_ LedDigits
 
 
 ### setLedDigitsFloatValue(widgetIndex, value):
@@ -355,7 +365,9 @@ value: int, float
 mates.setLedDigitsFloatValue(2, 9.989) # Set value of LedDigits2 to 9.989
 ```
 
-**Note:** _This function is only applicable for **float32** LedDigits_
+!!!note
+
+    This function is only applicable for _Float_ LedDigits
 
 
 ### setSpectrumValue(spectrumId, gaugeIndex, value)
@@ -897,7 +909,7 @@ Debugging function to print the version of the Mates Studio compatible along wit
 
 !!!hint "Return"
 
-    void.
+    void
 
 ```python title="Example"
 # Prints library version and compatible Mates Studio version to debug serial
