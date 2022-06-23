@@ -16,4 +16,6 @@ From hobbyist to engineering professional, Breadboard Mates cutting edge product
 
 Mates Studio is unlike any other, offering four different programming methods with a library of hundreds of pre-designed pages and widgets. The result is an unprecedented increase in development speed for stand-alone, host driven or PC testing applications.
 
+![Product Portfolio](img/product-portfolio.png)
+
 With investment backing from [4D Systems](https://4dsystems.com.au/), Breadboard Mates operates as an independent venture, with its own engineering delivery model and dedicated management and R&D team focused on bringing breadboard-friendly products to the market. The partnership is predicted to significantly scale up the efforts of the fast-growth Breadboard Mates team, with support and resourcing coming from a highly reputable partner.
