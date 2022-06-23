@@ -1,38 +1,38 @@
+# Mates Studio User Manual
+
 ## Introduction
 
-Mates Studio is an Integrated Development Environment design to be used with Breadboard Mates products. This software application is developed for Windows PCs.
+Mates Studio is an Integrated Development Environment designed to be used with Breadboard Mates products. This software application is developed for Windows PCs.
 
 The application includes multiple environments that users can utilize to design and develop simple and complex GUI applications for their prototyping needs.
 
 ### [Commander](commander.md)
 
-This environment allows users to select and utilize different page designs/layouts from a built-in collection provided by the Breadboard Mates team and its community. This allows users to quickly produce nice looking GUI applications in seconds.
+Commander is the simplest among all Mates Studio environments. It allows users to select and utilize different page designs/layouts from a built-in collection provided by the Breadboard Mates team and its community. This allows development of GUI applications in seconds.
 
-This output program features an easy-to-use-and-understand Mates Serial Command Protocol that can allows users to control the display using their favorite microcontrollers.
+This environment is designed to program Breadboard Mates modules to be used with a host controller using the [Mates Controller Command Protocol](command-protocol.md). This allows users to control the display using their favorite microcontrollers through Serial UART.
 
-This also includes a simple to use interface that allows users to simulate a microcontroller controlling the display programmed with a Commander project.
+This environment also includes a [Mates Controller interface](controller.md) that simulates a microcontroller controlling the display module programmed with a Commander project.
 
 ### [Architect](architect.md)
 
-This environment provides users with a lot more flexibility with their projects by providing the ability to design their custom page layouts using a collection of configurable graphical widgets. This allows users to create unique widget and page designs that can be saved for future use.
+Similar to Commander, the Architect environment was designed to program modules to be used with a host controller and features [Mates Controller Command Protocol](command-protocol.md). It also provides the [Mates Controller interface](controller.md) to simulate a host controller.
 
-Saved widget configurations can be loaded and used in Architect, Genius and Builder projects. Saved page configurations can also be used in Commander environment.
-
-Like the Commander environment, Architect utilizes the same command protocol and host controller simulator.
+The main advantage of Architect over Commander is the increased flexibility with designing their projects by featuring a [Graphics Editor](graphics-editor.md) which allows custom widget and page designs.
 
 ### [Genius](genius.md)
 
-This environment provides users with the ability to not only design their own widget and page layouts but also to write their own program to directly control how the widgets in the display will behave. This also allows users to design custom features/functionality that they need which Commander and Architect environments is not able to provide.
+The Genius environment is designed to allow user to write their own custom programs for Breadboard Mates module. This allows Breadboard Mates modules to work as standalone devices.
 
-Saved widget configurations can be loaded and used in Architect, Genius and Builder projects. Saved page configurations can also be used in Commander environment.
-
-Unlike Commander and Architect environments, this environment does not include the Mates Serial Command protocol
+It features a [Graphics Editor](graphics-editor.md)  allowing custom widget and page designs and a [Code Editor](code-editor.md) to write the program in 4D Graphics Language (4DGL). This provides direct control of the widgets and the unused device peripherals allowing custom functionalities that users need which Commander and Architect are not able to provide.
 
 ### [Builder](builder.md)
 
-_This environment is currently under development._
+Similar to Genius, the Builder environment is designed to allow user to develop custom programs for their Breadboard Mates modules.
 
-This environment will provide users with similar capabilities as the Genius environment. The main difference between Genius and Builder is simply the method of programming the display. While Genius allows user to write their own code, this environment allows users to design their project flow using graphical programming in the form of blocks.
+It also features a [Graphics Editor](graphics-editor.md)  allowing custom widget and page designs. But instead of a code editor, it features a [Blocks Editor](blocks-editor.md). This also provides direct control of the widgets and the unused device peripherals allowing custom functionalities that users need which Commander and Architect are not able to provide.
+
+This environment is designed mainly for inexperienced 4DGL developers but can also be used by seasoned developers. This environment can be used to develop varying complexity of projects. However, as the project becomes increasingly complicated, writing the code in Genius can prove to be more managable for experience developers.
 
 ## System Requirements
 
@@ -40,9 +40,9 @@ Mates Studio is currently available for 64-bit Windows PCs. Here are the require
 - Windows 7 and later are supported, older operating systems are not supported (and do not work). Please note that the ARM version of Windows is not supported.
 - An Intel Pentium 4 processor or later that’s SSE3 capable.
 - At least 300 MB of storage space
-- Minimum 1GB of RAM
+- Minimum 1GB of RAM (_depends on usage_)
 
-## Installing the Application
+## Installation
 
 Mates Studio can be installed for all users (system wide) or only for the current user.
 
