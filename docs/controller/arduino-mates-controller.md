@@ -4,21 +4,21 @@
 
 This library is developed to easily control Breadboard Mates modules using Arduino-compatible boards by utilizing the [Mates Controller Command Protocol](../studio/mates-controller-command-protocol.md). This applies to projects developed using [Commander](../studio/mates-studio-commander-environment.md) and [Architect](../studio/mates-studio-architect-environment.md) environments. 
 
-## Library Discussion
+For working examples of using the library and its functions in a project, refer to the _examples_ and _extras_ directories in the [repository](https://github.com/BreadBoardMates/Arduino-Mates-Controller).
 
-This section serves to give brief discussion about the constructor and functions included in the library. For working examples of using the library and its functions in a project, refer to the _examples_ and _extras_ directories in the [repository](https://github.com/BreadBoardMates/Arduino-Mates-Controller).
+## Constructors
+
+This section serves to provide brief discussion about the constructors that can be used to initialize the library.
 
 ### MatesController(serial, resetPin, mode)
 
 This is the main constructor for the library. It creates a unique instance and sets the specified display serial port and reset pin. If _serial_ is not a HardwareSerial (or SoftwareSerial for AVR devices), the Serial stream needs to be initialized manually before running [begin(baudrate, resetModule)](#beginbaudrate-resetmodule) function.
-
 
 | Parameters              | Type    | Description                                                            |
 |:-----------------------:|:-------:| ---------------------------------------------------------------------- |
 | serial                  | Stream  | The serial port to use for controlling the display module              |
 | resetPin<br/>(optional) | uint8_t | Arduino reset pin to use for resetting the display module (default: 4) |
 | mode<br/>(optional)     | uint8_t | Arduino reset pulse to use when performing reset (default: LOW)        |
-
 
 Example No. 1:
 
@@ -54,14 +54,12 @@ MatesController mates = MatesController(Serial, 6, HIGH);
 
 This is an alternative constructor for the library. It creates a unique instance and sets the specified display serial port, debug serial and reset pin. If not using a HardwareSerial (or SoftwareSerial for AVR devices), the Serial stream needs to be initialized manually before running the [begin(baudrate, resetModule)](#beginbaudrate-resetmodule) function.
 
-
 | Parameters              | Type    | Description                                                            |
 |:-----------------------:|:-------:| ---------------------------------------------------------------------- |
 | serial                  | Stream  | The serial port to use for controlling the display module              |
 | dbSerial                | Stream  | The serial port to use for printing debug messages                     |
 | resetPin<br/>(optional) | uint8_t | Arduino reset pin to use for resetting the display module (default: 4) |
 | mode<br/>(optional)     | uint8_t | Arduino reset pulse to use when performing reset (default: LOW)        |
-
 
 Example No. 1:
 
@@ -82,14 +80,18 @@ Example No. 2:
 //  - Pin 5 of Arduino as Reset Pin
 MatesController mates = MatesController(Serial1, Serial, 5);
 ```
+
 !!! note
 
     If a debug serial port is specified, it should be initialized before running the begin() function of this library.
 
+## Functions
+
+This section serves to provide brief discussion about the functions that can be used with an initialized [MatesController](#constructors) object.
+
 ### begin(baudrate, resetModule)
 
 This function must be used once to initialize the Serial port at the start of the Arduino application and to reset or synchronize with the display.
-
 
 | Parameters                 | Type    | Description                                                            |
 |:--------------------------:|:-------:| ---------------------------------------------------------------------- |
@@ -100,7 +102,6 @@ This function must be used once to initialize the Serial port at the start of th
 
     1. Baudrate is ignored when not using a HardwareSerial (or SoftwareSerial for AVR devices) to communicate with the display. In that case, the Serial/Stream instance needs to be initialize before using this function.
     2. If resetModule is false, this function will attempt to synchronize with the display.
-
 
 **Return:** success or failure (_boolean_)
 
@@ -131,7 +132,6 @@ mates.begin(19200, false);
     2. If a debug serial port is specified, it should be initialized manually before running the begin() function of this library.
     3. If not using reset, users needs to be aware of the boot timing of the module. This should be around 3-5 seconds or more depending on the project after power on. If more time is needed to sync, set a higher boot timeout using [setBootTimeout(timeout)](#setboottimeouttimeout)
 
-
 ### isReady()
 
 This function can be used to determine if the module is in sync with the Arduino host.
@@ -158,9 +158,7 @@ This function can be used to setup auto resynchronization when an error occurs.
 | attempts                  | uint8_t  | Number of resync attempts to perform              |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait for every resync attempt (default: boot timeout) |
 
-
 **Return:** none
-
 
 Example No. 1: 
 
@@ -226,14 +224,11 @@ This function can be used to reset the display by sending a reset pulse from the
 
 The function finishes as soon as the display sends the ready signal or the wait period passes.
 
-
 | Parameters                | Type     | Description                                       |
 |:-------------------------:|:--------:| ------------------------------------------------- |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-
 **Return:** success or failure (_boolean_)
-
 
 Example No 1:
 
@@ -256,14 +251,11 @@ This function can be used to reset the display by sending a reset command. The d
 
 The function finishes as soon as the display sends the ready signal or the wait period passes.
 
-
 | Parameters                | Type     | Description                                       |
 |:-------------------------:|:--------:| ------------------------------------------------- |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-
 **Return:** success or failure (_boolean_)
-
 
 Example No 1:
 
@@ -287,9 +279,7 @@ This function can be used to set the wait period during reset and softReset.
 |:-----------:|:--------:| ----------------------------------------------------- |
 | timeout     | uint32_t | New timeout period to wait until the display is ready |
 
-
 **Return:** success or failure (_boolean_)
-
 
 Example:
 
@@ -303,16 +293,19 @@ This function can be used to reset the wait period during reset and softReset to
 
 **Return:** none
 
-
 Example:
 
 ```cpp
 mates.resetBootTimeout(); // resets boot timeout to the default period
 ```
 
-### attachErrorHandler(timeout)
+### attachErrorHandler(handler)
 
-This function can be used to reset the wait period during reset and softReset to the default 5 seconds.
+| Parameters | Type              | Description                                   |
+|:----------:|:-----------------:| --------------------------------------------- |
+| handler    | MatesErrorHandler | Custom function to handle errors as they come |
+
+This function can be used to attach and error handler function to the library.
 
 **Return:** none
 
@@ -390,7 +383,6 @@ void loop() {
 ### setBacklight(value)
 
 This function can be used to set the backlight level to the _value_ specified.
-
 
 | Parameters | Type    | Description                |
 |:----------:|:-------:| -------------------------- |
