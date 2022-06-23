@@ -8,6 +8,7 @@ nav:
     - Blocks Editor: studio/mates-studio-blocks-editor.md
     - Controller Interface: studio/mates-controller-interface.md
     - Command Protocol: studio/mates-controller-command-protocol.md
+    - Release Notes: studio/mates-studio-release-notes.md
   - Mates Controller Libraries:
     - Arduino: controller/arduino.md
     - Python: controller/python.md
