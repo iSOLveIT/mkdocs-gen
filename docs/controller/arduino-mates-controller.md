@@ -535,7 +535,6 @@ mates.setLedDigitsValue(0, 1234); // Set value of LedDigits0 to 1234
     This function is only applicable for _Int16_ LedDigits
 
 
-
 ### setLedDigitsValue(index, value)
 
 This function can be used to set the 32-bit integer _value_ of the LedDigits specified by _index_.
@@ -688,6 +687,10 @@ This function can be used to set the parameter (_param_) of the target _widget_ 
 mates.setWidgetParam(GaugeA3, MATES_GAUGE_A_BG_COLOR, BLACK);
 ```
 
+!!! note
+
+    All applicable widget types are listed in [here](keywords/widgets.md).
+
 
 ### getWidgetParam(widget, param)
 
@@ -706,6 +709,10 @@ This function can be used to query the parameter (_param_) of the target _widget
 // Query the background color of GaugeA3
 int16_t paramVal = mates.getWidgetParam(GaugeA3, MATES_GAUGE_A_BG_COLOR);
 ```
+
+!!! note
+
+    All applicable widget types are listed in [here](keywords/widgets.md).
 
 
 ### setWidgetParam(type, index, param, value);
@@ -728,6 +735,10 @@ This function can be used to set the parameter (_param_) of the target widget, d
 mates.setWidgetParam(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR, BLACK);
 ```
 
+!!! note
+
+    All applicable widget types are listed in [here](keywords/widgets.md).
+
 
 ### getWidgetParam(type, index, param)
 
@@ -747,6 +758,10 @@ This function can be used to query the parameter (_param_) of the target widget,
 // Query the background color of GaugeA3
 int16_t paramVal = mates.getWidgetParam(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR);
 ```
+
+!!! note
+
+    All applicable widget types are listed in [here](keywords/widgets.md).
 
 
 ### setBufferSize(size)
