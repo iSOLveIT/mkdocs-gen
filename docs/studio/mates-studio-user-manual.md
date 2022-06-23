@@ -69,7 +69,7 @@ After successfully installing Mates Studio, the installer will prompt to optiona
 
 ![Installation Completed](img/install-completed.jpg)
 
-Tick `Run Mates Studio` to launch Mates Studio after installation if desired.
+Tick _Run Mates Studio_ to launch Mates Studio after installation if desired.
 
 ## Creating a New Project
 
@@ -87,7 +87,7 @@ By clicking on the preview, the project orientation can be set.
 
 ![Select Orientation](img/select-product-orientation.jpg)
 
-After selecting the product and desired orientation, continue by clicking on the `CONFIRM` button.
+After selecting the product and desired orientation, continue by clicking on the **CONFIRM** button.
 
 ### Selecting Environment
 
