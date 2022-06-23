@@ -1,8 +1,6 @@
 site_name: Breadboard Mates Resources
 site_url: https://resources.breadboardmates.com/
 nav:
-  - Home: README.md
-  - Docs: docs.md
   - Mates Studio: 
     - Manual: studio/mates-studio-user-manual.md
     - Graphics Editor: studio/mates-studio-graphics-editor.md
