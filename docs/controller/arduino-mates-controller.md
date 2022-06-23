@@ -99,7 +99,9 @@ This function must be used once to initialize the Serial port at the start of th
     1. Baudrate is ignored when not using a HardwareSerial (or SoftwareSerial for AVR devices) to communicate with the display. In that case, the Serial/Stream instance needs to be initialize before using this function.
     2. If resetModule is false, this function will attempt to synchronize with the display.
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example No. 1"
 // Initializes display serial port with 9600 (default) and resets the display
@@ -127,7 +129,9 @@ mates.begin(19200, false);
 
 This function can be used to determine if the module is in sync with the Arduino host.
 
-**Return:** sync status (_boolean_)
+!!! return
+
+    sync status (_boolean_)
 
 ```cpp title="Example"
 // Check if the module is in sync
@@ -148,7 +152,9 @@ This function can be used to setup auto resynchronization when an error occurs.
 | attempts                  | uint8_t  | Number of resync attempts to perform              |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait for every resync attempt (default: boot timeout) |
 
-**Return:** none
+!!! return
+
+    none
 
 ```cpp title="Example No. 1"
 // Setup 3 automatic attempts to resync with default timeout
@@ -170,7 +176,9 @@ This function can be used to establish synchronization between the BBM module an
 | resetToPage0              | bool     | Indicates whether to go to Page0 after a successful synchronization (default: true) |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example No. 1"
 // Attempts to synchronize with the display
@@ -212,7 +220,9 @@ The function finishes as soon as the display sends the ready signal or the wait 
 |:-------------------------:|:--------:| ------------------------------------------------- |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example No. 1"
 // Reset the display and wait for
@@ -236,7 +246,9 @@ The function finishes as soon as the display sends the ready signal or the wait 
 |:-------------------------:|:--------:| ------------------------------------------------- |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example No. 1"
 // Reset the display and wait for
@@ -257,7 +269,9 @@ This function can be used to set the wait period during reset and softReset.
 |:-----------:|:--------:| ----------------------------------------------------- |
 | timeout     | uint32_t | New timeout period to wait until the display is ready |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setBootTimeout(10000); // sets boot timeout to a period of 10 seconds
@@ -268,7 +282,9 @@ mates.setBootTimeout(10000); // sets boot timeout to a period of 10 seconds
 
 This function can be used to reset the wait period during reset and softReset to the default 5 seconds.
 
-**Return:** none
+!!! return
+
+    none
 
 ```cpp title="Example"
 mates.resetBootTimeout(); // resets boot timeout to the default period
@@ -283,7 +299,9 @@ mates.resetBootTimeout(); // resets boot timeout to the default period
 
 This function can be used to attach and error handler function to the library.
 
-**Return:** none
+!!! return
+
+    none
 
 ```cpp title="Example No. 1"
 MatesController mates = MatesController(Serial);
@@ -361,7 +379,9 @@ This function can be used to set the backlight level to the _value_ specified.
 |:----------:|:-------:| -------------------------- |
 | value      | uint8_t | The target backlight level |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setBacklight(7); // Set backlight value to 7
@@ -376,7 +396,9 @@ This function can be used to navigate to the specified _page_.
 |:----------:|:--------:| --------------------- |
 | page       | uint16_t | The target page index |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setPage(1); // Navigate to Page1
@@ -387,7 +409,9 @@ mates.setPage(1); // Navigate to Page1
 
 This function can be used to query the current active page.
 
-**Return:** Active page index (_uint16_t_)
+!!! return
+
+    Active page index (_uint16_t_)
 
 ```cpp title="Example"
 uint16_t activePage = mates.getPage(); // Query active page
@@ -403,7 +427,9 @@ This function can be used to set the 16-bit integer _value_ of the specified _wi
 | widget     | int16_t | The ID of the target widget  |
 | value      | int16_t | The new value for the widget |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setWidgetValue(MediaGaugeB0, 50); // Set value of MediaGaugeB0 to 50
@@ -411,7 +437,8 @@ mates.setWidgetValue(MediaGaugeB0, 50); // Set value of MediaGaugeB0 to 50
 
 !!! note
 
-    This function is not applicable to _Int32_ and _Float_ LedDigits
+    1. All applicable widget types are listed in [here](keywords/widgets.md).
+    2. This function is not applicable to _Int32_ and _Float_ LedDigits
 
 
 ### getWidgetValue(widget)
@@ -422,7 +449,9 @@ This function can be used to query the specified _widget_'s value.
 |:----------:|:-------:| --------------------------- |
 | widget     | int16_t | The ID of the target widget |
 
-**Return:** Value of the specified **widget** (_int16_t_)
+!!! return
+
+    Value of the specified **widget** (_int16_t_)
 
 ```cpp title="Example"
 // Query the current value of MediaLed4
@@ -431,7 +460,8 @@ int16_t widgetVal = mates.getWidgetValue(MediaLed4);
 
 !!! note
 
-    This function is not applicable to _Int32_ and _Float_ LedDigits
+    1. All applicable widget types are listed in [here](keywords/widgets.md).
+    2. This function is not applicable to _Int32_ and _Float_ LedDigits
 
 
 ### setWidgetValue(type, index, value)
@@ -444,7 +474,9 @@ This function can be used to set the 16-bit integer _value_ of the widget specif
 | index      | int8_t      | The index of the target widget |
 | value      | int16_t     | The new value for the widget   |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set value of MediaGaugeB0 to 50
@@ -466,7 +498,9 @@ This function can be used to query the value of the widget specified by _type_ a
 | type       | MatesWidget | The type of the target widget  |
 | index      | int8_t      | The index of the target widget |
 
-**Return:** Value of the specified widget (_int16_t_)
+!!! return
+
+    Value of the specified widget (_int16_t_)
 
 ```cpp title="Example"
 // Query the current value of MediaLed4
@@ -488,7 +522,9 @@ This function can be used to set the 16-bit integer _value_ of the LedDigits spe
 | index      | uint8_t | The index of the target LedDigits |
 | value      | int16_t | The new value for the LedDigits   |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setLedDigitsValue(0, 1234); // Set value of LedDigits0 to 1234
@@ -509,7 +545,9 @@ This function can be used to set the 32-bit integer _value_ of the LedDigits spe
 | index      | uint8_t | The index of the target LedDigits |
 | value      | int32_t | The new value for the LedDigits   |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setLedDigitsValue(0, 602214076); // Set value of LedDigits0 to 602214076
@@ -529,7 +567,9 @@ This function can be used to set the float _value_ of the LedDigits specified by
 | index      | uint8_t | The index of the target LedDigits |
 | value      | float   | The new value for the LedDigits   |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set value of LedDigits1 to 3.1416
@@ -551,7 +591,9 @@ This function can be used to set the _value_ of a specified gauge index of the s
 | gaugeIndex | uint8_t     | The gauge index of the target spectrum widget |
 | value      | uint8_t     | The new value for the widget                  |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set value of gauge index 2 of LedSpectrum5 to 64
@@ -573,7 +615,9 @@ This function can be used to set the _value_ of a specified _gaugeIndex_ of the 
 | gaugeIndex | uint8_t     | The gauge index of the target Led Spectrum widget |
 | value      | uint8_t     | The new value for the column/row of the widget    |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set value of gauge index 2 of LedSpectrum5 to 64
@@ -591,7 +635,9 @@ This function can be used to set the _value_ of a specified _gaugeIndex_ of the 
 | gaugeIndex | uint8_t     | The gauge index of the target Led Spectrum widget |
 | value      | uint8_t     | The new value for the column/row of the widget    |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set value of gauge index 3 of MediaSpectrum4 to 48
@@ -610,7 +656,9 @@ This function can be used to set the 32-bit integer _value_ of the LedDigits spe
 | g          | uint8_t | The green component of the new color of the MediaColorLed |
 | b          | uint8_t | The blue component of the new color of the MediaColorLed  |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setMediaColorLedValue(3, 255, 0, 0); // Set value of MediaColorLed3 to RED
@@ -631,7 +679,9 @@ This function can be used to set the parameter (_param_) of the target _widget_ 
 | param      | int16_t | The target widget parameter            |
 | value      | int16_t | The new value for the widget parameter |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set GaugeA3's Background color to BLACK
@@ -648,7 +698,9 @@ This function can be used to query the parameter (_param_) of the target _widget
 | widget     | int16_t | The ID of the target widget |
 | param      | int16_t | The target widget parameter |
 
-**Return:** The current _param_ value of the _widget_ (int16_t)
+!!! return
+
+    The current _param_ value of the _widget_ (int16_t)
 
 ```cpp title="Example"
 // Query the background color of GaugeA3
@@ -667,7 +719,9 @@ This function can be used to set the parameter (_param_) of the target widget, d
 | param      | int16_t     | The target widget parameter            |
 | value      | int16_t     | The new value for the widget parameter |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set GaugeA3's Background color to BLACK
@@ -685,7 +739,9 @@ This function can be used to query the parameter (_param_) of the target widget,
 | index      | int8_t      | The index of the target widget  |
 | param      | int16_t     | The target widget parameter     |
 
-**Return:** The current _param_ value of the widget (int16_t)
+!!! return
+
+    The current _param_ value of the widget (int16_t)
 
 ```cpp title="Example"
 // Query the background color of GaugeA3
@@ -701,7 +757,9 @@ This function can be used to adjust the max string buffer _size_ to be used when
 |:----------:|:--------:| ------------------- |
 | size       | uint16_t | The new buffer size (max: 1000) |
 
-**Return:** success or failure (boolean)
+!!! return
+
+    success or failure (boolean)
 
 ```cpp title="Example"
 // Increase buffer size to a maximum of 100 characters
@@ -718,7 +776,9 @@ This function can be used to clear the TextArea specified by _index_.
 |:----------:|:--------:| --------------------------------------- |
 | index      | uint16_t | The index of the target TextArea widget |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.clearTextArea(6); // Clear TextArea6
@@ -735,7 +795,9 @@ This function can be used to update the contents of the TextArea specified by _i
 | format     | const char * | The text to be written to the Text Area                        |
 | ...        | -            | Additional values to replace the format specifiers in _format_ |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example No. 1"
 mates.updateTextArea(2, "Mates"); // Update TextArea2 to "Mates"
@@ -756,7 +818,9 @@ This function can be used to update the contents of the TextArea specified by _i
 | index      | uint16_t     | The index of the target TextArea widget                        |
 | str     | String | The String to be written to the Text Area                        |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 String str = "Mates";
@@ -772,7 +836,9 @@ This function can be used to clear the PrintArea specified by _index_.
 |:----------:|:--------:| ---------------------------------------- |
 | index      | uint16_t | The index of the target PrintArea widget |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.clearPrintArea(5); // Clear PrintArea5
@@ -788,7 +854,9 @@ This function can be used to set the print color (_rgb565_) used by the PrintAre
 | index      | uint16_t | The index of the target PrintArea widget |
 | rgb565     | int16_t  | The color as a 16-bit RGB565 value       |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 // Set print color of PrintArea4 to RED (0xF800)
@@ -807,7 +875,9 @@ This function can be used to set the print color used by the PrintArea specified
 | g          | uint8_t  | The green component of the new color value |
 | b          | uint8_t  | The blue component of the new color value  |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 mates.setPrintAreaColor(7, 0, 255, 0); // Set print color of PrintArea7 to GREEN
@@ -824,7 +894,9 @@ This function can be used to append a number of bytes (_len_) from the data in _
 | buffer     | const int8_t * | The source of data to be appended         |
 | len        | uint16_t       | The number of bytes to be sent            |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 int8_t data[] = {0xF8, 0x7F, 0x1F};
@@ -842,7 +914,9 @@ This function can be used to append contents to the PrintArea specified by _inde
 | format     | const char * | The text to be written to the PrintArea                        |
 | ...        | -            | Additional values to replace the format specifiers in _format_ |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example No. 1"
 mates.appendToPrintArea(8, "Mates"); // Append "Mates" to PrintArea8
@@ -864,7 +938,9 @@ This function can be used to append contents to the PrintArea specified by _inde
 | index      | uint16_t     | The index of the target Print Area widget                      |
 | str        | String       | The text to be written to the PrintArea                        |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 String str = "Mates";
@@ -882,7 +958,9 @@ This function can be used to append a number of 16-bit values (_len_) from the d
 | buffer     | const int16_t * | The source of data to be appended    |
 | len        | uint16_t        | The number of values to be sent      |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 int16_t data[] = {0xF8, 0x7F, 0x1F};
@@ -900,7 +978,9 @@ This function can be used to append contents to the DotMatrix specified by _inde
 | format     | const char * | The text to be written to the DotMatrix                        |
 | ...        | -            | Additional values to replace the format specifiers in _format_ |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example No. 1"
     mates.updateDotMatrix(8, "Mates"); // Update DotMatrix0 to "Mates"
@@ -921,7 +1001,9 @@ This function can be used to update the contents of the DotMatrix specified by _
 | index      | uint16_t     | The index of the target DotMatrix widget                       |
 | str        | String       | The String to be written to the DotMatrix                      |
 
-**Return:** success or failure (_boolean_)
+!!! return
+
+    success or failure (_boolean_)
 
 ```cpp title="Example"
 String str = "Mates";
@@ -933,7 +1015,9 @@ mates.updateDotMatrix(2, str); // Update DotMatrix2 to 'str'
 
 This function can be used to query the number of button events recorded by a touch screen module
 
-**Return:** Number of recorder button events (uint16_t)
+!!! return
+
+    Number of recorder button events (uint16_t)
 
 ```cpp title="Example"
 // Query the number of button events recorded
@@ -945,7 +1029,9 @@ uint16_t btnEvents = mates.getButtonEventCount();
 
 This function can be used to query the source of next recorded button event
 
-**Return:** Widget ID of the next event button (int16_t)
+!!! return
+
+    Widget ID of the next event button (int16_t)
 
 ```cpp title="Example"
 // If there is any event recorded
@@ -967,7 +1053,9 @@ if (mates.getButtonEventCount() > 0) {
 
 This function can be used to query the number of swipe events recorded by a touch screen module
 
-**Return:** Number of recorder swipe events (uint16_t)
+!!! return
+
+    Number of recorder swipe events (uint16_t)
 
 ```cpp title="Example"
 // Query the number of swipe events recorded
@@ -979,7 +1067,9 @@ uint16_t swipeEvents = mates.getSwipeEventCount();
 
 This function can be used to query the source of next recorded button event
 
-**Return:** Swipe event (int16_t)
+!!! return
+
+    Swipe event (int16_t)
 
 ```cpp title="Example"
 // If there is any event recorded
@@ -1002,7 +1092,9 @@ if (mates.getSwipeEventCount() > 0) {
 
 This function can be used to query the version number of the library.
 
-**Return:** Version Information (_String_)
+!!! return
+
+    Version Information (_String_)
 
 ```cpp title="Example"
 // Get the library version number as string
@@ -1014,7 +1106,9 @@ String matesVersion = mates.getVersion();
 
 This function can be used to query the version number of Mates Studio compatible with the version of the library.
 
-**Return:** Compatibility Version Information (_String_)
+!!! return
+
+    Compatibility Version Information (_String_)
 
 ```cpp title="Example"
 // Get the library version number as string
@@ -1026,7 +1120,9 @@ String matesVersion = mates.getVersion();
 
 This function can be used to print the version number of the library and the compatible Mates Studio version to the debug serial port. If no debug serial was specified in the constructor, this function does nothing.
 
-**Return:** none
+!!! return
+
+    none
 
 ```cpp title="Example"
 // Prints library version and compatible Mates Studio version to debug serial
@@ -1036,7 +1132,7 @@ mates.printVersion();
 
 ### getError()
 
-This function can be used to investigate errors that occurred while controlling the display module. Detailed information of the possible errors is discussed in [here](keywords/errors.md).
+This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in [here](keywords/errors.md).
 
 ```cpp title="Example"
 // Checks the last error that occurred
