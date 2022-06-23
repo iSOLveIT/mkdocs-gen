@@ -695,7 +695,7 @@ int16_t paramVal = mates.getWidgetParam(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR
 
 ### setBufferSize(size)
 
-This function can be used to adjust the max string buffer _size_ to be used when composing a string for a TextArea or a PrintArea. The string composition is done by [updateTextArea(index, format, ...)](#updatetextareaindex-format-), [updateDotMatrix(index, format, ...)](#updatedotmatrixindex-format-) and [appendToPrintArea(index, format, ...)](#appendtoprintareaindex-format-)
+This function can be used to adjust the max string buffer _size_ to be used when composing a string for a TextArea or a PrintArea. The string composition is done by [updateTextArea(index, format, ...)](#updatetextareaindex-format-), [updateDotMatrix(index, format, ...)](#updatedotmatrixindex-format) and [appendToPrintArea(index, format, ...)](#appendtoprintareaindex-format)
 
 | Parameters | Type     | Description         |
 |:----------:|:--------:| ------------------- |
