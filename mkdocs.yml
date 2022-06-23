@@ -10,8 +10,8 @@ nav:
     - Command Protocol: studio/mates-controller-command-protocol.md
     - Release Notes: studio/mates-studio-release-notes.md
   - Mates Controller Libraries:
-    - Arduino: controller/arduino.md
-    - Python: controller/python.md
+    - Arduino: controller/arduino-mates-controller.md
+    - Python: controller/python-mates-controller.md
 theme:
   name: material
   palette:
