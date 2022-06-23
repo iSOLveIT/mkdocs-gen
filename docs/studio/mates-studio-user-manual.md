@@ -6,31 +6,31 @@ Mates Studio is an Integrated Development Environment designed to be used with B
 
 The application includes multiple environments that users can utilize to design and develop simple and complex GUI applications for their prototyping needs.
 
-### [Commander](commander.md)
+### [Commander](mates-studio-commander-environment.md)
 
 Commander is the simplest among all Mates Studio environments. It allows users to select and utilize different page designs/layouts from a built-in collection provided by the Breadboard Mates team and its community. This allows development of GUI applications in seconds.
 
-This environment is designed to program Breadboard Mates modules to be used with a host controller using the [Mates Controller Command Protocol](command-protocol.md). This allows users to control the display using their favorite microcontrollers through Serial UART.
+This environment is designed to program Breadboard Mates modules to be used with a host controller using the [Mates Controller Command Protocol](mates-controller-command-protocol.md). This allows users to control the display using their favorite microcontrollers through Serial UART.
 
-This environment also includes a [Mates Controller interface](controller.md) that simulates a microcontroller controlling the display module programmed with a Commander project.
+This environment also includes a [Mates Controller Interface](mates-controller-interface.md) that simulates a microcontroller controlling the display module programmed with a Commander project.
 
-### [Architect](architect.md)
+### [Architect](mates-studio-architect-environment.md)
 
-Similar to Commander, the Architect environment was designed to program modules to be used with a host controller and features [Mates Controller Command Protocol](command-protocol.md). It also provides the [Mates Controller interface](controller.md) to simulate a host controller.
+Similar to Commander, the Architect environment was designed to program modules to be used with a host controller and features [Mates Controller Command Protocol](mates-controller-command-protocol.md). It also provides the [Mates Controller Interface](mates-controller-interface.md) to simulate a host controller.
 
-The main advantage of Architect over Commander is the increased flexibility with designing their projects by featuring a [Graphics Editor](graphics-editor.md) which allows custom widget and page designs.
+The main advantage of Architect over Commander is the increased flexibility with designing their projects by featuring a [Graphics Editor](mates-studio-graphics-editor.md) which allows custom widget and page designs.
 
-### [Genius](genius.md)
+### [Genius](mates-studio-genius-environment.md)
 
 The Genius environment is designed to allow user to write their own custom programs for Breadboard Mates module. This allows Breadboard Mates modules to work as standalone devices.
 
-It features a [Graphics Editor](graphics-editor.md)  allowing custom widget and page designs and a [Code Editor](code-editor.md) to write the program in 4D Graphics Language (4DGL). This provides direct control of the widgets and the unused device peripherals allowing custom functionalities that users need which Commander and Architect are not able to provide.
+It features a [Graphics Editor](mates-studio-graphics-editor.md)  allowing custom widget and page designs and a [Code Editor](mates-studio-code-editor.md) to write the program in 4D Graphics Language (4DGL). This provides direct control of the widgets and the unused device peripherals allowing custom functionalities that users need which Commander and Architect are not able to provide.
 
-### [Builder](builder.md)
+### [Builder](mates-studio-builder-environment.md)
 
 Similar to Genius, the Builder environment is designed to allow user to develop custom programs for their Breadboard Mates modules.
 
-It also features a [Graphics Editor](graphics-editor.md)  allowing custom widget and page designs. But instead of a code editor, it features a [Blocks Editor](blocks-editor.md). This also provides direct control of the widgets and the unused device peripherals allowing custom functionalities that users need which Commander and Architect are not able to provide.
+It also features a [Graphics Editor](mates-studio-graphics-editor.md)  allowing custom widget and page designs. But instead of a code editor, it features a [Blocks Editor](mates-studio-blocks-editor.md). This also provides direct control of the widgets and the unused device peripherals allowing custom functionalities that users need which Commander and Architect are not able to provide.
 
 This environment is designed mainly for inexperienced 4DGL developers but can also be used by seasoned developers. This environment can be used to develop varying complexity of projects. However, as the project becomes increasingly complicated, writing the code in Genius can prove to be more managable for experience developers.
 
