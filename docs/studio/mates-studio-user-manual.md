@@ -37,6 +37,7 @@ This environment is designed mainly for inexperienced 4DGL developers but can al
 ## System Requirements
 
 Mates Studio is currently available for 64-bit Windows PCs. Here are the requirements for installing the application:
+
 - Windows 7 and later are supported, older operating systems are not supported (and do not work). Please note that the ARM version of Windows is not supported.
 - An Intel Pentium 4 processor or later that’s SSE3 capable.
 - At least 300 MB of storage space
