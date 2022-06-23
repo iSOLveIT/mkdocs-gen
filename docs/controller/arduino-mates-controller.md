@@ -171,13 +171,15 @@ This function can be used to setup auto resynchronization when an error occurs.
 Example No. 1:
 
 ```cpp
-mates.autoResync(3); // Setup 3 automatic attempts to resync with default timeout
+// Setup 3 automatic attempts to resync with default timeout
+mates.autoResync(3);
 ```
 
 Example No. 2:
 
 ```cpp
-mates.autoResync(5, 10000); // Setup 5 automatic attempts to resync with 10000ms timeout
+// Setup 5 automatic attempts to resync with 10000ms timeout
+mates.autoResync(5, 10000);
 ```
 
 
@@ -244,15 +246,15 @@ Example No 1:
 
 ```cpp
 // Reset the display and wait for
-mates.reset();          // a period of 5 seconds (default)
-                        // (actually the current boot timeout which is 5s by default)
+mates.reset(); // a period of 5 seconds (default)
+               // (actually the current boot timeout which is 5s by default)
 ```
 
 Example No 2:
 
 ```cpp
 // Reset the display and wait for
-mates.reset(4000);   // a period of 4 seconds
+mates.reset(4000); // a period of 4 seconds
 ```
 
 
@@ -272,14 +274,14 @@ Example No 1:
 
 ```cpp
 // Reset the display and wait for
-mates.softReset();  // a period of 5 seconds (default boot timeout)
+mates.softReset(); // a period of 5 seconds (default boot timeout)
 ```
 
 Example No 2:
 
 ```cpp
 // Reset the display and wait for
-mates.softReset(4000);  // a period of 4 seconds
+mates.softReset(4000); // a period of 4 seconds
 ```
 
 
@@ -477,7 +479,8 @@ This function can be used to query the specified _widget_'s value.
 Example:
 
 ```cpp
-int16_t widgetVal = mates.getWidgetValue(MediaLed4); // Query the current value of MediaLed4
+// Query the current value of MediaLed4
+int16_t widgetVal = mates.getWidgetValue(MediaLed4);
 ```
 
 !!! note
@@ -500,7 +503,8 @@ This function can be used to set the 16-bit integer _value_ of the widget specif
 Example:
 
 ```cpp
-mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50); // Set value of MediaGaugeB0 to 50
+// Set value of MediaGaugeB0 to 50
+mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50);
 ```
 
 !!! note
@@ -523,7 +527,8 @@ This function can be used to query the value of the widget specified by _type_ a
 Example:
 
 ```cpp
-int16_t widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4); // Query the current value of MediaLed4
+// Query the current value of MediaLed4
+int16_t widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4);
 ```
 
 !!! note
@@ -591,7 +596,8 @@ This function can be used to set the float _value_ of the LedDigits specified by
 Example:
 
 ```cpp
-mates.setLedDigitsValue(LedDigits1, 3.1416); // Set value of LedDigits1 to 3.1416
+// Set value of LedDigits1 to 3.1416
+mates.setLedDigitsValue(LedDigits1, 3.1416);
 ```
 
 !!! note
@@ -614,7 +620,8 @@ This function can be used to set the _value_ of a specified gauge index of the s
 Example:
 
 ```cpp
-mates.setSpectrumValue(LedSpectrum5, 2, 64); // Set value of gauge index 2 of LedSpectrum5 to 64
+// Set value of gauge index 2 of LedSpectrum5 to 64
+mates.setSpectrumValue(LedSpectrum5, 2, 64);
 ```
 
 !!! note
@@ -637,7 +644,8 @@ This function can be used to set the _value_ of a specified _gaugeIndex_ of the 
 Example:
 
 ```cpp
-mates.setLedSpectrumValue(5, 2, 64); // Set value of gauge index 2 of LedSpectrum5 to 64
+// Set value of gauge index 2 of LedSpectrum5 to 64
+mates.setLedSpectrumValue(5, 2, 64);
 ```
 
 
@@ -656,7 +664,8 @@ This function can be used to set the _value_ of a specified _gaugeIndex_ of the 
 Example:
 
 ```cpp
-mates.setMediaSpectrumValue(4, 3, 48); // Set value of gauge index 3 of MediaSpectrum4 to 48
+// Set value of gauge index 3 of MediaSpectrum4 to 48
+mates.setMediaSpectrumValue(4, 3, 48);
 ```
 
 
@@ -777,7 +786,8 @@ This function can be used to adjust the max string buffer _size_ to be used when
 Example:
 
 ```cpp
-// Increase buffer size to a maximum of 100 characters including the null terminator
+// Increase buffer size to a maximum of 100 characters
+// including the null terminator
 mates.setBufferSize(100);
 ```
 
@@ -875,7 +885,8 @@ This function can be used to set the print color (_rgb565_) used by the PrintAre
 Example:
 
 ```cpp
-mates.setPrintAreaColor(4, 0xF800); // Set print color of PrintArea4 to RED (0xF800)
+// Set print color of PrintArea4 to RED (0xF800)
+mates.setPrintAreaColor(4, 0xF800);
 ```
 
 
@@ -941,7 +952,8 @@ Example No. 2:
 
 ```cpp
 int value = 108;
-mates.appendToPrintArea(9, "Value: %d", 108); // Append value as text to PrintArea9
+// Append value as text to PrintArea9
+mates.appendToPrintArea(9, "Value: %d", 108);
 ```
 
 
