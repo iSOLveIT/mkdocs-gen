@@ -131,7 +131,7 @@ This function can be used to determine if the module is in sync with the Arduino
 
 !!! hint "Return"
 
-    sync status (_boolean_)
+    Sync Status (_boolean_)
 
 ```cpp title="Example"
 // Check if the module is in sync

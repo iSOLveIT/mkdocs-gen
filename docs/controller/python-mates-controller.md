@@ -63,7 +63,11 @@ MatesController mates = MatesController("COM10", resetFunction=resetModule,debug
 
     If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library.
 
+
 ## Methods
+
+This section serves to provide brief discussion about the methods that can be used with a [MatesController](#constructors) instance.
+
 
 ### begin(baudrate)
 
@@ -83,6 +87,7 @@ Begins the serial connection if portname not supplied in constructor.
 mates.begin(9600) 
 ```
 
+
 ### close()
 
 Closes opened serial port.
@@ -95,6 +100,7 @@ Closes opened serial port.
 # Closes serial port
 mates.close()
 ```
+
 
 ### reset(waitPeriod)
 
@@ -117,6 +123,7 @@ mates.reset()         # a period of 5 seconds (default)
 # mates.reset(4000)   # a period of 4 seconds
 ```
 
+
 ### softReset(waitPeriod)
 
 Sends a serial command to the connected device to trigger a reset.
@@ -137,6 +144,7 @@ mates.softReset()       # a period of 5 seconds (default)
 mates.softReset(4000)   # a period of 4 seconds
 ```
 
+
 ### setBacklight(backlightValue)
 
 Sets the intensity of the backlight of connected device.
@@ -155,6 +163,7 @@ backlightValue: int
 mates.setBacklight(15)
 ```    
 
+
 ### setPage(pageIndex)
 
 Sets the page to be displayed on the connected device.
@@ -172,6 +181,7 @@ pageIndex: int
 mates.setPage(1) # Navigate to Page1
 ```
 
+
 ### getPage()
 
 Returns the index of the current page displayed by the connected device.
@@ -184,6 +194,7 @@ Returns the index of the current page displayed by the connected device.
 ```python title="Example"
 activePage = mates.getPage() # Query active page
 ```
+
 
 ### setWidgetValueById(widgetId, value)
 
@@ -207,6 +218,7 @@ value: int
     # Note: The ID of MediaGaugeB0 can be copied or exported from Mates Studio
 ```
 
+
 ### getWidgetValueById(widgetId)
 
 Gets the value of a specific widget based on the provided identifier.
@@ -224,6 +236,7 @@ widgetId: int
     widgetVal = mates.getWidgetValue(MediaLed4) # Query the current value of MediaLed4
     # Note: The ID of MediaLed4 can be copied or exported from Mates Studio
 ```
+
 
 ### setWidgetValueByIndex(widgetType, widgetIndex, value)
 
@@ -286,7 +299,7 @@ widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4) # Query the current value o
 
 Sets the 16-bit integer value of the Led Digits widget specified by widgetIndex.
 
-****Args**:**
+**Args**:
 
 widgetIndex: int
 
@@ -389,6 +402,7 @@ value: int
 mates.setSpectrumValue(MatesLedSpectrum5, 2, 64)
 # Set value of gauge index 2 of LedSpectrum5 to 64
 ```
+
 
 ### setLedSpectrumValue(ledSpectrumIndex, gaugeIndex, value)
 
@@ -870,7 +884,6 @@ if mates.getSwipeEventCount() > 0:
 
 Helper function to obtain the version of the Python Mates Controller library.
 
-
 !!!hint "Return"
 
     Version Information (_str_)
@@ -885,7 +898,6 @@ matesVersion = mates.getVersion()
 
 Helper function to obtain the version of the Mates Studio compatible with this library version.
 
-
 !!!hint "Return"
 
     Compatibility Version Information (_str_)
@@ -899,7 +911,6 @@ compatVersion = mates.getCompatibility()
 ### printVersion()
 
 Debugging function to print the version of the Mates Studio compatible along with this specific library version.
-
 
 !!!hint "Return"
 
