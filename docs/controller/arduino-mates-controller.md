@@ -500,7 +500,7 @@ This function can be used to query the value of the widget specified by _type_ a
 
 !!! hint "Return"
 
-    Value of the specified widget (_int16_t_)
+    Value of the widget specified by **type** and **index** (_int16_t_)
 
 ```cpp title="Example"
 // Query the current value of MediaLed4
@@ -703,7 +703,7 @@ This function can be used to query the parameter (_param_) of the target _widget
 
 !!! hint "Return"
 
-    The current _param_ value of the _widget_ (int16_t)
+    The current **param** value of the **widget** (int16_t)
 
 ```cpp title="Example"
 // Query the background color of GaugeA3
@@ -752,7 +752,7 @@ This function can be used to query the parameter (_param_) of the target widget,
 
 !!! hint "Return"
 
-    The current _param_ value of the widget (int16_t)
+    The current **param** value of the widget specified by **type** and **index** (int16_t)
 
 ```cpp title="Example"
 // Query the background color of GaugeA3
@@ -1032,7 +1032,7 @@ This function can be used to query the number of button events recorded by a tou
 
 !!! hint "Return"
 
-    Number of recorder button events (uint16_t)
+    Number of recorded button events (_uint16_t_)
 
 ```cpp title="Example"
 // Query the number of button events recorded
@@ -1046,7 +1046,7 @@ This function can be used to query the source of next recorded button event
 
 !!! hint "Return"
 
-    Widget ID of the next event button (int16_t)
+    Widget ID of the next event button (_int16_t_)
 
 ```cpp title="Example"
 // If there is any event recorded
@@ -1070,7 +1070,7 @@ This function can be used to query the number of swipe events recorded by a touc
 
 !!! hint "Return"
 
-    Number of recorder swipe events (uint16_t)
+    Number of recorded swipe events (_uint16_t_)
 
 ```cpp title="Example"
 // Query the number of swipe events recorded
@@ -1126,8 +1126,8 @@ This function can be used to query the version number of Mates Studio compatible
     Compatibility Version Information (_String_)
 
 ```cpp title="Example"
-// Get the library version number as string
-String matesVersion = mates.getVersion();
+// Get the compatible Mates Studio version number as string
+String compatVersion = mates.getCompatibility();
 ```
 
 
@@ -1148,6 +1148,10 @@ mates.printVersion();
 ### getError()
 
 This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in [here](keywords/errors.md).
+
+!!! hint "Return"
+
+    Current error code (_MatesError_)
 
 ```cpp title="Example"
 // Checks the last error that occurred

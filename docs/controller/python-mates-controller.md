@@ -6,7 +6,7 @@
 This library is developed to easily control Breadboard Mates modules using any device that can run Python boards by utilizing the [Mates Controller Command Protocol](../studio/mates-controller-command-protocol.md). This applies to projects developed using [Commander](../studio/mates-studio-commander-environment.md) and [Architect](../studio/mates-studio-architect-environment.md) environments.
 
 
-## Hardware and Software Support
+## Supported Devices
 
 This library is developed for Python3 and designed to be used with any operating system as long as it is supported by the `pyserial` library.
 
@@ -30,12 +30,12 @@ This section serves to provide brief discussion about the constructors that can 
 Constructs all the necessary attributes associated with an instance
 of a Mates Controller Object.
 
-| Parameters                         | Type             | Description                                                            |
-|:----------------------------------:|:----------------:| ---------------------------------------------------------------------- |
-| portName                           | str              | The name of the port to be opened. Example: `/dev/ttyUSB0` for linux   |
-| resetFunction                      | function         | Function used to perform a hard reset                                  |
-| debugStream<br/>(optional)         | io.TextIOWrapper | Text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
-| debugFileLength<br/>(optional)     | int              | Determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
+| Parameters                     | Type             | Description                                                            |
+|:------------------------------:|:----------------:| ---------------------------------------------------------------------- |
+| portName                       | str              | The name of the port to be opened. Example: `/dev/ttyUSB0` for linux   |
+| resetFunction                  | function         | Function used to perform a hard reset                                  |
+| debugStream<br/>(optional)     | io.TextIOWrapper | Text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
+| debugFileLength<br/>(optional) | int              | Determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
 
 ```python title="Example No. 1"
 # Creates a new instance named 'mates' which utilizes: 
@@ -45,7 +45,6 @@ MatesController mates = MatesController("COM10")
 ```
 
 ```python title="Example No. 2"
-
 def resetModule():
     # perform reset of 100ms pulse to the RST pin
     # set reset pulse
@@ -66,19 +65,17 @@ MatesController mates = MatesController("COM10", resetFunction=resetModule,debug
 
 ## Methods
 
-### begin(baudrate)**
+### begin(baudrate)
 
 Begins the serial connection if portname not supplied in constructor.
 
-**Args**:
-
-baudrate: int
-
-- the baudrate of the serial port (default: 9600)
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| baudrate   | str  | the baudrate of the serial port (default: 9600) |
 
 !!!hint "Return"
 
-    void
+    None
 
 ```python title="Example"
 # Initializes display serial port 9600 baud
@@ -86,24 +83,20 @@ baudrate: int
 mates.begin(9600) 
 ```
 
-### close()**
+### close()
 
 Closes opened serial port.
 
-**Args**:
-
-void
-
 !!!hint "Return"
 
-    id.
+    id
 
 ```python title="Example"
 # Closes serial port
 mates.close()
 ```
 
-### reset(waitPeriod)**
+### reset(waitPeriod)
 
 Uses hardware driven signal to hard reset companion device.
 
@@ -115,7 +108,7 @@ wait_period: int
 
 !!!hint "Return"
 
-    boolean response of reset.
+    success or failure (_boolean_)
 
 ```python title="Example"
 # Reset the display and wait for
@@ -135,7 +128,7 @@ waitPeriod: int
 
 !!!hint "Return"
 
-    boolean response of reset
+    success or failure (_boolean_)
 
 ```python title="Example"
 # Reset the display and wait for
@@ -144,7 +137,7 @@ mates.softReset()       # a period of 5 seconds (default)
 mates.softReset(4000)   # a period of 4 seconds
 ```
 
-### setBacklight(backlightValue)**
+### setBacklight(backlightValue)
 
 Sets the intensity of the backlight of connected device.
 
@@ -155,7 +148,7 @@ backlightValue: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 # set backlight value of 15 (max)
@@ -173,7 +166,7 @@ pageIndex: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setPage(1) # Navigate to Page1
@@ -186,7 +179,7 @@ Returns the index of the current page displayed by the connected device.
 
 !!!hint "Return"
 
-    integer corresponding to current page index.
+    Active page index (_int_)
 
 ```python title="Example"
 activePage = mates.getPage() # Query active page
@@ -225,14 +218,14 @@ widgetId: int
 
 !!!hint "Return"
 
-    integer corresponding to widget value.  
+    Value of the widget specified by **widgetId** (_int_)
 
 ```python title="Example"
     widgetVal = mates.getWidgetValue(MediaLed4) # Query the current value of MediaLed4
     # Note: The ID of MediaLed4 can be copied or exported from Mates Studio
 ```
 
-### setWidgetValueByIndex(widgetType, widgetIndex, value)**
+### setWidgetValueByIndex(widgetType, widgetIndex, value)
 
 Sets the value of a specific widget based on the index within a widget type.
 
@@ -251,7 +244,7 @@ value: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
     mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50) # Set value of MediaGaugeB0 to 50
@@ -278,7 +271,7 @@ widgetIndex: int
 
 !!!hint "Return"
 
-    integer corresponding to widget value.
+    Value of the widget specified by **widgetType** and **widgetIndex** (_int_)
 
 ```python title="Example No. 1"
 widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4) # Query the current value of MediaLed4
@@ -306,7 +299,7 @@ Values must be within the int16 datatype range.
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setLedDigitsShortValue(2, 50) # Set value of LedDigits2 to 50
@@ -333,7 +326,7 @@ value: int, float
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setLedDigitsLongValue(2, 50) # Set value of LedDigits2 to 50
@@ -359,7 +352,7 @@ value: int, float
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setLedDigitsFloatValue(2, 9.989) # Set value of LedDigits2 to 9.989
@@ -390,7 +383,7 @@ value: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setSpectrumValue(MatesLedSpectrum5, 2, 64)
@@ -416,7 +409,7 @@ value: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setLedSpectrumValue(5, 2, 64)
@@ -443,7 +436,7 @@ value: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setMediaSpectrumValue(4, 3, 48)
@@ -470,7 +463,7 @@ value: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 # Set GaugeA3's Background color to BLACK
@@ -494,7 +487,7 @@ param: int
 
 !!!hint "Return"
 
-    integer response indicating target parameter value.
+    The current **param** value of the widget specified by **widgetId** (_int_)
 
 ```python title="Example"
 # Query the background color of GaugeA3
@@ -526,7 +519,7 @@ value: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 # Set GaugeA3's Background color to BLACK
@@ -554,7 +547,7 @@ param: int
 
 !!!hint "Return"
 
-    integer response indicating target parameter value.
+    The current **param** value of the widget specified by **widgetType** and **widgetIndex** (_int_)
 
 ```python title="Example"
 # Query the background color of GaugeA3
@@ -574,7 +567,7 @@ textAreaIndex: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.clearTextArea(6) # Clear TextArea6
@@ -601,7 +594,7 @@ formatArgs:
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example No. 1"
 mates.updateTextArea(2, "Mates") # Update TextArea2 to "Mates"
@@ -625,7 +618,7 @@ Value must be within the uint16 datatype range.
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.clearPrintArea(5) # Clear PrintArea5
@@ -676,7 +669,7 @@ green: int
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 mates.setPrintAreaColor(7, 0, 255, 0) # Set print color of PrintArea7 to GREEN
@@ -700,7 +693,7 @@ buffer: \[int\]
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 arr = [0xAB, 0xCD, 0xEF]
@@ -731,7 +724,7 @@ textFormat string.
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example No. 1"
 mates.appendStringToPrintArea(8, "Mates") # Append "Mates" to PrintArea8
@@ -760,7 +753,7 @@ buffer: \[int\]
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example"
 data = {0xF8, 0x7F, 0x1F}
@@ -789,7 +782,7 @@ formatArgs:
 
 !!!hint "Return"
 
-    boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ```python title="Example No. 1"
 mates.updateDotMatrix(8, "Mates") # Update DotMatrix0 to "Mates"
@@ -808,7 +801,7 @@ Gets the number of events recorded from applicable button widgets.
 
 !!!hint "Return"
 
-    integer corresponding to the number of events.
+    Number of recorded button events (_int_)
 
 ```python title="Example"
 # Get the number of logged button events
@@ -823,7 +816,7 @@ Gets the next event source logged from applicable buttons.
 
 !!!hint "Return"
 
-     integer corresponding to the button widget ID
+    Widget ID of the next event button (_int_)
 
 ```python title="Example"
 # If there is any event recorded
@@ -835,6 +828,7 @@ if mates.getButtonEventCount() > 0:
     # add more possible cases here...
 ```
 
+
 ### getSwipeEventCount()
 
 Gets the number of events recorded from swipe gestures.
@@ -842,7 +836,7 @@ Gets the number of events recorded from swipe gestures.
 
 !!!hint "Return"
 
-    integer corresponding to the number of events.
+    Number of recorded swipe events (_int_)
 
 ```python title="Example"
 # Get the number of logged swipe events
@@ -879,7 +873,7 @@ Helper function to obtain the version of the Python Mates Controller library.
 
 !!!hint "Return"
 
-    string response of library version.
+    Version Information (_str_)
 
 ```python title="Example"
 # Get the library version number as string
@@ -894,11 +888,11 @@ Helper function to obtain the version of the Mates Studio compatible with this l
 
 !!!hint "Return"
 
-    string response of Mates Studio version compatible with this library.
+    Compatibility Version Information (_str_)
 
 ```python title="Example"
-# Get the library version number as string
-matesVersion = mates.getCompatibility()
+# Get the compatible Mates Studio version number as string
+compatVersion = mates.getCompatibility()
 ```
 
 
@@ -909,7 +903,7 @@ Debugging function to print the version of the Mates Studio compatible along wit
 
 !!!hint "Return"
 
-    void
+    None
 
 ```python title="Example"
 # Prints library version and compatible Mates Studio version to debug serial
@@ -919,12 +913,11 @@ mates.printVersion()
 
 ### getError()
 
-Function to return the current error state of the Mates Controller.
-
+This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in [here](keywords/errors.md).
 
 !!!hint "Return"
 
-    MatesError response of current error.
+    Current error code (_MatesError_)
 
 ```python title="Example"
 # Checks the last error that occurred
