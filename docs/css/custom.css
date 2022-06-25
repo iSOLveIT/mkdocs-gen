@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,300&display=swap');
+
+@media print{
+    *{
+        font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    div[data-md-component="skip"], div[data-md-component="announce"],
+    div[data-md-component="header"], label[class="md-overlay"]{
+        display: none;
+    }
+    div[class="md-main__inner md-grid"]{
+        margin-top: 0!important;
+    }
+
+	@page {
+        size: a4 portrait;
+        margin: 10mm;
+        counter-increment: page;
+        font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+        @bottom-right {
+            content: 'Page ' counter(page);
+            font-size: 8pt;
+        }
+    }
+}
+

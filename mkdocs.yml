@@ -12,6 +12,8 @@ nav:
   - Mates Controller Libraries:
     - Arduino: controller/arduino-mates-controller.md
     - Python: controller/python-mates-controller.md
+extra_css:
+    - css/custom.css
 theme:
   name: material
   palette:
