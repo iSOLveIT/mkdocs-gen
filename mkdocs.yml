@@ -3,6 +3,8 @@ site_url: https://example.com/
 nav:
   - Home: README.md
   - Docs: docs.md
+extra_css:
+    - css/custom.css
 theme:
   name: material
   palette:
