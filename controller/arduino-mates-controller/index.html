@@ -1,0 +1,2859 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://resources.breadboardmates.com/controller/arduino-mates-controller/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>Arduino - Breadboard Mates Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mates-controller-arduino-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Breadboard Mates Resources" class="md-header__button md-logo" aria-label="Breadboard Mates Resources" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Breadboard Mates Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arduino
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Breadboard Mates Resources" class="md-nav__button md-logo" aria-label="Breadboard Mates Resources" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Breadboard Mates Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Mates Studio
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mates Studio" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Mates Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-user-manual/" class="md-nav__link">
+        Manual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-graphics-editor/" class="md-nav__link">
+        Graphics Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-code-editor/" class="md-nav__link">
+        Code Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-blocks-editor/" class="md-nav__link">
+        Blocks Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-controller-interface/" class="md-nav__link">
+        Controller Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-controller-command-protocol/" class="md-nav__link">
+        Command Protocol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-release-notes/" class="md-nav__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Mates Controller Libraries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mates Controller Libraries" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mates Controller Libraries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Arduino
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Arduino
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerserial-resetpin-mode" class="md-nav__link">
+    MatesController(serial, resetPin, mode)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerserial-dbserial-resetpin-mode" class="md-nav__link">
+    MatesController(serial, dbSerial, resetPin, mode)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginbaudrate-resetmodule" class="md-nav__link">
+    begin(baudrate, resetModule)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isready" class="md-nav__link">
+    isReady()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoresyncattempts-waitperiod" class="md-nav__link">
+    autoResync(attempts, waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncresettopage0-waitperiod" class="md-nav__link">
+    sync(resetToPage0, waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetwaitperiod" class="md-nav__link">
+    reset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softresetwaitperiod" class="md-nav__link">
+    softReset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setboottimeouttimeout" class="md-nav__link">
+    setBootTimeout(timeout)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetboottimeouttimeout" class="md-nav__link">
+    resetBootTimeout(timeout)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attacherrorhandlerhandler" class="md-nav__link">
+    attachErrorHandler(handler)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbacklightvalue" class="md-nav__link">
+    setBacklight(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpagepage" class="md-nav__link">
+    setPage(page)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpage" class="md-nav__link">
+    getPage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluewidget-value" class="md-nav__link">
+    setWidgetValue(widget, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluewidget" class="md-nav__link">
+    getWidgetValue(widget)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluetype-index-value" class="md-nav__link">
+    setWidgetValue(type, index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluetype-index" class="md-nav__link">
+    getWidgetValue(type, index)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsvalueindex-value" class="md-nav__link">
+    setLedDigitsValue(index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsvalueindex-value_1" class="md-nav__link">
+    setLedDigitsValue(index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsvalueindex-value_2" class="md-nav__link">
+    setLedDigitsValue(index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setspectrumvaluewidget-gaugeindex-value" class="md-nav__link">
+    setSpectrumValue(widget, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setledspectrumvalueindex-gaugeindex-value" class="md-nav__link">
+    setLedSpectrumValue(index, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediaspectrumvaluetype-index-gaugeindex-value" class="md-nav__link">
+    setMediaSpectrumValue(type, index, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediacolorledvalueindex-r-g-b" class="md-nav__link">
+    setMediaColorLedValue(index, r, g, b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparamwidget-param-value" class="md-nav__link">
+    setWidgetParam(widget, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparamwidget-param" class="md-nav__link">
+    getWidgetParam(widget, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparamtype-index-param-value" class="md-nav__link">
+    setWidgetParam(type, index, param, value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparamtype-index-param" class="md-nav__link">
+    getWidgetParam(type, index, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuffersizesize" class="md-nav__link">
+    setBufferSize(size)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartextareaindex" class="md-nav__link">
+    clearTextArea(index)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareaindex-format" class="md-nav__link">
+    updateTextArea(index, format, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareaindex-str" class="md-nav__link">
+    updateTextArea(index, str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearprintareaindex" class="md-nav__link">
+    clearPrintArea(index)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorindex-rgb565" class="md-nav__link">
+    setPrintAreaColor(index, rgb565)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorindex-r-g-b" class="md-nav__link">
+    setPrintAreaColor(index, r, g, b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoprintareaindex-buffer-len" class="md-nav__link">
+    appendToPrintArea(index, buffer, len)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoprintareaindex-format" class="md-nav__link">
+    appendToPrintArea(index, format, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoprintareaindex-str" class="md-nav__link">
+    appendToPrintArea(index, str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoscopeindex-buffer-len" class="md-nav__link">
+    appendToScope(index, buffer, len)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixindex-format" class="md-nav__link">
+    updateDotMatrix(index, format, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixindex-str" class="md-nav__link">
+    updateDotMatrix(index, str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoneventcount" class="md-nav__link">
+    getButtonEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getswipeeventcount" class="md-nav__link">
+    getSwipeEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent_1" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversion" class="md-nav__link">
+    getVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcompatibility" class="md-nav__link">
+    getCompatibility()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printversion" class="md-nav__link">
+    printVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geterror" class="md-nav__link">
+    getError()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-mates-controller/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerserial-resetpin-mode" class="md-nav__link">
+    MatesController(serial, resetPin, mode)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerserial-dbserial-resetpin-mode" class="md-nav__link">
+    MatesController(serial, dbSerial, resetPin, mode)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginbaudrate-resetmodule" class="md-nav__link">
+    begin(baudrate, resetModule)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isready" class="md-nav__link">
+    isReady()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoresyncattempts-waitperiod" class="md-nav__link">
+    autoResync(attempts, waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncresettopage0-waitperiod" class="md-nav__link">
+    sync(resetToPage0, waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetwaitperiod" class="md-nav__link">
+    reset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softresetwaitperiod" class="md-nav__link">
+    softReset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setboottimeouttimeout" class="md-nav__link">
+    setBootTimeout(timeout)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetboottimeouttimeout" class="md-nav__link">
+    resetBootTimeout(timeout)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attacherrorhandlerhandler" class="md-nav__link">
+    attachErrorHandler(handler)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbacklightvalue" class="md-nav__link">
+    setBacklight(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpagepage" class="md-nav__link">
+    setPage(page)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpage" class="md-nav__link">
+    getPage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluewidget-value" class="md-nav__link">
+    setWidgetValue(widget, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluewidget" class="md-nav__link">
+    getWidgetValue(widget)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluetype-index-value" class="md-nav__link">
+    setWidgetValue(type, index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluetype-index" class="md-nav__link">
+    getWidgetValue(type, index)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsvalueindex-value" class="md-nav__link">
+    setLedDigitsValue(index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsvalueindex-value_1" class="md-nav__link">
+    setLedDigitsValue(index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsvalueindex-value_2" class="md-nav__link">
+    setLedDigitsValue(index, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setspectrumvaluewidget-gaugeindex-value" class="md-nav__link">
+    setSpectrumValue(widget, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setledspectrumvalueindex-gaugeindex-value" class="md-nav__link">
+    setLedSpectrumValue(index, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediaspectrumvaluetype-index-gaugeindex-value" class="md-nav__link">
+    setMediaSpectrumValue(type, index, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediacolorledvalueindex-r-g-b" class="md-nav__link">
+    setMediaColorLedValue(index, r, g, b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparamwidget-param-value" class="md-nav__link">
+    setWidgetParam(widget, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparamwidget-param" class="md-nav__link">
+    getWidgetParam(widget, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparamtype-index-param-value" class="md-nav__link">
+    setWidgetParam(type, index, param, value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparamtype-index-param" class="md-nav__link">
+    getWidgetParam(type, index, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuffersizesize" class="md-nav__link">
+    setBufferSize(size)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartextareaindex" class="md-nav__link">
+    clearTextArea(index)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareaindex-format" class="md-nav__link">
+    updateTextArea(index, format, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareaindex-str" class="md-nav__link">
+    updateTextArea(index, str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearprintareaindex" class="md-nav__link">
+    clearPrintArea(index)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorindex-rgb565" class="md-nav__link">
+    setPrintAreaColor(index, rgb565)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorindex-r-g-b" class="md-nav__link">
+    setPrintAreaColor(index, r, g, b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoprintareaindex-buffer-len" class="md-nav__link">
+    appendToPrintArea(index, buffer, len)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoprintareaindex-format" class="md-nav__link">
+    appendToPrintArea(index, format, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoprintareaindex-str" class="md-nav__link">
+    appendToPrintArea(index, str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoscopeindex-buffer-len" class="md-nav__link">
+    appendToScope(index, buffer, len)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixindex-format" class="md-nav__link">
+    updateDotMatrix(index, format, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixindex-str" class="md-nav__link">
+    updateDotMatrix(index, str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoneventcount" class="md-nav__link">
+    getButtonEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getswipeeventcount" class="md-nav__link">
+    getSwipeEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent_1" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversion" class="md-nav__link">
+    getVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcompatibility" class="md-nav__link">
+    getCompatibility()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printversion" class="md-nav__link">
+    printVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geterror" class="md-nav__link">
+    getError()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="arduino-mates-controller.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+              
+                
+
+
+<h1 id="mates-controller-arduino-library">Mates Controller Arduino Library</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This library is developed to easily control Breadboard Mates modules using Arduino-compatible boards by utilizing the <a href="../../studio/mates-controller-command-protocol/">Mates Controller Command Protocol</a>. This applies to projects developed using <a href="../../studio/mates-studio-commander-environment/">Commander</a> and <a href="../../studio/mates-studio-architect-environment/">Architect</a> environments.</p>
+<p>For working examples of using the library and its functions in a project, refer to the <em>examples</em> and <em>extras</em> directories in the <a href="https://github.com/BreadBoardMates/Arduino-Mates-Controller">repository</a>.</p>
+<h2 id="constructors">Constructors</h2>
+<p>This section serves to provide brief discussion about the constructors that can be used to initialize the library.</p>
+<h3 id="matescontrollerserial-resetpin-mode">MatesController(serial, resetPin, mode)</h3>
+<p>This is the main constructor for the library. It creates a unique instance and sets the specified display serial port and reset pin. If <em>serial</em> is not a HardwareSerial (or SoftwareSerial for AVR devices), the Serial stream needs to be initialized manually before running <a href="#beginbaudrate-resetmodule">begin(baudrate, resetModule)</a> function.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">serial</td>
+<td align="center">Stream</td>
+<td>The serial port to use for controlling the display module</td>
+</tr>
+<tr>
+<td align="center">resetPin<br/>(optional)</td>
+<td align="center">uint8_t</td>
+<td>Arduino reset pin to use for resetting the display module (default: 4)</td>
+</tr>
+<tr>
+<td align="center">mode<br/>(optional)</td>
+<td align="center">uint8_t</td>
+<td>Arduino reset pulse to use when performing reset (default: LOW)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Creates a new instance named &#39;mates&#39; which utilizes:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">//  - Serial as UART</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">//  - Pin 4 of Arduino as Reset Pin (default)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">//  - Reset mode as a LOW pulse (default)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">MatesController</span><span class="w"> </span><span class="n">mates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MatesController</span><span class="p">(</span><span class="n">Serial</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Creates a new instance named &#39;mates&#39; which utilizes:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">//  - Serial as UART</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">//  - Pin 5 of Arduino as Reset Pin</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">//  - Reset mode as a LOW pulse (default)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">MatesController</span><span class="w"> </span><span class="n">mates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MatesController</span><span class="p">(</span><span class="n">Serial</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 3</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Creates a new instance named &#39;mates&#39; which utilizes:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">//  - Serial as UART</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">//  - Pin 6 of Arduino as Reset Pin</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">//  - Reset mode as a HIGH pulse</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">MatesController</span><span class="w"> </span><span class="n">mates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MatesController</span><span class="p">(</span><span class="n">Serial</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">   </span>
+</code></pre></div>
+<h3 id="matescontrollerserial-dbserial-resetpin-mode">MatesController(serial, dbSerial, resetPin, mode)</h3>
+<p>This is an alternative constructor for the library. It creates a unique instance and sets the specified display serial port, debug serial and reset pin. If not using a HardwareSerial (or SoftwareSerial for AVR devices), the Serial stream needs to be initialized manually before running the <a href="#beginbaudrate-resetmodule">begin(baudrate, resetModule)</a> function.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">serial</td>
+<td align="center">Stream</td>
+<td>The serial port to use for controlling the display module</td>
+</tr>
+<tr>
+<td align="center">dbSerial</td>
+<td align="center">Stream</td>
+<td>The serial port to use for printing debug messages</td>
+</tr>
+<tr>
+<td align="center">resetPin<br/>(optional)</td>
+<td align="center">uint8_t</td>
+<td>Arduino reset pin to use for resetting the display module (default: 4)</td>
+</tr>
+<tr>
+<td align="center">mode<br/>(optional)</td>
+<td align="center">uint8_t</td>
+<td>Arduino reset pulse to use when performing reset (default: LOW)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Creates a new instance named &#39;mates&#39; which utilizes:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">//  - Serial1 as display UART</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">//  - Serial as debug UART</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">//  - Pin 4 of Arduino as Reset Pin (default)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">MatesController</span><span class="w"> </span><span class="n">mates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MatesController</span><span class="p">(</span><span class="n">Serial1</span><span class="p">,</span><span class="w"> </span><span class="n">Serial</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Creates a new instance named &#39;mates&#39; which utilizes:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">//  - Serial1 as display UART</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">//  - Serial as debug UART</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">//  - Pin 5 of Arduino as Reset Pin</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">MatesController</span><span class="w"> </span><span class="n">mates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MatesController</span><span class="p">(</span><span class="n">Serial1</span><span class="p">,</span><span class="w"> </span><span class="n">Serial</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a debug serial port is specified, it should be initialized before running the begin() function of this library.</p>
+</div>
+<h2 id="functions">Functions</h2>
+<p>This section serves to provide brief discussion about the functions that can be used with an initialized <a href="#constructors">MatesController</a> object.</p>
+<h3 id="beginbaudrate-resetmodule">begin(baudrate, resetModule)</h3>
+<p>This function must be used once to initialize the Serial port at the start of the Arduino application and to reset or synchronize with the display.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">baudrate<br/>(optional)</td>
+<td align="center">int32_t</td>
+<td>Baudrate setting to be used to control the display module (default: 9600)</td>
+</tr>
+<tr>
+<td align="center">resetModule<br/>(optional)</td>
+<td align="center">bool</td>
+<td>Indicates whether the module should be reset from the hardware reset pin (default: true)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>Baudrate is ignored when not using a HardwareSerial (or SoftwareSerial for AVR devices) to communicate with the display. In that case, the Serial/Stream instance needs to be initialize before using this function.</li>
+<li>If resetModule is false, this function will attempt to synchronize with the display.</li>
+</ol>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Initializes display serial port with 9600 (default) and resets the display</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Initializes display serial port with 115200 baud and resets the display</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 3</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Initializes display serial port with 19200 baud and skips reset</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">19200</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>Ensure that the baudrate matches the baudrate setting of the Mates Studio Commander/Architect project</li>
+<li>If a debug serial port is specified, it should be initialized manually before running the begin() function of this library.</li>
+<li>If not using reset, users needs to be aware of the boot timing of the module. This should be around 3-5 seconds or more depending on the project after power on. If more time is needed to sync, set a higher boot timeout using <a href="#setboottimeouttimeout">setBootTimeout(timeout)</a></li>
+</ol>
+</div>
+<h3 id="isready">isReady()</h3>
+<p>This function can be used to determine if the module is in sync with the Arduino host.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Sync Status (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// Check if the module is in sync</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mates</span><span class="p">.</span><span class="n">isReady</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="c1">// Write to or read from widgets</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">mates</span><span class="p">.</span><span class="n">sync</span><span class="p">();</span><span class="w"> </span><span class="c1">// Try to resync with the module</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="autoresyncattempts-waitperiod">autoResync(attempts, waitPeriod)</h3>
+<p>This function can be used to setup auto resynchronization when an error occurs.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">attempts</td>
+<td align="center">uint8_t</td>
+<td>Number of resync attempts to perform</td>
+</tr>
+<tr>
+<td align="center">waitPeriod<br/>(optional)</td>
+<td align="center">uint16_t</td>
+<td>Timeout period to wait for every resync attempt (default: boot timeout)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>none</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Setup 3 automatic attempts to resync with default timeout</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">autoResync</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Setup 5 automatic attempts to resync with 10000ms timeout</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">autoResync</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="syncresettopage0-waitperiod">sync(resetToPage0, waitPeriod)</h3>
+<p>This function can be used to establish synchronization between the BBM module and the Arduino compatible host.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">resetToPage0</td>
+<td align="center">bool</td>
+<td>Indicates whether to go to Page0 after a successful synchronization (default: true)</td>
+</tr>
+<tr>
+<td align="center">waitPeriod<br/>(optional)</td>
+<td align="center">uint16_t</td>
+<td>Timeout period to wait until the display is ready (default: boot timeout)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// Attempts to synchronize with the display</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mates</span><span class="p">.</span><span class="n">sync</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="c1">// Do something if synchronization was successful</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="c1">// Do something if synchronization failed</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// Attempts to synchronize with the display</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mates</span><span class="p">.</span><span class="n">sync</span><span class="p">(</span><span class="nb">true</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="c1">// Do something if synchronization was successful</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="c1">// and project returned to Page0</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="c1">// Do something if synchronization failed</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 3</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">// Attempts to synchronize with the display with a timeout of 10000</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mates</span><span class="p">.</span><span class="n">sync</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="c1">// Do something if synchronization was successful</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="c1">// and project returned to Page0</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="c1">// Do something if synchronization failed</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="resetwaitperiod">reset(waitPeriod)</h3>
+<p>This function can be used to reset the display by sending a reset pulse from the reset pin specified through the contructor. The default wait period is 5 seconds (5000 ms) or as specified by <a href="#setboottimeouttimeout">setBootTimeout(timeout)</a>.</p>
+<p>The function finishes as soon as the display sends the ready signal or the wait period passes.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">waitPeriod<br/>(optional)</td>
+<td align="center">uint16_t</td>
+<td>Timeout period to wait until the display is ready (default: boot timeout)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">// Reset the display and wait for</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span><span class="w"> </span><span class="c1">// a period of 5 seconds (default)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">               </span><span class="c1">// (actually the current boot timeout which is 5s by default)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Reset the display and wait for</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span><span class="w"> </span><span class="c1">// a period of 4 seconds</span>
+</code></pre></div>
+<h3 id="softresetwaitperiod">softReset(waitPeriod)</h3>
+<p>This function can be used to reset the display by sending a reset command. The default wait period is 5 seconds (5000 ms) or as specified by <a href="#setboottimeouttimeout">setBootTimeout(timeout)</a>.</p>
+<p>The function finishes as soon as the display sends the ready signal or the wait period passes.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">waitPeriod<br/>(optional)</td>
+<td align="center">uint16_t</td>
+<td>Timeout period to wait until the display is ready (default: boot timeout)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// Reset the display and wait for</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">softReset</span><span class="p">();</span><span class="w"> </span><span class="c1">// a period of 5 seconds (default boot timeout)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// Reset the display and wait for</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">softReset</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span><span class="w"> </span><span class="c1">// a period of 4 seconds</span>
+</code></pre></div>
+<h3 id="setboottimeouttimeout">setBootTimeout(timeout)</h3>
+<p>This function can be used to set the wait period during reset and softReset.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">timeout</td>
+<td align="center">uint32_t</td>
+<td>New timeout period to wait until the display is ready</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setBootTimeout</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span><span class="w"> </span><span class="c1">// sets boot timeout to a period of 10 seconds</span>
+</code></pre></div>
+<h3 id="resetboottimeouttimeout">resetBootTimeout(timeout)</h3>
+<p>This function can be used to reset the wait period during reset and softReset to the default 5 seconds.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>none</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">resetBootTimeout</span><span class="p">();</span><span class="w"> </span><span class="c1">// resets boot timeout to the default period</span>
+</code></pre></div>
+<h3 id="attacherrorhandlerhandler">attachErrorHandler(handler)</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">handler</td>
+<td align="center">MatesErrorHandler</td>
+<td>Custom function to handle errors as they come</td>
+</tr>
+</tbody>
+</table>
+<p>This function can be used to attach and error handler function to the library.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>none</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">MatesController</span><span class="w"> </span><span class="n">mates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MatesController</span><span class="p">(</span><span class="n">Serial</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">matesErrorHandler</span><span class="p">(</span><span class="n">MatesError</span><span class="w"> </span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// Blink builtin LED and block project execution</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="c1">// This is not ideal but can be used to as simple error indication</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="c1">// Errors should be handled as shown in Example 2</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">    </span><span class="c1">// Sets &#39;matesErrorHandler&#39; as the function for handling possible MatesError</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">    </span><span class="n">mates</span><span class="p">.</span><span class="n">attachErrorHandler</span><span class="p">(</span><span class="n">matesErrorHandler</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">    </span><span class="n">mates</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">    </span><span class="c1">// do something...</span>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">    </span><span class="c1">// do something...</span>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">MatesController</span><span class="w"> </span><span class="n">mates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MatesController</span><span class="p">(</span><span class="n">Serial</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">matesErrorHandler</span><span class="p">(</span><span class="n">MatesError</span><span class="w"> </span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">MATES_ERROR_COMMAND_FAILED</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">            </span><span class="c1">// Do something when last command is invalid</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">MATES_ERROR_RESPONSE_TIMEOUT</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">            </span><span class="c1">// Do something when the expected response from</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">            </span><span class="c1">// the last command wasn&#39;t received on time</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">MATES_ERROR_COMMAND_TIMEOUT</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">            </span><span class="c1">// Do something when the expected acknowledgement from</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">            </span><span class="c1">// the last command wasn&#39;t received on time</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">MATES_ERROR_NOT_INITIALIZED</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">            </span><span class="c1">// Do something when the display is not yet ready</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="w">    </span><span class="c1">// Sets &#39;matesErrorHandler&#39; as the function for handling possible MatesError</span>
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="w">    </span><span class="n">mates</span><span class="p">.</span><span class="n">attachErrorHandler</span><span class="p">(</span><span class="n">matesErrorHandler</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="w">    </span><span class="n">mates</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a><span class="w">    </span><span class="c1">// do something...</span>
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>
+<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a><span class="w">    </span><span class="c1">// do something...</span>
+<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="setbacklightvalue">setBacklight(value)</h3>
+<p>This function can be used to set the backlight level to the <em>value</em> specified.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">value</td>
+<td align="center">uint8_t</td>
+<td>The target backlight level</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setBacklight</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set backlight value to 7</span>
+</code></pre></div>
+<h3 id="setpagepage">setPage(page)</h3>
+<p>This function can be used to navigate to the specified <em>page</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">page</td>
+<td align="center">uint16_t</td>
+<td>The target page index</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setPage</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Navigate to Page1</span>
+</code></pre></div>
+<h3 id="getpage">getPage()</h3>
+<p>This function can be used to query the current active page.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Active page index (<em>uint16_t</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">uint16_t</span><span class="w"> </span><span class="n">activePage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getPage</span><span class="p">();</span><span class="w"> </span><span class="c1">// Query active page</span>
+</code></pre></div>
+<h3 id="setwidgetvaluewidget-value">setWidgetValue(widget, value)</h3>
+<p>This function can be used to set the 16-bit integer <em>value</em> of the specified <em>widget</em></p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widget</td>
+<td align="center">int16_t</td>
+<td>The ID of the target widget</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int16_t</td>
+<td>The new value for the widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setWidgetValue</span><span class="p">(</span><span class="n">MediaGaugeB0</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set value of MediaGaugeB0 to 50</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</li>
+<li>This function is not applicable to <em>Int32</em> and <em>Float</em> LedDigits</li>
+</ol>
+</div>
+<h3 id="getwidgetvaluewidget">getWidgetValue(widget)</h3>
+<p>This function can be used to query the specified <em>widget</em>'s value.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widget</td>
+<td align="center">int16_t</td>
+<td>The ID of the target widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Value of the specified <strong>widget</strong> (<em>int16_t</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">// Query the current value of MediaLed4</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kt">int16_t</span><span class="w"> </span><span class="n">widgetVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getWidgetValue</span><span class="p">(</span><span class="n">MediaLed4</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</li>
+<li>This function is not applicable to <em>Int32</em> and <em>Float</em> LedDigits</li>
+</ol>
+</div>
+<h3 id="setwidgetvaluetype-index-value">setWidgetValue(type, index, value)</h3>
+<p>This function can be used to set the 16-bit integer <em>value</em> of the widget specified by <em>type</em> and <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">type</td>
+<td align="center">MatesWidget</td>
+<td>The type of the target widget</td>
+</tr>
+<tr>
+<td align="center">index</td>
+<td align="center">int8_t</td>
+<td>The index of the target widget</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int16_t</td>
+<td>The new value for the widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">// Set value of MediaGaugeB0 to 50</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setWidgetValue</span><span class="p">(</span><span class="n">MATES_MEDIA_GAUGE_B</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</li>
+<li>This function is not applicable to <em>Int32</em> and <em>Float</em> LedDigits</li>
+</ol>
+</div>
+<h3 id="getwidgetvaluetype-index">getWidgetValue(type, index)</h3>
+<p>This function can be used to query the value of the widget specified by <em>type</em> and <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">type</td>
+<td align="center">MatesWidget</td>
+<td>The type of the target widget</td>
+</tr>
+<tr>
+<td align="center">index</td>
+<td align="center">int8_t</td>
+<td>The index of the target widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Value of the widget specified by <strong>type</strong> and <strong>index</strong> (<em>int16_t</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1">// Query the current value of MediaLed4</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kt">int16_t</span><span class="w"> </span><span class="n">widgetVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getWidgetValue</span><span class="p">(</span><span class="n">MATES_MEDIA_LED</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</li>
+<li>This function is not applicable to <em>Int32</em> and <em>Float</em> LedDigits</li>
+</ol>
+</div>
+<h3 id="setleddigitsvalueindex-value">setLedDigitsValue(index, value)</h3>
+<p>This function can be used to set the 16-bit integer <em>value</em> of the LedDigits specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint8_t</td>
+<td>The index of the target LedDigits</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int16_t</td>
+<td>The new value for the LedDigits</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setLedDigitsValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set value of LedDigits0 to 1234</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Int16</em> LedDigits</p>
+</div>
+<h3 id="setleddigitsvalueindex-value_1">setLedDigitsValue(index, value)</h3>
+<p>This function can be used to set the 32-bit integer <em>value</em> of the LedDigits specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint8_t</td>
+<td>The index of the target LedDigits</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int32_t</td>
+<td>The new value for the LedDigits</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setLedDigitsValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">602214076</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set value of LedDigits0 to 602214076</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Int32</em> LedDigits</p>
+</div>
+<h3 id="setleddigitsvalueindex-value_2">setLedDigitsValue(index, value)</h3>
+<p>This function can be used to set the float <em>value</em> of the LedDigits specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint8_t</td>
+<td>The index of the target LedDigits</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">float</td>
+<td>The new value for the LedDigits</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1">// Set value of LedDigits1 to 3.1416</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setLedDigitsValue</span><span class="p">(</span><span class="n">LedDigits1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.1416</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Float</em> LedDigits</p>
+</div>
+<h3 id="setspectrumvaluewidget-gaugeindex-value">setSpectrumValue(widget, gaugeIndex, value)</h3>
+<p>This function can be used to set the <em>value</em> of a specified gauge index of the spectrum <em>widget</em> specified.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widget</td>
+<td align="center">int16_t</td>
+<td>The ID of the target spectrum widget</td>
+</tr>
+<tr>
+<td align="center">gaugeIndex</td>
+<td align="center">uint8_t</td>
+<td>The gauge index of the target spectrum widget</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">uint8_t</td>
+<td>The new value for the widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">// Set value of gauge index 2 of LedSpectrum5 to 64</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setSpectrumValue</span><span class="p">(</span><span class="n">LedSpectrum5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for LedSpectrum and MediaSpectrum</p>
+</div>
+<h3 id="setledspectrumvalueindex-gaugeindex-value">setLedSpectrumValue(index, gaugeIndex, value)</h3>
+<p>This function can be used to set the <em>value</em> of a specified <em>gaugeIndex</em> of the Led Spectrum widget determined by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint8_t</td>
+<td>The index of the target Led Spectrum widget</td>
+</tr>
+<tr>
+<td align="center">gaugeIndex</td>
+<td align="center">uint8_t</td>
+<td>The gauge index of the target Led Spectrum widget</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">uint8_t</td>
+<td>The new value for the column/row of the widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1">// Set value of gauge index 2 of LedSpectrum5 to 64</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setLedSpectrumValue</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="setmediaspectrumvaluetype-index-gaugeindex-value">setMediaSpectrumValue(type, index, gaugeIndex, value)</h3>
+<p>This function can be used to set the <em>value</em> of a specified <em>gaugeIndex</em> of the Media Spectrum widget determined by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint8_t</td>
+<td>The index of the target Led Spectrum widget</td>
+</tr>
+<tr>
+<td align="center">gaugeIndex</td>
+<td align="center">uint8_t</td>
+<td>The gauge index of the target Led Spectrum widget</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">uint8_t</td>
+<td>The new value for the column/row of the widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1">// Set value of gauge index 3 of MediaSpectrum4 to 48</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setMediaSpectrumValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="setmediacolorledvalueindex-r-g-b">setMediaColorLedValue(index, r, g, b)</h3>
+<p>This function can be used to set the 32-bit integer <em>value</em> of the LedDigits specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint8_t</td>
+<td>The index of the target MediaColorLed</td>
+</tr>
+<tr>
+<td align="center">r</td>
+<td align="center">uint8_t</td>
+<td>The red component of the new color of the MediaColorLed</td>
+</tr>
+<tr>
+<td align="center">g</td>
+<td align="center">uint8_t</td>
+<td>The green component of the new color of the MediaColorLed</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">uint8_t</td>
+<td>The blue component of the new color of the MediaColorLed</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setMediaColorLedValue</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set value of MediaColorLed3 to RED</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for MediaColorLeds</p>
+</div>
+<h3 id="setwidgetparamwidget-param-value">setWidgetParam(widget, param, value)</h3>
+<p>This function can be used to set the parameter (<em>param</em>) of the target <em>widget</em> to the specified <em>value</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widget</td>
+<td align="center">int16_t</td>
+<td>The ID of the target widget</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int16_t</td>
+<td>The target widget parameter</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int16_t</td>
+<td>The new value for the widget parameter</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1">// Set GaugeA3&#39;s Background color to BLACK</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setWidgetParam</span><span class="p">(</span><span class="n">GaugeA3</span><span class="p">,</span><span class="w"> </span><span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">,</span><span class="w"> </span><span class="n">BLACK</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</p>
+</div>
+<h3 id="getwidgetparamwidget-param">getWidgetParam(widget, param)</h3>
+<p>This function can be used to query the parameter (<em>param</em>) of the target <em>widget</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widget</td>
+<td align="center">int16_t</td>
+<td>The ID of the target widget</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int16_t</td>
+<td>The target widget parameter</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>The current <strong>param</strong> value of the <strong>widget</strong> (int16_t)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1">// Query the background color of GaugeA3</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="kt">int16_t</span><span class="w"> </span><span class="n">paramVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getWidgetParam</span><span class="p">(</span><span class="n">GaugeA3</span><span class="p">,</span><span class="w"> </span><span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</p>
+</div>
+<h3 id="setwidgetparamtype-index-param-value">setWidgetParam(type, index, param, value);</h3>
+<p>This function can be used to set the parameter (<em>param</em>) of the target widget, determined by <em>type</em> and <em>index</em>, to the specified <em>value</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">type</td>
+<td align="center">MatesWidget</td>
+<td>The type of the target widget</td>
+</tr>
+<tr>
+<td align="center">index</td>
+<td align="center">int8_t</td>
+<td>The index of the target widget</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int16_t</td>
+<td>The target widget parameter</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int16_t</td>
+<td>The new value for the widget parameter</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1">// Set GaugeA3&#39;s Background color to BLACK</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setWidgetParam</span><span class="p">(</span><span class="n">MATES_GAUGE_A</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">,</span><span class="w"> </span><span class="n">BLACK</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</p>
+</div>
+<h3 id="getwidgetparamtype-index-param">getWidgetParam(type, index, param)</h3>
+<p>This function can be used to query the parameter (<em>param</em>) of the target widget, determined by <em>type</em> and <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">type</td>
+<td align="center">MatesWidget</td>
+<td>The type of the target widget</td>
+</tr>
+<tr>
+<td align="center">index</td>
+<td align="center">int8_t</td>
+<td>The index of the target widget</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int16_t</td>
+<td>The target widget parameter</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>The current <strong>param</strong> value of the widget specified by <strong>type</strong> and <strong>index</strong> (int16_t)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1">// Query the background color of GaugeA3</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="kt">int16_t</span><span class="w"> </span><span class="n">paramVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getWidgetParam</span><span class="p">(</span><span class="n">MATES_GAUGE_A</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</p>
+</div>
+<h3 id="setbuffersizesize">setBufferSize(size)</h3>
+<p>This function can be used to adjust the max string buffer <em>size</em> to be used when composing a string for a TextArea or a PrintArea. The string composition is done by <a href="#updatetextareaindex-format-">updateTextArea(index, format, ...)</a>, <a href="#updatedotmatrixindex-format">updateDotMatrix(index, format, ...)</a> and <a href="#appendtoprintareaindex-format">appendToPrintArea(index, format, ...)</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">size</td>
+<td align="center">uint16_t</td>
+<td>The new buffer size (max: 1000)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (boolean)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1">// Increase buffer size to a maximum of 100 characters</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="c1">// including the null terminator</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="n">mates</span><span class="p">.</span><span class="n">setBufferSize</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="cleartextareaindex">clearTextArea(index)</h3>
+<p>This function can be used to clear the TextArea specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target TextArea widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">clearTextArea</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// Clear TextArea6</span>
+</code></pre></div>
+<h3 id="updatetextareaindex-format">updateTextArea(index, format, ...)</h3>
+<p>This function can be used to update the contents of the TextArea specified by <em>index</em> with the text formed by <em>format</em> and the additional arguments.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target TextArea widget</td>
+</tr>
+<tr>
+<td align="center">format</td>
+<td align="center">const char *</td>
+<td>The text to be written to the Text Area</td>
+</tr>
+<tr>
+<td align="center">...</td>
+<td align="center">-</td>
+<td>Additional values to replace the format specifiers in <em>format</em></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">updateTextArea</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mates&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Update TextArea2 to &quot;Mates&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">76</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">updateTextArea</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Value is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">76</span><span class="p">);</span><span class="w"> </span><span class="c1">// Print value to TextArea3</span>
+</code></pre></div>
+<h3 id="updatetextareaindex-str">updateTextArea(index, str)</h3>
+<p>This function can be used to update the contents of the TextArea specified by <em>index</em> with the String 'str'.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target TextArea widget</td>
+</tr>
+<tr>
+<td align="center">str</td>
+<td align="center">String</td>
+<td>The String to be written to the Text Area</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mates&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">updateTextArea</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// Update TextArea2 to &#39;str&#39;</span>
+</code></pre></div>
+<h3 id="clearprintareaindex">clearPrintArea(index)</h3>
+<p>This function can be used to clear the PrintArea specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target PrintArea widget</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">clearPrintArea</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Clear PrintArea5</span>
+</code></pre></div>
+<h3 id="setprintareacolorindex-rgb565">setPrintAreaColor(index, rgb565)</h3>
+<p>This function can be used to set the print color (<em>rgb565</em>) used by the PrintArea specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target PrintArea widget</td>
+</tr>
+<tr>
+<td align="center">rgb565</td>
+<td align="center">int16_t</td>
+<td>The color as a 16-bit RGB565 value</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1">// Set print color of PrintArea4 to RED (0xF800)</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">setPrintAreaColor</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xF800</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="setprintareacolorindex-r-g-b">setPrintAreaColor(index, r, g, b)</h3>
+<p>This function can be used to set the print color used by the PrintArea specified by <em>index</em>. The color is determined by <em>r</em>, <em>g</em> and <em>b</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target PrintArea widget</td>
+</tr>
+<tr>
+<td align="center">r</td>
+<td align="center">uint8_t</td>
+<td>The red component of the new color value</td>
+</tr>
+<tr>
+<td align="center">g</td>
+<td align="center">uint8_t</td>
+<td>The green component of the new color value</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">uint8_t</td>
+<td>The blue component of the new color value</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">setPrintAreaColor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set print color of PrintArea7 to GREEN</span>
+</code></pre></div>
+<h3 id="appendtoprintareaindex-buffer-len">appendToPrintArea(index, buffer, len)</h3>
+<p>This function can be used to append a number of bytes (<em>len</em>) from the data in <em>buffer</em> to the PrintArea specified by <em>index</em> .</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target Print Area widget</td>
+</tr>
+<tr>
+<td align="center">buffer</td>
+<td align="center">const int8_t *</td>
+<td>The source of data to be appended</td>
+</tr>
+<tr>
+<td align="center">len</td>
+<td align="center">uint16_t</td>
+<td>The number of bytes to be sent</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kt">int8_t</span><span class="w"> </span><span class="n">data</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xF8</span><span class="p">,</span><span class="w"> </span><span class="mh">0x7F</span><span class="p">,</span><span class="w"> </span><span class="mh">0x1F</span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">appendToPrintArea</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Append data to PrintArea7</span>
+</code></pre></div>
+<h3 id="appendtoprintareaindex-format">appendToPrintArea(index, format, ...)</h3>
+<p>This function can be used to append contents to the PrintArea specified by <em>index</em> with the text formed by <em>format</em> and the additional arguments.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target Print Area widget</td>
+</tr>
+<tr>
+<td align="center">format</td>
+<td align="center">const char *</td>
+<td>The text to be written to the PrintArea</td>
+</tr>
+<tr>
+<td align="center">...</td>
+<td align="center">-</td>
+<td>Additional values to replace the format specifiers in <em>format</em></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="n">mates</span><span class="p">.</span><span class="n">appendToPrintArea</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mates&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Append &quot;Mates&quot; to PrintArea8</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">108</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="c1">// Append value as text to PrintArea9</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="n">mates</span><span class="p">.</span><span class="n">appendToPrintArea</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Value: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">108</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="appendtoprintareaindex-str">appendToPrintArea(index, str)</h3>
+<p>This function can be used to append contents to the PrintArea specified by <em>index</em> with the String provided.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target Print Area widget</td>
+</tr>
+<tr>
+<td align="center">str</td>
+<td align="center">String</td>
+<td>The text to be written to the PrintArea</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mates&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">appendToPrintArea</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// // Append &#39;str&#39; to PrintArea2</span>
+</code></pre></div>
+<h3 id="appendtoscopeindex-buffer-len">appendToScope(index, buffer, len)</h3>
+<p>This function can be used to append a number of 16-bit values (<em>len</em>) from the data in <em>buffer</em> to the Scope widget specified by <em>index</em>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target Scope widget</td>
+</tr>
+<tr>
+<td align="center">buffer</td>
+<td align="center">const int16_t *</td>
+<td>The source of data to be appended</td>
+</tr>
+<tr>
+<td align="center">len</td>
+<td align="center">uint16_t</td>
+<td>The number of values to be sent</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kt">int16_t</span><span class="w"> </span><span class="n">data</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xF8</span><span class="p">,</span><span class="w"> </span><span class="mh">0x7F</span><span class="p">,</span><span class="w"> </span><span class="mh">0x1F</span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">appendToScope</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Append data to Scope7</span>
+</code></pre></div>
+<h3 id="updatedotmatrixindex-format">updateDotMatrix(index, format, ...)</h3>
+<p>This function can be used to append contents to the DotMatrix specified by <em>index</em> with the text formed by <em>format</em> and the additional arguments.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target DotMatrix widget</td>
+</tr>
+<tr>
+<td align="center">format</td>
+<td align="center">const char *</td>
+<td>The text to be written to the DotMatrix</td>
+</tr>
+<tr>
+<td align="center">...</td>
+<td align="center">-</td>
+<td>Additional values to replace the format specifiers in <em>format</em></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="w">    </span><span class="n">mates</span><span class="p">.</span><span class="n">updateDotMatrix</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mates&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Update DotMatrix0 to &quot;Mates&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">108</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">updateDotMatrix</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Value: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">108</span><span class="p">);</span><span class="w"> </span><span class="c1">// Update DotMatrix0 to show value</span>
+</code></pre></div>
+<h3 id="updatedotmatrixindex-str">updateDotMatrix(index, str)</h3>
+<p>This function can be used to update the contents of the DotMatrix specified by <em>index</em> with the String 'str'.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">index</td>
+<td align="center">uint16_t</td>
+<td>The index of the target DotMatrix widget</td>
+</tr>
+<tr>
+<td align="center">str</td>
+<td align="center">String</td>
+<td>The String to be written to the DotMatrix</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mates&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">updateDotMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// Update DotMatrix2 to &#39;str&#39;</span>
+</code></pre></div>
+<h3 id="getbuttoneventcount">getButtonEventCount()</h3>
+<p>This function can be used to query the number of button events recorded by a touch screen module</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Number of recorded button events (<em>uint16_t</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="c1">// Query the number of button events recorded</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="kt">uint16_t</span><span class="w"> </span><span class="n">btnEvents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getButtonEventCount</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="getnextbuttonevent">getNextButtonEvent()</h3>
+<p>This function can be used to query the source of next recorded button event</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Widget ID of the next event button (<em>int16_t</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="c1">// If there is any event recorded</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mates</span><span class="p">.</span><span class="n">getButtonEventCount</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="w">    </span><span class="kt">int16_t</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getNextButtonEvent</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">button</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">MediaButton1</span><span class="p">:</span><span class="w"> </span><span class="c1">// if the button pressed is MediaButton1</span>
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a><span class="w">            </span><span class="c1">// do something</span>
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a><span class="w">        </span><span class="c1">// add more possible cases here...</span>
+<a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a><span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
+<a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="getswipeeventcount">getSwipeEventCount()</h3>
+<p>This function can be used to query the number of swipe events recorded by a touch screen module</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Number of recorded swipe events (<em>uint16_t</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c1">// Query the number of swipe events recorded</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="kt">uint16_t</span><span class="w"> </span><span class="n">swipeEvents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getSwipeEventCount</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="getnextbuttonevent_1">getNextButtonEvent()</h3>
+<p>This function can be used to query the source of next recorded button event</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Swipe event (int16_t)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="c1">// If there is any event recorded</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mates</span><span class="p">.</span><span class="n">getSwipeEventCount</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="w">    </span><span class="kt">int16_t</span><span class="w"> </span><span class="n">swipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getNextSwipeEvent</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">swipe</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MATES_SWIPE_SOUTH</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MATES_SWIPE_SOUTH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="w">        </span><span class="c1">// if swipe is towards from top to bottom</span>
+<a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-59-7" name="__codelineno-59-7" href="#__codelineno-59-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">swipe</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MATES_SWIPE_EAST</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MATES_SWIPE_EAST</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-59-8" name="__codelineno-59-8" href="#__codelineno-59-8"></a><span class="w">        </span><span class="c1">// if swipe is towards from left to right</span>
+<a id="__codelineno-59-9" name="__codelineno-59-9" href="#__codelineno-59-9"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-59-10" name="__codelineno-59-10" href="#__codelineno-59-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">swipe</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MATES_SWIPE_TLBR</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MATES_SWIPE_TLBR</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-59-11" name="__codelineno-59-11" href="#__codelineno-59-11"></a><span class="w">        </span><span class="c1">// if swipe is towards from top left to bottom right</span>
+<a id="__codelineno-59-12" name="__codelineno-59-12" href="#__codelineno-59-12"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-59-13" name="__codelineno-59-13" href="#__codelineno-59-13"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="getversion">getVersion()</h3>
+<p>This function can be used to query the version number of the library.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Version Information (<em>String</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="c1">// Get the library version number as string</span>
+<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="n">String</span><span class="w"> </span><span class="n">matesVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getVersion</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="getcompatibility">getCompatibility()</h3>
+<p>This function can be used to query the version number of Mates Studio compatible with the version of the library.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Compatibility Version Information (<em>String</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="c1">// Get the compatible Mates Studio version number as string</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="n">String</span><span class="w"> </span><span class="n">compatVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getCompatibility</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="printversion">printVersion()</h3>
+<p>This function can be used to print the version number of the library and the compatible Mates Studio version to the debug serial port. If no debug serial was specified in the constructor, this function does nothing.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>none</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="c1">// Prints library version and compatible Mates Studio version to debug serial</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="n">mates</span><span class="p">.</span><span class="n">printVersion</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="geterror">getError()</h3>
+<p>This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in <a href="../keywords/errors/">here</a>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Current error code (<em>MatesError</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="c1">// Checks the last error that occurred</span>
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mates</span><span class="p">.</span><span class="n">getError</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MATES_ERROR_NONE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="w">    </span><span class="c1">// Last command was successful</span>
+<a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../studio/mates-studio-release-notes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Release Notes" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Release Notes
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../python-mates-controller/" class="md-footer__link md-footer__link--next" aria-label="Next: Python" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Python
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+    
+  </body>
+</html>

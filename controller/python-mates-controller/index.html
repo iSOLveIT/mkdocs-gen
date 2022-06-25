@@ -1,0 +1,1895 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://resources.breadboardmates.com/controller/python-mates-controller/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>Python - Breadboard Mates Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-mates-controller-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Breadboard Mates Resources" class="md-header__button md-logo" aria-label="Breadboard Mates Resources" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Breadboard Mates Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Breadboard Mates Resources" class="md-nav__button md-logo" aria-label="Breadboard Mates Resources" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Breadboard Mates Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Mates Studio
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mates Studio" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Mates Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-user-manual/" class="md-nav__link">
+        Manual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-graphics-editor/" class="md-nav__link">
+        Graphics Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-code-editor/" class="md-nav__link">
+        Code Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-blocks-editor/" class="md-nav__link">
+        Blocks Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-controller-interface/" class="md-nav__link">
+        Controller Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-controller-command-protocol/" class="md-nav__link">
+        Command Protocol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../studio/mates-studio-release-notes/" class="md-nav__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Mates Controller Libraries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mates Controller Libraries" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mates Controller Libraries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arduino-mates-controller/" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-devices" class="md-nav__link">
+    Supported Devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerportname-resetfunction-debugstream-debugfilelength" class="md-nav__link">
+    MatesController(portName, resetFunction, debugStream, debugFileLength)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginbaudrate" class="md-nav__link">
+    begin(baudrate)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    close()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetwaitperiod" class="md-nav__link">
+    reset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softresetwaitperiod" class="md-nav__link">
+    softReset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbacklightbacklightvalue" class="md-nav__link">
+    setBacklight(backlightValue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpagepageindex" class="md-nav__link">
+    setPage(pageIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpage" class="md-nav__link">
+    getPage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyidwidgetid-value" class="md-nav__link">
+    setWidgetValueById(widgetId, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyidwidgetid" class="md-nav__link">
+    getWidgetValueById(widgetId)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyindexwidgettype-widgetindex-value" class="md-nav__link">
+    setWidgetValueByIndex(widgetType, widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyindexwidgettype-widgetindex" class="md-nav__link">
+    getWidgetValueByIndex(widgetType, widgetIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsshortvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsShortValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitslongvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsLongValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsfloatvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsFloatValue(widgetIndex, value):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setspectrumvaluespectrumid-gaugeindex-value" class="md-nav__link">
+    setSpectrumValue(spectrumId, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setledspectrumvalueledspectrumindex-gaugeindex-value" class="md-nav__link">
+    setLedSpectrumValue(ledSpectrumIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediaspectrumvaluemediaindex-gaugeindex-value" class="md-nav__link">
+    setMediaSpectrumValue(mediaIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyidwidgetid-param-value" class="md-nav__link">
+    setWidgetParamById(widgetId, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyidwidgetid-param" class="md-nav__link">
+    getWidgetParamById(widgetId, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyindexwidgettype-widgetindex-param-value" class="md-nav__link">
+    setWidgetParamByIndex(widgetType, widgetIndex, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyindexwidgettype-widgetindex-param" class="md-nav__link">
+    getWidgetParamByIndex(widgetType, widgetIndex, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartextareatextareaindex" class="md-nav__link">
+    clearTextArea(textAreaIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareatextareaindex-textformat-formatargs" class="md-nav__link">
+    updateTextArea(textAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearprintareaprintareaindex-int" class="md-nav__link">
+    clearPrintArea(printAreaIndex: int)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolor565printareaindex-rgb565" class="md-nav__link">
+    setPrintAreaColor565(printAreaIndex, rgb565)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorrgbprintareaindex-red-green-blue" class="md-nav__link">
+    setPrintAreaColorRGB(printAreaIndex, red, green, blue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendarraytoprintareaprintareaindex-array" class="md-nav__link">
+    appendArrayToPrintArea(printAreaIndex, array)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendstringtoprintareaprintareaindex-textformat-formatargs" class="md-nav__link">
+    appendStringToPrintArea(printAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoscopewidgetscopeindex-buffer" class="md-nav__link">
+    appendToScopeWidget(scopeIndex, buffer)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixwidgetmatrixindex-textformat-formatargs" class="md-nav__link">
+    updateDotMatrixWidget(matrixIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoneventcount" class="md-nav__link">
+    getButtonEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getswipeeventcount" class="md-nav__link">
+    getSwipeEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextswipeevent" class="md-nav__link">
+    getNextSwipeEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversion" class="md-nav__link">
+    getVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcompatibility" class="md-nav__link">
+    getCompatibility()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printversion" class="md-nav__link">
+    printVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geterror" class="md-nav__link">
+    getError()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-devices" class="md-nav__link">
+    Supported Devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerportname-resetfunction-debugstream-debugfilelength" class="md-nav__link">
+    MatesController(portName, resetFunction, debugStream, debugFileLength)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginbaudrate" class="md-nav__link">
+    begin(baudrate)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    close()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetwaitperiod" class="md-nav__link">
+    reset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softresetwaitperiod" class="md-nav__link">
+    softReset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbacklightbacklightvalue" class="md-nav__link">
+    setBacklight(backlightValue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpagepageindex" class="md-nav__link">
+    setPage(pageIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpage" class="md-nav__link">
+    getPage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyidwidgetid-value" class="md-nav__link">
+    setWidgetValueById(widgetId, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyidwidgetid" class="md-nav__link">
+    getWidgetValueById(widgetId)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyindexwidgettype-widgetindex-value" class="md-nav__link">
+    setWidgetValueByIndex(widgetType, widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyindexwidgettype-widgetindex" class="md-nav__link">
+    getWidgetValueByIndex(widgetType, widgetIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsshortvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsShortValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitslongvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsLongValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsfloatvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsFloatValue(widgetIndex, value):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setspectrumvaluespectrumid-gaugeindex-value" class="md-nav__link">
+    setSpectrumValue(spectrumId, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setledspectrumvalueledspectrumindex-gaugeindex-value" class="md-nav__link">
+    setLedSpectrumValue(ledSpectrumIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediaspectrumvaluemediaindex-gaugeindex-value" class="md-nav__link">
+    setMediaSpectrumValue(mediaIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyidwidgetid-param-value" class="md-nav__link">
+    setWidgetParamById(widgetId, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyidwidgetid-param" class="md-nav__link">
+    getWidgetParamById(widgetId, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyindexwidgettype-widgetindex-param-value" class="md-nav__link">
+    setWidgetParamByIndex(widgetType, widgetIndex, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyindexwidgettype-widgetindex-param" class="md-nav__link">
+    getWidgetParamByIndex(widgetType, widgetIndex, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartextareatextareaindex" class="md-nav__link">
+    clearTextArea(textAreaIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareatextareaindex-textformat-formatargs" class="md-nav__link">
+    updateTextArea(textAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearprintareaprintareaindex-int" class="md-nav__link">
+    clearPrintArea(printAreaIndex: int)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolor565printareaindex-rgb565" class="md-nav__link">
+    setPrintAreaColor565(printAreaIndex, rgb565)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorrgbprintareaindex-red-green-blue" class="md-nav__link">
+    setPrintAreaColorRGB(printAreaIndex, red, green, blue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendarraytoprintareaprintareaindex-array" class="md-nav__link">
+    appendArrayToPrintArea(printAreaIndex, array)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendstringtoprintareaprintareaindex-textformat-formatargs" class="md-nav__link">
+    appendStringToPrintArea(printAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoscopewidgetscopeindex-buffer" class="md-nav__link">
+    appendToScopeWidget(scopeIndex, buffer)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixwidgetmatrixindex-textformat-formatargs" class="md-nav__link">
+    updateDotMatrixWidget(matrixIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoneventcount" class="md-nav__link">
+    getButtonEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getswipeeventcount" class="md-nav__link">
+    getSwipeEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextswipeevent" class="md-nav__link">
+    getNextSwipeEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversion" class="md-nav__link">
+    getVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcompatibility" class="md-nav__link">
+    getCompatibility()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printversion" class="md-nav__link">
+    printVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geterror" class="md-nav__link">
+    getError()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="python-mates-controller.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+              
+                
+
+
+<h1 id="python-mates-controller-library">Python Mates Controller Library</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This library is developed to easily control Breadboard Mates modules using any device that can run Python boards by utilizing the <a href="../../studio/mates-controller-command-protocol/">Mates Controller Command Protocol</a>. This applies to projects developed using <a href="../../studio/mates-studio-commander-environment/">Commander</a> and <a href="../../studio/mates-studio-architect-environment/">Architect</a> environments.</p>
+<h2 id="supported-devices">Supported Devices</h2>
+<p>This library is developed for Python3 and designed to be used with any operating system as long as it is supported by the <code>pyserial</code> library.</p>
+<h2 id="installation">Installation</h2>
+<p>This library can be installed from the Python Packaging Index (PyPI) by running the command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip3 install mates-controller
+</code></pre></div>
+<h2 id="constructors">Constructors</h2>
+<p>This section serves to provide brief discussion about the constructors that can be used to initialize the library.</p>
+<h3 id="matescontrollerportname-resetfunction-debugstream-debugfilelength">MatesController(portName, resetFunction, debugStream, debugFileLength)</h3>
+<p>Constructs all the necessary attributes associated with an instance
+of a Mates Controller Object.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">portName</td>
+<td align="center">str</td>
+<td>The name of the port to be opened. Example: <code>/dev/ttyUSB0</code> for linux</td>
+</tr>
+<tr>
+<td align="center">resetFunction</td>
+<td align="center">function</td>
+<td>Function used to perform a hard reset</td>
+</tr>
+<tr>
+<td align="center">debugStream<br/>(optional)</td>
+<td align="center">io.TextIOWrapper</td>
+<td>Text file object to write debugging code to, supply of none will result in no debugging. Ex. <code>sys.stdout</code>, <code>open('log.txt', 'r+')</code></td>
+</tr>
+<tr>
+<td align="center">debugFileLength<br/>(optional)</td>
+<td align="center">int</td>
+<td>Determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Creates a new instance named &#39;mates&#39; which utilizes: </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#  - COM10 as the serial port</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#  - with no reset function and no output stream</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">MatesController</span> <span class="n">mates</span> <span class="o">=</span> <span class="n">MatesController</span><span class="p">(</span><span class="s2">&quot;COM10&quot;</span><span class="p">)</span> 
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">resetModule</span><span class="p">():</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1"># perform reset of 100ms pulse to the RST pin</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c1"># set reset pulse</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="c1"># wait for 100ms</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1"># unset reset pulse</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Creates a new instance named &#39;mates&#39; which utilizes: </span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">#  - COM10 as the serial port</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#  - resetModule as the reset function</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#  - output_file as debug file stream</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#  - debugFileLength of zero indicating no circular logging</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">MatesController</span> <span class="n">mates</span> <span class="o">=</span> <span class="n">MatesController</span><span class="p">(</span><span class="s2">&quot;COM10&quot;</span><span class="p">,</span> <span class="n">resetFunction</span><span class="o">=</span><span class="n">resetModule</span><span class="p">,</span><span class="n">debugStream</span><span class="o">=</span><span class="n">output_file</span><span class="p">,</span> <span class="n">debugFileLength</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library.</p>
+</div>
+<h2 id="methods">Methods</h2>
+<p>This section serves to provide brief discussion about the methods that can be used with a <a href="#constructors">MatesController</a> instance.</p>
+<h3 id="beginbaudrate">begin(baudrate)</h3>
+<p>Begins the serial connection if portname not supplied in constructor.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">baudrate</td>
+<td align="center">str</td>
+<td>the baudrate of the serial port (default: 9600)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>None</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Initializes display serial port 9600 baud</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># and resets the display if a reset function is provided</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">mates</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">)</span> 
+</code></pre></div>
+<h3 id="close">close()</h3>
+<p>Closes opened serial port.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>id</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Closes serial port</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="resetwaitperiod">reset(waitPeriod)</h3>
+<p>Uses hardware driven signal to hard reset companion device.</p>
+<p><strong>Args</strong>:</p>
+<p>wait_period: int</p>
+<ul>
+<li>determines how long to wait (milliseconds) before checking for connection. Value must be within the uint16 datatype range (default: 5000)</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Reset the display and wait for</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>         <span class="c1"># a period of 5 seconds (default)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Reset the display and wait for</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># mates.reset(4000)   # a period of 4 seconds</span>
+</code></pre></div>
+<h3 id="softresetwaitperiod">softReset(waitPeriod)</h3>
+<p>Sends a serial command to the connected device to trigger a reset.</p>
+<p><strong>Args</strong>:<br />
+waitPeriod: int</p>
+<ul>
+<li>determines how long (milliseconds) to wait before timing out after no acknowledgement. Value must be within the uint16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Reset the display and wait for</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">softReset</span><span class="p">()</span>       <span class="c1"># a period of 5 seconds (default)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Reset the display and wait for</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">mates</span><span class="o">.</span><span class="n">softReset</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>   <span class="c1"># a period of 4 seconds</span>
+</code></pre></div>
+<h3 id="setbacklightbacklightvalue">setBacklight(backlightValue)</h3>
+<p>Sets the intensity of the backlight of connected device.</p>
+<p><strong>Args</strong>:<br />
+backlightValue: int</p>
+<ul>
+<li>intensity of backlight. Value must be between 0 and 15, and within the uint8 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># set backlight value of 15 (max)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setBacklight</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="setpagepageindex">setPage(pageIndex)</h3>
+<p>Sets the page to be displayed on the connected device.</p>
+<p><strong>Args</strong>:<br />
+pageIndex: int</p>
+<ul>
+<li>index of page to set as current. Value must be within the uint16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setPage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Navigate to Page1</span>
+</code></pre></div>
+<h3 id="getpage">getPage()</h3>
+<p>Returns the index of the current page displayed by the connected device.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Active page index (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">activePage</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getPage</span><span class="p">()</span> <span class="c1"># Query active page</span>
+</code></pre></div>
+<h3 id="setwidgetvaluebyidwidgetid-value">setWidgetValueById(widgetId, value)</h3>
+<p>Sets the value of a specific widget based on the provided widgetId.</p>
+<p><strong>Args</strong>:<br />
+widgetId: int
+    - the unique id of the desired widget.
+    Value must exist within the int16 datatype range.</p>
+<p>value: int
+    the value the corresponding widget will be set to.
+    Value must exist within the int16 datatype range.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>    <span class="n">mates</span><span class="o">.</span><span class="n">setWidgetValueById</span><span class="p">(</span><span class="n">MediaGaugeB0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Set value of MediaGaugeB0 to 50</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="c1"># Note: The ID of MediaGaugeB0 can be copied or exported from Mates Studio</span>
+</code></pre></div>
+<h3 id="getwidgetvaluebyidwidgetid">getWidgetValueById(widgetId)</h3>
+<p>Gets the value of a specific widget based on the provided identifier.</p>
+<p><strong>Args</strong>:<br />
+widgetId: int</p>
+<ul>
+<li>the unique id of the target widget. Value must be within the uint16 datatype range  </li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Value of the widget specified by <strong>widgetId</strong> (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>    <span class="n">widgetVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetValue</span><span class="p">(</span><span class="n">MediaLed4</span><span class="p">)</span> <span class="c1"># Query the current value of MediaLed4</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="c1"># Note: The ID of MediaLed4 can be copied or exported from Mates Studio</span>
+</code></pre></div>
+<h3 id="setwidgetvaluebyindexwidgettype-widgetindex-value">setWidgetValueByIndex(widgetType, widgetIndex, value)</h3>
+<p>Sets the value of a specific widget based on the index within a widget type.</p>
+<p><strong>Args</strong>:<br />
+widgetType: MatesWidget</p>
+<ul>
+<li>the unique type of widget to be changed.</li>
+</ul>
+<p>widgetIndex: int</p>
+<ul>
+<li>the index of the widget, of a specific type. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>value: int</p>
+<ul>
+<li>the value the corresponding widget will be set to. Value must be within the int16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>    <span class="n">mates</span><span class="o">.</span><span class="n">setWidgetValue</span><span class="p">(</span><span class="n">MATES_MEDIA_GAUGE_B</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Set value of MediaGaugeB0 to 50</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All applicable widget types are listed in <a href="../keywords/widgets/">here</a>.</p>
+</div>
+<h3 id="getwidgetvaluebyindexwidgettype-widgetindex">getWidgetValueByIndex(widgetType, widgetIndex)</h3>
+<p>Gets the value of a specific widget based on the index within a widget type.</p>
+<p><strong>Args</strong>:</p>
+<p>widgetType: MatesWidget</p>
+<ul>
+<li>the unique type of widget to be changed.</li>
+</ul>
+<p>widgetIndex: int  </p>
+<ul>
+<li>the index of the widget, of a specific type. Value must be within the uint8 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Value of the widget specified by <strong>widgetType</strong> and <strong>widgetIndex</strong> (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">widgetVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetValue</span><span class="p">(</span><span class="n">MATES_MEDIA_LED</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># Query the current value of MediaLed4</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is not applicable to <em>Int32</em> and <em>Float</em> LedDigits</p>
+</div>
+<h3 id="setleddigitsshortvaluewidgetindex-value">setLedDigitsShortValue(widgetIndex, value)</h3>
+<p>Sets the 16-bit integer value of the Led Digits widget specified by widgetIndex.</p>
+<p><strong>Args</strong>:</p>
+<p>widgetIndex: int</p>
+<ul>
+<li>the index of the LED Digits widget. Value must be within uint8 datatype range.</li>
+</ul>
+<p>value: int, float</p>
+<ul>
+<li>the value the corresponding widget will be set to.
+Values must be within the int16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedDigitsShortValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Set value of LedDigits2 to 50</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Int16</em> LedDigits</p>
+</div>
+<h3 id="setleddigitslongvaluewidgetindex-value">setLedDigitsLongValue(widgetIndex, value)</h3>
+<p>Sets the 32-bit integer value of the Led Digits widget specified by widgetIndex.</p>
+<p><strong>Args</strong>:</p>
+<p>widgetIndex: int</p>
+<ul>
+<li>the index of the LED Digits widget. Value must be within uint8 datatype range.</li>
+</ul>
+<p>value: int, float</p>
+<ul>
+<li>the value the corresponding widget will be set to. Values must be within the int32 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedDigitsLongValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Set value of LedDigits2 to 50</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Int32</em> LedDigits</p>
+</div>
+<h3 id="setleddigitsfloatvaluewidgetindex-value">setLedDigitsFloatValue(widgetIndex, value):</h3>
+<p>Sets the 32-bit float value of the Led Digits widget specified by widgetIndex.</p>
+<p><strong>Args</strong>:</p>
+<p>widgetIndex: int
+- the index of the LED Digits widget. Value must be within uint8 datatype range.</p>
+<p>value: int, float
+- the value the corresponding widget will be set to.
+  Values must be within the float32 datatype range.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedDigitsFloatValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">9.989</span><span class="p">)</span> <span class="c1"># Set value of LedDigits2 to 9.989</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Float</em> LedDigits</p>
+</div>
+<h3 id="setspectrumvaluespectrumid-gaugeindex-value">setSpectrumValue(spectrumId, gaugeIndex, value)</h3>
+<p>Sets the value of the column (specified by gaugeIndex) of the spectrum widget (specified by spectrumId).</p>
+<p><strong>Args</strong>:</p>
+<p>spectrumId: int</p>
+<ul>
+<li>the id of the relevant Spectrum widget. Value must be within the int16 datatype range.</li>
+</ul>
+<p>gaugeIndex: int</p>
+<ul>
+<li>the gauge index within the target Spectrum widget. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>value: int</p>
+<ul>
+<li>the value the corresponding widget will be set to. Value must be within the uint8 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setSpectrumValue</span><span class="p">(</span><span class="n">MatesLedSpectrum5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># Set value of gauge index 2 of LedSpectrum5 to 64</span>
+</code></pre></div>
+<h3 id="setledspectrumvalueledspectrumindex-gaugeindex-value">setLedSpectrumValue(ledSpectrumIndex, gaugeIndex, value)</h3>
+<p>Sets the value of the column (specified by gaugeIndex) of the Led Spectrum widget (specified by ledSpectrumIndex).</p>
+<p><strong>Args</strong>:
+ledSpectrumIndex: int</p>
+<ul>
+<li>the index of the desired LED Spectrum widget. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>gaugeIndex: int</p>
+<ul>
+<li>the gauge index within the target LED Spectrum widget. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>value: int</p>
+<ul>
+<li>the value the corresponding widget will be set to. Value must be within the uint8 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedSpectrumValue</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1"># Set value of gauge index 2 of LedSpectrum5 to 64</span>
+</code></pre></div>
+<h3 id="setmediaspectrumvaluemediaindex-gaugeindex-value">setMediaSpectrumValue(mediaIndex, gaugeIndex, value)</h3>
+<p>Sets the value of the column (specified by gaugeIndex) of the Media Spectrum widget (specified by ledSpectrumIndex).</p>
+<p><strong>Args</strong>:
+mediaIndex: int</p>
+<ul>
+<li>the index of the Media Spectrum widget. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>gaugeIndex: int</p>
+<ul>
+<li>the index of the desired gauge. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>value: int</p>
+<ul>
+<li>the value the corresponding widget will be set to. Value must be within the uint8 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setMediaSpectrumValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">48</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># Set value of gauge index 3 of MediaSpectrum4 to 48</span>
+</code></pre></div>
+<h3 id="setwidgetparambyidwidgetid-param-value">setWidgetParamById(widgetId, param, value)</h3>
+<p>Sets the value of a widget parameter based on widget id and parameter id.</p>
+<p><strong>Args</strong>:
+widgetId: int</p>
+<ul>
+<li>the unique id of the target widget. Value must be within the int16 datatype range.</li>
+</ul>
+<p>param: int</p>
+<ul>
+<li>the unique id of the target parameter. Value must be within the int16 datatype range.</li>
+</ul>
+<p>value: int</p>
+<ul>
+<li>the value the corresponding parameter will be set to. Value must be within the int16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Set GaugeA3&#39;s Background color to BLACK</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setWidgetParamById</span><span class="p">(</span><span class="n">GaugeA3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">)</span> 
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1"># Note: The ID of GaugeA3 can be copied or exported from Mates Studio</span>
+</code></pre></div>
+<h3 id="getwidgetparambyidwidgetid-param">getWidgetParamById(widgetId, param)</h3>
+<p>Gets the value of a widget parameter based on widget id and parameter id.</p>
+<p><strong>Args</strong>:
+widgetId: int
+    - the unique id of the target widget.
+    Value must be within the int16 datatype range.</p>
+<p>param: int
+    - the unique id of the target parameter.
+    Value must be within the int16 datatype range.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>The current <strong>param</strong> value of the widget specified by <strong>widgetId</strong> (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Query the background color of GaugeA3</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">paramVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetParamById</span><span class="p">(</span><span class="n">GaugeA3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">)</span> 
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1"># Note: The ID of GaugeA3 can be copied or exported from Mates Studio</span>
+</code></pre></div>
+<h3 id="setwidgetparambyindexwidgettype-widgetindex-param-value">setWidgetParamByIndex(widgetType, widgetIndex, param, value)</h3>
+<p>Sets the value of a widget parameter based on widget index and parameter id.</p>
+<p><strong>Args</strong>:
+widgetType: MatesWidget</p>
+<ul>
+<li>the type of the target widget.</li>
+</ul>
+<p>widgetIndex: int</p>
+<ul>
+<li>the index of the target widget. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>param: int</p>
+<ul>
+<li>the unique id of the target parameter. Value must be within the int16 datatype range.</li>
+</ul>
+<p>value: int</p>
+<ul>
+<li>the value the corresponding parameter will be set to. Value must be within the int16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Set GaugeA3&#39;s Background color to BLACK</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setWidgetParamByIndex</span><span class="p">(</span><span class="n">MATES_GAUGE_A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">)</span> 
+</code></pre></div>
+<h3 id="getwidgetparambyindexwidgettype-widgetindex-param">getWidgetParamByIndex(widgetType, widgetIndex, param)</h3>
+<p>Gets the value of a widget parameter based on widget index and parameter id.</p>
+<p><strong>Args</strong>:</p>
+<p>widgetType: MatesWidget</p>
+<ul>
+<li>the type of the target widget.</li>
+</ul>
+<p>widgetIndex: int</p>
+<ul>
+<li>the index of the target widget. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>param: int</p>
+<ul>
+<li>the unique id of the target parameter. Value must be within the int16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>The current <strong>param</strong> value of the widget specified by <strong>widgetType</strong> and <strong>widgetIndex</strong> (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Query the background color of GaugeA3</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">paramVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetParamByIndex</span><span class="p">(</span><span class="n">MATES_GAUGE_A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">)</span> 
+</code></pre></div>
+<h3 id="cleartextareatextareaindex">clearTextArea(textAreaIndex)</h3>
+<p>Clears a targeted Text Area.</p>
+<p><strong>Args</strong>:</p>
+<p>textAreaIndex: int</p>
+<ul>
+<li>the index of the target Text Area widget. Value must be within the uint16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">clearTextArea</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Clear TextArea6</span>
+</code></pre></div>
+<h3 id="updatetextareatextareaindex-textformat-formatargs">updateTextArea(textAreaIndex, textFormat, *formatArgs)</h3>
+<p>Updates the text displayed within Text Area widget.</p>
+<p><strong>Args</strong>:</p>
+<p>textAreaIndex: int</p>
+<ul>
+<li>the index of the target Text Area widget. Value must be within the uint16 datatype range.</li>
+</ul>
+<p>textFormat: str</p>
+<ul>
+<li>the string format to be displayed.</li>
+</ul>
+<p>formatArgs:</p>
+<ul>
+<li>zero or more values to be formatted into the provided text format string.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateTextArea</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Mates&quot;</span><span class="p">)</span> <span class="c1"># Update TextArea2 to &quot;Mates&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">76</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateTextArea</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c1"># Print value to TextArea3</span>
+</code></pre></div>
+<h3 id="clearprintareaprintareaindex-int">clearPrintArea(printAreaIndex: int)</h3>
+<p>Clears a targeted Print Area.</p>
+<p><strong>Args</strong>:</p>
+<p>printAreaIndex: int
+- the index of the target Print Area widget.
+Value must be within the uint16 datatype range.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">clearPrintArea</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Clear PrintArea5</span>
+</code></pre></div>
+<h3 id="setprintareacolor565printareaindex-rgb565">setPrintAreaColor565(printAreaIndex, rgb565)</h3>
+<p>Sets the color of a PrintArea Widget based on an rgb565 value.</p>
+<p><strong>Args</strong>:</p>
+<p>printAreaIndex: int
+- index of widget, value must be within uint16 datatype range.</p>
+<p>rgb565: int
+- colour to set widget to, value must be within uint16 datatype range.</p>
+<p>Returns:</p>
+<ul>
+<li>boolean response indicating command success or failure.</li>
+</ul>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setPrintAreaColor</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mh">0xF800</span><span class="p">)</span> <span class="c1"># Set print color of PrintArea4 to RED (0xF800)</span>
+</code></pre></div>
+<h3 id="setprintareacolorrgbprintareaindex-red-green-blue">setPrintAreaColorRGB(printAreaIndex, red, green, blue)</h3>
+<p>Sets the colour of a targeted Print Area.</p>
+<p><strong>Args</strong>:</p>
+<p>printAreaIndex: int</p>
+<ul>
+<li>the index of the target Print Area widget. Value must be within the uint16 datatype range.</li>
+</ul>
+<p>red: int</p>
+<ul>
+<li>Unsigned 8 bit integer value of red concentration. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>blue: int</p>
+<ul>
+<li>Unsigned 8 bit integer value of green concentration. Value must be within the uint8 datatype range.</li>
+</ul>
+<p>green: int</p>
+<ul>
+<li>Unsigned 8 bit integer value of blue concentration. Value must be within the uint8 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setPrintAreaColor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Set print color of PrintArea7 to GREEN</span>
+</code></pre></div>
+<h3 id="appendarraytoprintareaprintareaindex-array">appendArrayToPrintArea(printAreaIndex, array)</h3>
+<p>Appends an array of 8-bit integers to a targeted Print Area.</p>
+<p><strong>Args</strong>:</p>
+<p>printAreaIndex: int</p>
+<ul>
+<li>the index of the target Print Area widget.
+Value must be within the uint16 datatype range.</li>
+</ul>
+<p>buffer: [int]</p>
+<ul>
+<li>the list of datapoints to be appended to scope widget. Values must be within the uint8 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0xCD</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">]</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendArrayToPrintArea</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> <span class="c1"># Append &quot;0xAB, 0xCD, 0xEF&quot; to PrintArea6</span>
+</code></pre></div>
+<h3 id="appendstringtoprintareaprintareaindex-textformat-formatargs">appendStringToPrintArea(printAreaIndex, textFormat, *formatArgs)</h3>
+<p>Appends text to a targeted Print Area.</p>
+<p><strong>Args</strong>:</p>
+<p>printAreaIndex: int</p>
+<ul>
+<li>the index of the target Print Area widget.
+Value must be within the uint16 datatype range.</li>
+</ul>
+<p>textFormat: str</p>
+<ul>
+<li>the string to be appended to the Print Area
+with zero or more format specifiers to be formatted.</li>
+</ul>
+<p>formatArgs:</p>
+<ul>
+<li>zero or more args that can be formatted into the
+textFormat string.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendStringToPrintArea</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Mates&quot;</span><span class="p">)</span> <span class="c1"># Append &quot;Mates&quot; to PrintArea8</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">Example</span> <span class="n">No</span><span class="o">.</span> <span class="mi">2</span><span class="p">:</span> 
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">108</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendStringToPrintArea</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;Value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c1"># Append value as text to PrintArea9</span>
+</code></pre></div>
+<h3 id="appendtoscopewidgetscopeindex-buffer">appendToScopeWidget(scopeIndex, buffer)</h3>
+<p>Appends a list of integers to a Scope widget.</p>
+<p><strong>Args</strong>:</p>
+<p>scopeIndex: int</p>
+<ul>
+<li>the index of the target Scope widget. Value must be within the uint16 datatype range.</li>
+</ul>
+<p>buffer: [int]</p>
+<ul>
+<li>the list of datapoints to be appended to scope widget. Values must be within the int16 datatype range.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0xF8</span><span class="p">,</span> <span class="mh">0x7F</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">}</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendToScopeWidget</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Append data to Scope Widget 7</span>
+</code></pre></div>
+<h3 id="updatedotmatrixwidgetmatrixindex-textformat-formatargs">updateDotMatrixWidget(matrixIndex, textFormat, *formatArgs)</h3>
+<p>Changes the text displayed by the target Dot Matrix widget.</p>
+<p><strong>Args</strong>:</p>
+<p>matrixIndex (int): matrix index.</p>
+<ul>
+<li>The index of the target Scope widget.
+Value must be within the uint16 datatype range.</li>
+</ul>
+<p>textFormat: str</p>
+<ul>
+<li>the string to be appended to the Scope widget with zero or more format specifiers to be formatted.</li>
+</ul>
+<p>formatArgs:</p>
+<ul>
+<li>zero or more args that can be formatted into the text_format string.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example No. 1</span><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateDotMatrix</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Mates&quot;</span><span class="p">)</span> <span class="c1"># Update DotMatrix0 to &quot;Mates&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Example No. 2</span><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">108</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateDotMatrix</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;Value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c1"># Update DotMatrix0 to show value</span>
+</code></pre></div>
+<h3 id="getbuttoneventcount">getButtonEventCount()</h3>
+<p>Gets the number of events recorded from applicable button widgets.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Number of recorded button events (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># Get the number of logged button events</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">buttonEvents</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getButtonEventCount</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="getnextbuttonevent">getNextButtonEvent()</h3>
+<p>Gets the next event source logged from applicable buttons.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Widget ID of the next event button (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># If there is any event recorded</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="k">if</span> <span class="n">mates</span><span class="o">.</span><span class="n">getButtonEventCount</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>    <span class="n">button</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getNextButtonEvent</span><span class="p">()</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">button</span> <span class="o">==</span> <span class="n">MediaButton1</span><span class="p">):</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>        <span class="c1"># if the button pressed is MediaButton1</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>        <span class="c1"># do something</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>    <span class="c1"># add more possible cases here...</span>
+</code></pre></div>
+<h3 id="getswipeeventcount">getSwipeEventCount()</h3>
+<p>Gets the number of events recorded from swipe gestures.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Number of recorded swipe events (<em>int</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># Get the number of logged swipe events</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">swipeEvents</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getSwipeEventCount</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="getnextswipeevent">getNextSwipeEvent()</h3>
+<p>Gets the next swipe event value.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>integer corresponding to the swipe event.</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># If there is any event recorded</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="k">if</span> <span class="n">mates</span><span class="o">.</span><span class="n">getSwipeEventCount</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    <span class="n">swipe</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getNextSwipeEvent</span><span class="p">()</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>    <span class="k">if</span> <span class="p">((</span><span class="n">swipe</span> <span class="o">&amp;</span> <span class="n">MATES_SWIPE_SOUTH</span><span class="p">)</span> <span class="o">==</span> <span class="n">MATES_SWIPE_SOUTH</span><span class="p">):</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>        <span class="c1"># if swipe is towards from top to bottom</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>    <span class="k">if</span> <span class="p">((</span><span class="n">swipe</span> <span class="o">&amp;</span> <span class="n">MATES_SWIPE_EAST</span><span class="p">)</span> <span class="o">==</span> <span class="n">MATES_SWIPE_EAST</span><span class="p">):</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>        <span class="c1"># if swipe is towards from left to right</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>    <span class="k">if</span> <span class="p">((</span><span class="n">swipe</span> <span class="o">&amp;</span> <span class="n">MATES_SWIPE_TLBR</span><span class="p">)</span> <span class="o">==</span> <span class="n">MATES_SWIPE_TLBR</span><span class="p">):</span>
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>        <span class="c1"># if swipe is towards from top left to bottom right</span>
+</code></pre></div>
+<h3 id="getversion">getVersion()</h3>
+<p>Helper function to obtain the version of the Python Mates Controller library.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Version Information (<em>str</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1"># Get the library version number as string</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="n">matesVersion</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getVersion</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="getcompatibility">getCompatibility()</h3>
+<p>Helper function to obtain the version of the Mates Studio compatible with this library version.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Compatibility Version Information (<em>str</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Get the compatible Mates Studio version number as string</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">compatVersion</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getCompatibility</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="printversion">printVersion()</h3>
+<p>Debugging function to print the version of the Mates Studio compatible along with this specific library version.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>None</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1"># Prints library version and compatible Mates Studio version to debug serial</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">printVersion</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="geterror">getError()</h3>
+<p>This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in <a href="../keywords/errors/">here</a>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Return</p>
+<p>Current error code (<em>MatesError</em>)</p>
+</div>
+<div class="highlight"><span class="filename">Example</span><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1"># Checks the last error that occurred</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">error</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getError</span><span class="p">()</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="k">if</span> <span class="n">error</span> <span class="o">==</span> <span class="n">MATES_ERROR_NONE</span><span class="p">:</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>    <span class="c1"># Last command was successful</span>
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../arduino-mates-controller/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Arduino" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Arduino
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+    
+  </body>
+</html>
