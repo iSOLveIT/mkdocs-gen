@@ -1,8 +1,17 @@
-site_name: Markdown Docs Sample
-site_url: https://example.com/
+site_name: Breadboard Mates Resources
+site_url: https://resources.breadboardmates.com/
 nav:
-  - Home: README.md
-  - Docs: docs.md
+  - Mates Studio: 
+    - Manual: studio/mates-studio-user-manual.md
+    - Graphics Editor: studio/mates-studio-graphics-editor.md
+    - Code Editor: studio/mates-studio-code-editor.md
+    - Blocks Editor: studio/mates-studio-blocks-editor.md
+    - Controller Interface: studio/mates-controller-interface.md
+    - Command Protocol: studio/mates-controller-command-protocol.md
+    - Release Notes: studio/mates-studio-release-notes.md
+  - Mates Controller Libraries:
+    - Arduino: controller/arduino-mates-controller.md
+    - Python: controller/python-mates-controller.md
 extra_css:
     - css/custom.css
 theme:
@@ -46,3 +55,4 @@ markdown_extensions:
 plugins:
     - search
     - pdf-export
+    
