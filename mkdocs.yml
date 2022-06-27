@@ -4,7 +4,7 @@ nav:
   - Home: index.md
   - Manuals:
     - Mates Studio: 
-      - studio/mates-studio-user-manual.md
+      - studio/index.md
       - Graphics Editor: studio/mates-studio-graphics-editor.md
       - Code Editor: studio/mates-studio-code-editor.md
       - Blocks Editor: studio/mates-studio-blocks-editor.md
@@ -15,7 +15,6 @@ nav:
       - Arduino: controller/arduino-mates-controller.md
       - Python: controller/python-mates-controller.md
   - Products:
-    - MatesBUS: products/matesbus-datasheet.md    
     - TIMI:
       - TIMI-96: products/timi/timi-96-datasheet.md
       - TIMI-130: products/timi/timi-130-datasheet.md
@@ -30,10 +29,11 @@ nav:
       - Pi Adaptor: products/accessories/bbm-pi-adaptor-datasheet.md
       - MB Adaptor: products/accessories/bbm-mb-adaptor-datasheet.md
       - Wind Adaptor: products/accessories/bbm-wing-adaptor-datasheet.md
+    - MatesBUS: products/matesbus-datasheet.md
   - Tutorials:
     - Commander:
-      - tutorials/commander/commander-getting-started.md
-      - Tutoria No.1: tutorials/architect/architect-getting-started.md
+      - tutorials/commander/index.md
+      - Tutorial No.1: tutorials/commander/commander-getting-started.md
     - Architect:
       - tutorials/architect/architect-getting-started.md
     - Genius:
