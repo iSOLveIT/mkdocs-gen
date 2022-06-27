@@ -4,13 +4,13 @@ nav:
   - Home: index.md
   - Manuals:
     - Mates Studio: 
-      - studio/index.md
-      - Graphics Editor: studio/mates-studio-graphics-editor.md
-      - Code Editor: studio/mates-studio-code-editor.md
-      - Blocks Editor: studio/mates-studio-blocks-editor.md
-      - Controller Interface: studio/mates-controller-interface.md
-      - Command Protocol: studio/mates-controller-command-protocol.md
-      - Release Notes: studio/mates-studio-release-notes.md
+      - Mates Studio/index.md
+      - Graphics Editor: Mates Studio/mates-studio-graphics-editor.md
+      - Code Editor: Mates Studio/mates-studio-code-editor.md
+      - Blocks Editor: Mates Studio/mates-studio-blocks-editor.md
+      - Controller Interface: Mates Studio/mates-controller-interface.md
+      - Command Protocol: Mates Studio/mates-controller-command-protocol.md
+      - Release Notes: Mates Studio/mates-studio-release-notes.md
     - Mates Controller Libraries:
       - Arduino: controller/arduino-mates-controller.md
       - Python: controller/python-mates-controller.md
