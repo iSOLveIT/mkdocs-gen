@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This library is developed to easily control Breadboard Mates modules using Arduino-compatible boards by utilizing the [Mates Controller Command Protocol](../studio/mates-controller-command-protocol.md). This applies to projects developed using [Commander](../studio/mates-studio-commander-environment.md) and [Architect](../studio/mates-studio-architect-environment.md) environments.
+This library is developed to easily control Breadboard Mates modules using Arduino-compatible boards by utilizing the [Mates Controller Command Protocol](../mates studio/mates-controller-command-protocol.md). This applies to projects developed using [Commander](../mates studio/mates-studio-commander-environment.md) and [Architect](../mates studio/mates-studio-architect-environment.md) environments.
 
 For working examples of using the library and its functions in a project, refer to the _examples_ and _extras_ directories in the [repository](https://github.com/BreadBoardMates/Arduino-Mates-Controller).
 
