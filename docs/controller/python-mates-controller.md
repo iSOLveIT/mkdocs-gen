@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This library is developed to easily control Breadboard Mates modules using any device that can run Python boards by utilizing the [Mates Controller Command Protocol](../mates studio/mates-controller-command-protocol.md). This applies to projects developed using [Commander](../mates studio/mates-studio-commander-environment.md) and [Architect](../mates studio/mates-studio-architect-environment.md) environments.
+This library is developed to easily control Breadboard Mates modules using any device that can run Python boards by utilizing the [Mates Controller Command Protocol](../Mates Studio/mates-controller-command-protocol.md). This applies to projects developed using [Commander](../Mates Studio/mates-studio-commander-environment.md) and [Architect](../Mates Studio/mates-studio-architect-environment.md) environments.
 
 
 ## Supported Devices
