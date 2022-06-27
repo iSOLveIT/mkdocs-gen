@@ -1,5 +1,16 @@
 site_name: Breadboard Mates Resources
 site_url: https://resources.breadboardmates.com/
+copyright: Copyright &copy; 2022 Breadboard Mates
+extra:
+  homepage: https://breadboardmates.com/
+  social:
+    - icon: material/web
+      link: https://breadboardmates.com/
+      name: Breadboard Mates Website
+    - icon: material/github
+      link: https://github.com/BreadBoardMates
+      name: Breadboard Mates on GitHub
+  generator: false
 nav:
   - Home: index.md
   - Manuals:
@@ -13,7 +24,7 @@ nav:
     - Mates Controller Libraries:
       - Arduino: controller/arduino-mates-controller.md
       - Python: controller/python-mates-controller.md
-  - Products:
+  - Datasheets:
     - TIMI:
       - TIMI-96: products/timi/timi-96-datasheet.md
       - TIMI-130: products/timi/timi-130-datasheet.md
@@ -53,8 +64,6 @@ theme:
   name: material
   logo: full-logo.svg
   favicon: logo.svg
-  extra:
-    homepage: https://www.breadboardmates.com
   features:
     - navigation.instant
     - navigation.tabs
