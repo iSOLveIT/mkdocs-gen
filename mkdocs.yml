@@ -14,11 +14,6 @@ nav:
     - Mates Controller Libraries:
       - Arduino: controller/arduino-mates-controller.md
       - Python: controller/python-mates-controller.md
-  - Projects:
-    - Standalone:
-      - Pacman: projects/standalone/reptor-pacman.md
-    - Arduino:
-      - RGB Controller: projects/arduino/reptor-rgb-controller.md
   - Tutorials:
     - Commander:
       - Getting Started: tutorials/commander/commander-getting-started.md
@@ -28,6 +23,11 @@ nav:
       - Getting Started: tutorials/genius/genius-getting-started.md
     - Builder:
       - Getting Started: tutorials/builder/builder-getting-started.md
+  - Projects:
+    - Standalone:
+      - Pacman: projects/standalone/reptor-pacman.md
+    - Arduino:
+      - RGB Controller: projects/arduino/reptor-rgb-controller.md
 extra_css:
     - css/custom.css
 theme:
