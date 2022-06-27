@@ -1,17 +1,34 @@
 site_name: Breadboard Mates Resources
 site_url: https://resources.breadboardmates.com/
 nav:
-  - Mates Studio: 
-    - Manual: studio/mates-studio-user-manual.md
-    - Graphics Editor: studio/mates-studio-graphics-editor.md
-    - Code Editor: studio/mates-studio-code-editor.md
-    - Blocks Editor: studio/mates-studio-blocks-editor.md
-    - Controller Interface: studio/mates-controller-interface.md
-    - Command Protocol: studio/mates-controller-command-protocol.md
-    - Release Notes: studio/mates-studio-release-notes.md
-  - Mates Controller Libraries:
-    - Arduino: controller/arduino-mates-controller.md
-    - Python: controller/python-mates-controller.md
+  - Home: index.md
+  - Manuals:
+    - Mates Studio: 
+      - Manual: studio/mates-studio-user-manual.md
+      - Graphics Editor: studio/mates-studio-graphics-editor.md
+      - Code Editor: studio/mates-studio-code-editor.md
+      - Blocks Editor: studio/mates-studio-blocks-editor.md
+      - Controller Interface: studio/mates-controller-interface.md
+      - Command Protocol: studio/mates-controller-command-protocol.md
+      - Release Notes: studio/mates-studio-release-notes.md
+    - Mates Controller Libraries:
+      - Arduino: controller/arduino-mates-controller.md
+      - Python: controller/python-mates-controller.md
+  - Projects:
+    - Standalone:
+      - Pacman: projects/standalone/reptor-pacman.md
+    - Arduino:
+      - RGB Controller: projects/arduino/reptor-rgb-controller.md
+  - Tutorials:
+    - Commander:
+      - Getting Started: tutorials/commander/commander-getting-started.md
+    - Architect:
+      - Getting Started: tutorials/architect/architect-getting-started.md
+    - Genius:
+      - Getting Started: tutorials/genius/genius-getting-started.md
+    - Builder:
+      - Getting Started: tutorials/builder/builder-getting-started.md
+
 theme:
   name: material
   palette:
