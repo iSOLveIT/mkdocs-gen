@@ -10,7 +10,6 @@ nav:
       - Blocks Editor: mates studio/mates-studio-blocks-editor.md
       - Controller Interface: mates studio/mates-controller-interface.md
       - Command Protocol: mates studio/mates-controller-command-protocol.md
-      - Release Notes: mates studio/mates-studio-release-notes.md
     - Mates Controller Libraries:
       - Arduino: controller/arduino-mates-controller.md
       - Python: controller/python-mates-controller.md
@@ -33,16 +32,16 @@ nav:
   - Tutorials:
     - Commander:
       - tutorials/commander/index.md
-      - Tutorial No.1: tutorials/commander/commander-getting-started.md
+      - Tutorial No.1: tutorials/commander/tutorial-1.md
     - Architect:
-      - tutorials/commander/index.md
-      - Tutorial No.1: tutorials/commander/commander-getting-started.md
+      - tutorials/architect/index.md
+      - Tutorial No.1: tutorials/architect/tutorial-1.md
     - Genius:
-      - tutorials/commander/index.md
-      - Tutorial No.1: tutorials/commander/commander-getting-started.md
+      - tutorials/genius/index.md
+      - Tutorial No.1: tutorials/genius/tutorial-1.md
     - Builder:
-      - tutorials/commander/index.md
-      - Tutorial No.1: tutorials/commander/tutorial-1
+      - tutorials/builder/index.md
+      - Tutorial No.1: tutorials/builder/tutorial-1.md
   - Projects:
     - Standalone:
       - Pacman: projects/standalone/reptor-pacman.md
