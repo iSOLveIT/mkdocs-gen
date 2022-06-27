@@ -74,14 +74,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: 'indigo'
+      primary: 'white'
       accent: 'deep orange'
       toggle:
         icon: material/weather-night
         name: Switch to Dark Mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: 'deep orange'
+      primary: 'black'
       accent: 'indigo'
       toggle:
         icon: material/weather-sunny
