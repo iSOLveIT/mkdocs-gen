@@ -4,13 +4,13 @@ nav:
   - Home: index.md
   - Manuals:
     - Mates Studio: 
-      - Mates Studio/index.md
-      - Graphics Editor: Mates Studio/mates-studio-graphics-editor.md
-      - Code Editor: Mates Studio/mates-studio-code-editor.md
-      - Blocks Editor: Mates Studio/mates-studio-blocks-editor.md
-      - Controller Interface: Mates Studio/mates-controller-interface.md
-      - Command Protocol: Mates Studio/mates-controller-command-protocol.md
-      - Release Notes: Mates Studio/mates-studio-release-notes.md
+      - mates studio/index.md
+      - Graphics Editor: mates studio/mates-studio-graphics-editor.md
+      - Code Editor: mates studio/mates-studio-code-editor.md
+      - Blocks Editor: mates studio/mates-studio-blocks-editor.md
+      - Controller Interface: mates studio/mates-controller-interface.md
+      - Command Protocol: mates studio/mates-controller-command-protocol.md
+      - Release Notes: mates studio/mates-studio-release-notes.md
     - Mates Controller Libraries:
       - Arduino: controller/arduino-mates-controller.md
       - Python: controller/python-mates-controller.md
@@ -35,11 +35,14 @@ nav:
       - tutorials/commander/index.md
       - Tutorial No.1: tutorials/commander/commander-getting-started.md
     - Architect:
-      - tutorials/architect/architect-getting-started.md
+      - tutorials/commander/index.md
+      - Tutorial No.1: tutorials/commander/commander-getting-started.md
     - Genius:
-      - tutorials/genius/genius-getting-started.md
+      - tutorials/commander/index.md
+      - Tutorial No.1: tutorials/commander/commander-getting-started.md
     - Builder:
-      - tutorials/builder/builder-getting-started.md
+      - tutorials/commander/index.md
+      - Tutorial No.1: tutorials/commander/tutorial-1
   - Projects:
     - Standalone:
       - Pacman: projects/standalone/reptor-pacman.md
