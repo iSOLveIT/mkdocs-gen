@@ -28,7 +28,8 @@ nav:
       - Getting Started: tutorials/genius/genius-getting-started.md
     - Builder:
       - Getting Started: tutorials/builder/builder-getting-started.md
-
+extra_css:
+    - css/custom.css
 theme:
   name: material
   palette:
