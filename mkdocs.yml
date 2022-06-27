@@ -4,7 +4,7 @@ nav:
   - Home: index.md
   - Manuals:
     - Mates Studio: 
-      - Manual: studio/mates-studio-user-manual.md
+      - studio/mates-studio-user-manual.md
       - Graphics Editor: studio/mates-studio-graphics-editor.md
       - Code Editor: studio/mates-studio-code-editor.md
       - Blocks Editor: studio/mates-studio-blocks-editor.md
