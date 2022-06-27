@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Welcome to Breadboard Mates Resources
 
 ## Our Focus
