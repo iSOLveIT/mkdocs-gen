@@ -14,15 +14,32 @@ nav:
     - Mates Controller Libraries:
       - Arduino: controller/arduino-mates-controller.md
       - Python: controller/python-mates-controller.md
+  - Products:
+    - MatesBUS: products/matesbus-datasheet.md    
+    - TIMI:
+      - TIMI-96: products/timi/timi-96-datasheet.md
+      - TIMI-130: products/timi/timi-130-datasheet.md
+      - TIMI-MB: products/timi/timi-mb-datasheet.md
+    - TED:
+      - TED-96: products/ted/ted-96-datasheet.md
+      - TED-130: products/ted/ted-130-datasheet.md
+    - REPTOR:
+      - REPTOR-250: products/reptor/reptor-250-datasheet.md
+    - Accessories:
+      - Mates Programmer: products/accessories/bbm-programmer-datasheet.md
+      - Pi Adaptor: products/accessories/bbm-pi-adaptor-datasheet.md
+      - MB Adaptor: products/accessories/bbm-mb-adaptor-datasheet.md
+      - Wind Adaptor: products/accessories/bbm-wing-adaptor-datasheet.md
   - Tutorials:
     - Commander:
-      - Getting Started: tutorials/commander/commander-getting-started.md
+      - tutorials/commander/commander-getting-started.md
+      - Tutoria No.1: tutorials/architect/architect-getting-started.md
     - Architect:
-      - Getting Started: tutorials/architect/architect-getting-started.md
+      - tutorials/architect/architect-getting-started.md
     - Genius:
-      - Getting Started: tutorials/genius/genius-getting-started.md
+      - tutorials/genius/genius-getting-started.md
     - Builder:
-      - Getting Started: tutorials/builder/builder-getting-started.md
+      - tutorials/builder/builder-getting-started.md
   - Projects:
     - Standalone:
       - Pacman: projects/standalone/reptor-pacman.md
