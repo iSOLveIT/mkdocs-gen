@@ -51,6 +51,10 @@ extra_css:
     - css/custom.css
 theme:
   name: material
+  logo: full-logo.svg
+  favicon: logo.svg
+  extra:
+    homepage: https://www.breadboardmates.com
   features:
     - navigation.instant
     - navigation.tabs
@@ -65,14 +69,14 @@ theme:
       accent: 'deep orange'
       toggle:
         icon: material/weather-night
-        name: Switch to dark mode
+        name: Switch to Dark Mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: 'deep orange'
       accent: 'indigo'
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Switch to Light Mode
   icon:
     admonition:
       note: octicons/tag-16
