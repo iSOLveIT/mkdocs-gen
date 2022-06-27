@@ -4,12 +4,12 @@ copyright: Copyright &copy; 2022 Breadboard Mates
 extra:
   homepage: https://breadboardmates.com/
   social:
-    - icon: material/web
-      link: https://breadboardmates.com/
-      name: Breadboard Mates Website
     - icon: material/github
       link: https://github.com/BreadBoardMates
       name: Breadboard Mates on GitHub
+    - icon: material/web
+      link: https://breadboardmates.com/
+      name: Breadboard Mates Website
   generator: false
 nav:
   - Home: index.md
