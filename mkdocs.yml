@@ -32,6 +32,13 @@ extra_css:
     - css/custom.css
 theme:
   name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
