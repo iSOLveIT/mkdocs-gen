@@ -73,8 +73,8 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: 'white'
-      accent: 'deep orange'
+      primary: 'black'
+      accent: 'indigo'
       toggle:
         icon: material/weather-night
         name: Switch to Dark Mode
