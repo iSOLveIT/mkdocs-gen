@@ -30,6 +30,8 @@ Try running/serving the mkdocs
 
     mkdocs serve
 
+Open your browser and go to [localhost:8000 or 127.0.0.1:8000](http://localhost:8000)
+
 ## Updating Documentation
 
 TODO
