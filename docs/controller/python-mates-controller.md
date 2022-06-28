@@ -15,7 +15,7 @@ This library is developed for Python3 and designed to be used with any operating
 
 This library can be installed from the Python Packaging Index (PyPI) by running the command:
 
-```bash
+``` bash
 pip3 install mates-controller
 ```
 
@@ -37,14 +37,14 @@ of a Mates Controller Object.
 | debugStream<br/>(optional)     | io.TextIOWrapper | Text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
 | debugFileLength<br/>(optional) | int              | Determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
 
-```python title="Example No. 1"
+``` py title="Example No. 1"
 # Creates a new instance named 'mates' which utilizes: 
 #  - COM10 as the serial port
 #  - with no reset function and no output stream
 MatesController mates = MatesController("COM10") 
 ```
 
-```python title="Example No. 2"
+``` py title="Example No. 2"
 def resetModule():
     # perform reset of 100ms pulse to the RST pin
     # set reset pulse
@@ -81,7 +81,7 @@ Begins the serial connection if portname not supplied in constructor.
 
     None
 
-```python title="Example"
+``` py title="Example"
 # Initializes display serial port 9600 baud
 # and resets the display if a reset function is provided
 mates.begin(9600) 
@@ -96,7 +96,7 @@ Closes opened serial port.
 
     id
 
-```python title="Example"
+``` py title="Example"
 # Closes serial port
 mates.close()
 ```
@@ -116,7 +116,7 @@ wait_period: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 # Reset the display and wait for
 mates.reset()         # a period of 5 seconds (default)
 # Reset the display and wait for
@@ -137,7 +137,7 @@ waitPeriod: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 # Reset the display and wait for
 mates.softReset()       # a period of 5 seconds (default)
 # Reset the display and wait for
@@ -158,7 +158,7 @@ backlightValue: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 # set backlight value of 15 (max)
 mates.setBacklight(15)
 ```    
@@ -177,7 +177,7 @@ pageIndex: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setPage(1) # Navigate to Page1
 ```
 
@@ -191,7 +191,7 @@ Returns the index of the current page displayed by the connected device.
 
     Active page index (_int_)
 
-```python title="Example"
+``` py title="Example"
 activePage = mates.getPage() # Query active page
 ```
 
@@ -213,7 +213,7 @@ value: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
     mates.setWidgetValueById(MediaGaugeB0, 50) # Set value of MediaGaugeB0 to 50
     # Note: The ID of MediaGaugeB0 can be copied or exported from Mates Studio
 ```
@@ -232,7 +232,7 @@ widgetId: int
 
     Value of the widget specified by **widgetId** (_int_)
 
-```python title="Example"
+``` py title="Example"
     widgetVal = mates.getWidgetValue(MediaLed4) # Query the current value of MediaLed4
     # Note: The ID of MediaLed4 can be copied or exported from Mates Studio
 ```
@@ -259,7 +259,7 @@ value: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
     mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50) # Set value of MediaGaugeB0 to 50
 ```
 
@@ -286,7 +286,7 @@ widgetIndex: int
 
     Value of the widget specified by **widgetType** and **widgetIndex** (_int_)
 
-```python title="Example No. 1"
+``` py title="Example No. 1"
 widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4) # Query the current value of MediaLed4
 ```
 
@@ -314,7 +314,7 @@ Values must be within the int16 datatype range.
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setLedDigitsShortValue(2, 50) # Set value of LedDigits2 to 50
 ```
 
@@ -341,7 +341,7 @@ value: int, float
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setLedDigitsLongValue(2, 50) # Set value of LedDigits2 to 50
 ```
 
@@ -367,7 +367,7 @@ value: int, float
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setLedDigitsFloatValue(2, 9.989) # Set value of LedDigits2 to 9.989
 ```
 
@@ -398,7 +398,7 @@ value: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setSpectrumValue(MatesLedSpectrum5, 2, 64)
 # Set value of gauge index 2 of LedSpectrum5 to 64
 ```
@@ -425,7 +425,7 @@ value: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setLedSpectrumValue(5, 2, 64)
 # Set value of gauge index 2 of LedSpectrum5 to 64
 ```
@@ -452,7 +452,7 @@ value: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setMediaSpectrumValue(4, 3, 48)
 # Set value of gauge index 3 of MediaSpectrum4 to 48
 ```
@@ -479,7 +479,7 @@ value: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 # Set GaugeA3's Background color to BLACK
 mates.setWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR, BLACK) 
 # Note: The ID of GaugeA3 can be copied or exported from Mates Studio
@@ -503,7 +503,7 @@ param: int
 
     The current **param** value of the widget specified by **widgetId** (_int_)
 
-```python title="Example"
+``` py title="Example"
 # Query the background color of GaugeA3
 paramVal = mates.getWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR) 
 # Note: The ID of GaugeA3 can be copied or exported from Mates Studio
@@ -535,7 +535,7 @@ value: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 # Set GaugeA3's Background color to BLACK
 mates.setWidgetParamByIndex(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR, BLACK) 
 ```
@@ -563,7 +563,7 @@ param: int
 
     The current **param** value of the widget specified by **widgetType** and **widgetIndex** (_int_)
 
-```python title="Example"
+``` py title="Example"
 # Query the background color of GaugeA3
 paramVal = mates.getWidgetParamByIndex(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR) 
 ```
@@ -583,7 +583,7 @@ textAreaIndex: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.clearTextArea(6) # Clear TextArea6
 ```
 
@@ -610,11 +610,11 @@ formatArgs:
 
     success or failure (_boolean_)
 
-```python title="Example No. 1"
+``` py title="Example No. 1"
 mates.updateTextArea(2, "Mates") # Update TextArea2 to "Mates"
 ```
 
-```python title="Example No. 2"
+``` py title="Example No. 2"
 value = 76
 mates.updateTextArea(3, "Value is {}", value) # Print value to TextArea3
 ```
@@ -634,7 +634,7 @@ Value must be within the uint16 datatype range.
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.clearPrintArea(5) # Clear PrintArea5
 ```
 
@@ -654,7 +654,7 @@ Returns:
 
 - boolean response indicating command success or failure.
 
-```python title="Example"
+``` py title="Example"
 mates.setPrintAreaColor(4, 0xF800) # Set print color of PrintArea4 to RED (0xF800)
 ```
 
@@ -685,7 +685,7 @@ green: int
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 mates.setPrintAreaColor(7, 0, 255, 0) # Set print color of PrintArea7 to GREEN
 ```
 
@@ -709,7 +709,7 @@ buffer: \[int\]
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 arr = [0xAB, 0xCD, 0xEF]
 mates.appendArrayToPrintArea(6, arr) # Append "0xAB, 0xCD, 0xEF" to PrintArea6
 ```
@@ -740,11 +740,11 @@ textFormat string.
 
     success or failure (_boolean_)
 
-```python title="Example No. 1"
+``` py title="Example No. 1"
 mates.appendStringToPrintArea(8, "Mates") # Append "Mates" to PrintArea8
 ```
 
-```python title="Example No. 2"
+``` py title="Example No. 2"
 Example No. 2: 
 value = 108
 mates.appendStringToPrintArea(9, "Value: {}", value) # Append value as text to PrintArea9
@@ -769,7 +769,7 @@ buffer: \[int\]
 
     success or failure (_boolean_)
 
-```python title="Example"
+``` py title="Example"
 data = {0xF8, 0x7F, 0x1F}
 mates.appendToScopeWidget(7, data, 3) # Append data to Scope Widget 7
 ```
@@ -798,11 +798,11 @@ formatArgs:
 
     success or failure (_boolean_)
 
-```python title="Example No. 1"
+``` py title="Example No. 1"
 mates.updateDotMatrix(8, "Mates") # Update DotMatrix0 to "Mates"
 ```
 
-```python title="Example No. 2"
+``` py title="Example No. 2"
 value = 108
 mates.updateDotMatrix(9, "Value: {}", value) # Update DotMatrix0 to show value
 ```
@@ -817,7 +817,7 @@ Gets the number of events recorded from applicable button widgets.
 
     Number of recorded button events (_int_)
 
-```python title="Example"
+``` py title="Example"
 # Get the number of logged button events
 buttonEvents = mates.getButtonEventCount()
 ```
@@ -832,7 +832,7 @@ Gets the next event source logged from applicable buttons.
 
     Widget ID of the next event button (_int_)
 
-```python title="Example"
+``` py title="Example"
 # If there is any event recorded
 if mates.getButtonEventCount() > 0: 
     button = mates.getNextButtonEvent()
@@ -852,7 +852,7 @@ Gets the number of events recorded from swipe gestures.
 
     Number of recorded swipe events (_int_)
 
-```python title="Example"
+``` py title="Example"
 # Get the number of logged swipe events
 swipeEvents = mates.getSwipeEventCount()
 ```
@@ -867,7 +867,7 @@ Gets the next swipe event value.
 
     integer corresponding to the swipe event.
 
-```python title="Example"
+``` py title="Example"
 # If there is any event recorded
 if mates.getSwipeEventCount() > 0:
     swipe = mates.getNextSwipeEvent()
@@ -888,7 +888,7 @@ Helper function to obtain the version of the Python Mates Controller library.
 
     Version Information (_str_)
 
-```python title="Example"
+``` py title="Example"
 # Get the library version number as string
 matesVersion = mates.getVersion()
 ```
@@ -902,7 +902,7 @@ Helper function to obtain the version of the Mates Studio compatible with this l
 
     Compatibility Version Information (_str_)
 
-```python title="Example"
+``` py title="Example"
 # Get the compatible Mates Studio version number as string
 compatVersion = mates.getCompatibility()
 ```
@@ -916,7 +916,7 @@ Debugging function to print the version of the Mates Studio compatible along wit
 
     None
 
-```python title="Example"
+``` py title="Example"
 # Prints library version and compatible Mates Studio version to debug serial
 mates.printVersion()
 ```
@@ -930,7 +930,7 @@ This function can be used to investigate errors that occurred while controlling 
 
     Current error code (_MatesError_)
 
-```python title="Example"
+``` py title="Example"
 # Checks the last error that occurred
 error = mates.getError()
 if error == MATES_ERROR_NONE:
