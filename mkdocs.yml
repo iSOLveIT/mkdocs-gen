@@ -7,8 +7,11 @@ extra:
     - icon: material/github
       link: https://github.com/BreadBoardMates
       name: Breadboard Mates on GitHub
+    - icon: material/forum-outline
+      link: https://forum.breadboardmates.com
+      name: Breadboard Mates Forum
     - icon: material/web
-      link: https://breadboardmates.com/
+      link: https://breadboardmates.com
       name: Breadboard Mates Website
   generator: false
 nav:
