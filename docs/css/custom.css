@@ -14,20 +14,22 @@
 
 	@page {
         size: a4 portrait;
-        margin: 10mm;
+        margin: 15mm 10mm;
         counter-increment: page;
         font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
 
         @top-left {
             content: string(title);
+            font-size: 8pt;
         }
 
         @top-right {
             content: string(chapter);
+            font-size: 8pt;
         }
 
         @bottom-left {
-            content: 'Copyright &copy; 2022 Breadboard Mates';
+            content: '© 2022 Breadboard Mates';
             font-size: 8pt;
         }
 
