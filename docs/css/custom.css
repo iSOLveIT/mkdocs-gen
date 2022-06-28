@@ -17,6 +17,20 @@
         margin: 10mm;
         counter-increment: page;
         font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+        @top-left {
+            content: string(title);
+        }
+
+        @top-right {
+            content: string(chapter);
+        }
+
+        @bottom-left {
+            content: 'Copyright &copy; 2022 Breadboard Mates';
+            font-size: 8pt;
+        }
+
         @bottom-right {
             content: 'Page ' counter(page);
             font-size: 8pt;
