@@ -875,7 +875,7 @@ This function can be used to update the contents of the TextArea specified by _i
 
     ``` cpp
     int value = 76;
-    mates.updateTextArea(3, "Value is %d", 76); // Print value to TextArea3
+    mates.updateTextArea(3, "Value is %d", value); // Print value to TextArea3
     ```
 
 
@@ -999,7 +999,7 @@ This function can be used to append contents to the PrintArea specified by _inde
     ``` cpp
     int value = 108;
     // Append value as text to PrintArea9
-    mates.appendToPrintArea(9, "Value: %d", 108);
+    mates.appendToPrintArea(9, "Value: %d", value);
     ```
 
 
@@ -1066,7 +1066,7 @@ This function can be used to append contents to the DotMatrix specified by _inde
 
     ``` cpp
     int value = 108;
-    mates.updateDotMatrix(9, "Value: %d", 108); // Update DotMatrix0 to show value
+    mates.updateDotMatrix(9, "Value: %d", value); // Update DotMatrix0 to show value
     ```
 
 
