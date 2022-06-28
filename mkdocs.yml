@@ -110,5 +110,5 @@ markdown_extensions:
       alternate_style: true 
 plugins:
     - search
-    - pdf-export
-    
+    - pdf-export:
+        enabled_if_env: ENABLE_PDF_EXPORT
