@@ -6,6 +6,8 @@ This repository serves as a document generator for Breadboard Mates. It uses MkD
 
 The following discusses how to setup a Windows machine to write and test documentation before deploying to the main branch.
 
+It is recommended to use [Visual Studio Code](https://code.visualstudio.com/) or [VS Codium](https://github.com/VSCodium/vscodium/releases) for easy access to files, folders and command line interface.
+
 Install latest Python from the [Microsoft Store](https://www.microsoft.com/en-us/search?q=python)
 
 Install [GTK for Windows](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)
