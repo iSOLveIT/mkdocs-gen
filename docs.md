@@ -11,7 +11,7 @@ below:
 
 -   Source code - [https://github.com/BreadBoardMates/Breadboard-Mates-Resources](https://github.com/BreadBoardMates/Breadboard-Mates-Resources)
 
--   Website - [https://resources.breadboardmates.com](https://resources.breadboardmates.com/)
+-   Website - [https://resources.breadboardmates.com](https://resources.breadboardmates.com)
 
 Topics covered in this document are:
 
