@@ -246,6 +246,7 @@ The same situation applies for Hosts/Development boards which also only have a s
 ## Specifications & Ratings
 
 !!!info "Recommended Operating Conditions"
+
     | Parameter                 | Conditions / Information            | Min   | Typ | Max   | Units |
     |:------------------------- |:----------------------------------- |:----- |:--- |:----- |:----- |
     | Operating Temperature     |                                     | -20   | —   | +70   | °C    |
@@ -263,12 +264,14 @@ The same situation applies for Hosts/Development boards which also only have a s
     | GPIO Current              | Source / Sink                       | —     | —   | 15    | mA    |
 
 !!!info "Operating Characteristics"
+
     | Parameter            | Conditions / Information                                                | Min   | Typ | Max | Unit |
     |:-------------------- |:----------------------------------------------------------------------- |:-----:|:---:|:---:|:----:|
     | Supply Current (ICC) | 5V Supply – Normal Operation                                            | —     | 90  | —   | mA   |
     | Display Endurance    | Hours of operation, measured to when display is 50% original brightness | 30000 | —   | —   | H    |
 
 !!!info "LCD Display Information"
+
     | Parameter                 | Conditions / Information            | Specification                   |
     |:------------------------- |:----------------------------------- |:------------------------------- |
     | Display Type              |                                     | TFT IPS LCD                     |
