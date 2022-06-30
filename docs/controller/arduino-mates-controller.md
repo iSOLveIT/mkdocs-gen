@@ -23,7 +23,7 @@ This is the main constructor for the library. It creates a unique instance and s
 | resetPin<br/>(optional) | uint8_t | Arduino reset pin to use for resetting the display module (default: 4) |
 | mode<br/>(optional)     | uint8_t | Arduino reset pulse to use when performing reset (default: LOW)        |
 
-=== "Default"
+=== "Simple"
 
     ``` cpp
     // Creates a new instance named 'mates' which utilizes:
@@ -65,21 +65,38 @@ This is an alternative constructor for the library. It creates a unique instance
 | resetPin<br/>(optional) | uint8_t | Arduino reset pin to use for resetting the display module (default: 4) |
 | mode<br/>(optional)     | uint8_t | Arduino reset pulse to use when performing reset (default: LOW)        |
 
-``` cpp title="Example No. 1"
-// Creates a new instance named 'mates' which utilizes:
-//  - Serial1 as display UART
-//  - Serial as debug UART
-//  - Pin 4 of Arduino as Reset Pin (default)
-MatesController mates = MatesController(Serial1, Serial);
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-// Creates a new instance named 'mates' which utilizes:
-//  - Serial1 as display UART
-//  - Serial as debug UART
-//  - Pin 5 of Arduino as Reset Pin
-MatesController mates = MatesController(Serial1, Serial, 5);
-```
+    ``` cpp
+    // Creates a new instance named 'mates' which utilizes:
+    //  - Serial1 as display UART
+    //  - Serial as debug UART
+    //  - Pin 4 of Arduino as Reset Pin (default)
+    //  - Reset mode as a LOW pulse (default)
+    MatesController mates = MatesController(Serial1, Serial);
+    ```
+
+=== "Specify Pin"
+
+    ``` cpp
+    // Creates a new instance named 'mates' which utilizes:
+    //  - Serial1 as display UART
+    //  - Serial as debug UART
+    //  - Pin 5 of Arduino as Reset Pin
+    //  - Reset mode as a LOW pulse (default)
+    MatesController mates = MatesController(Serial1, Serial, 5);
+    ```
+
+=== "Specify Pin and Pulse Mode"
+
+    ``` cpp
+    // Creates a new instance named 'mates' which utilizes:
+    //  - Serial1 as display UART
+    //  - Serial as debug UART
+    //  - Pin 6 of Arduino as Reset Pin
+    //  - Reset mode as a HIGH pulse
+    MatesController mates = MatesController(Serial1, Serial, 6, HIGH);   
+    ```
 
 !!! note
 
@@ -109,20 +126,26 @@ This function must be used once to initialize the Serial port at the start of th
 
     success or failure (_boolean_)
 
-``` cpp title="Example No. 1"
-// Initializes display serial port with 9600 (default) and resets the display
-mates.begin();
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-// Initializes display serial port with 115200 baud and resets the display
-mates.begin(115200);
-```
+    ``` cpp
+    // Initializes display serial port with 9600 (default) and resets the display
+    mates.begin();
+    ```
 
-``` cpp title="Example No. 3"
-// Initializes display serial port with 19200 baud and skips reset
-mates.begin(19200, false);
-```
+=== "Specify Baudrate"
+
+    ``` cpp
+    // Initializes display serial port with 115200 baud and resets the display
+    mates.begin(115200);
+    ```
+
+=== "Specify Baudrate and Reset Option"
+
+    ``` cpp
+    // Initializes display serial port with 19200 baud and skips reset
+    mates.begin(19200, false);
+    ```
 
 !!! note
 
@@ -162,15 +185,19 @@ This function can be used to setup auto resynchronization when an error occurs.
 
     none
 
-``` cpp title="Example No. 1"
-// Setup 3 automatic attempts to resync with default timeout
-mates.autoResync(3);
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-// Setup 5 automatic attempts to resync with 10000ms timeout
-mates.autoResync(5, 10000);
-```
+    ``` cpp
+    // Setup 3 automatic attempts to resync with default timeout
+    mates.autoResync(3);
+    ```
+
+=== "Specify Timeout"
+
+    ``` cpp
+    // Setup 5 automatic attempts to resync with 10000ms timeout
+    mates.autoResync(5, 10000);
+    ```
 
 
 ### sync(resetToPage0, waitPeriod)
@@ -186,34 +213,40 @@ This function can be used to establish synchronization between the BBM module an
 
     success or failure (_boolean_)
 
-``` cpp title="Example No. 1"
-// Attempts to synchronize with the display
-if (mates.sync()) {
-    // Do something if synchronization was successful
-} else {
-    // Do something if synchronization failed
-}
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-// Attempts to synchronize with the display
-if (mates.sync(true)) {
-    // Do something if synchronization was successful
-    // and project returned to Page0
-} else {
-    // Do something if synchronization failed
-}
-```
+    ``` cpp
+    // Attempts to synchronize with the display
+    if (mates.sync()) {
+        // Do something if synchronization was successful
+    } else {
+        // Do something if synchronization failed
+    }
+    ```
 
-``` cpp title="Example No. 3"
-// Attempts to synchronize with the display with a timeout of 10000
-if (mates.sync(true, 10000)) {
-    // Do something if synchronization was successful
-    // and project returned to Page0
-} else {
-    // Do something if synchronization failed
-}
-```
+=== "Return to Page0 if Successful"
+
+    ``` cpp
+    // Attempts to synchronize with the display
+    if (mates.sync(true)) {
+        // Do something if synchronization was successful
+        // and project returned to Page0
+    } else {
+        // Do something if synchronization failed
+    }
+    ```
+
+=== "Specify Timeout"
+
+    ``` cpp
+    // Attempts to synchronize with the display with a timeout of 10000
+    if (mates.sync(true, 10000)) {
+        // Do something if synchronization was successful
+        // and project returned to Page0
+    } else {
+        // Do something if synchronization failed
+    }
+    ```
 
 
 ### reset(waitPeriod)
@@ -230,16 +263,20 @@ The function finishes as soon as the display sends the ready signal or the wait 
 
     success or failure (_boolean_)
 
-``` cpp title="Example No. 1"
-// Reset the display and wait for
-mates.reset(); // a period of 5 seconds (default)
-               // (actually the current boot timeout which is 5s by default)
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-// Reset the display and wait for
-mates.reset(4000); // a period of 4 seconds
-```
+    ``` cpp
+    // Reset the display and wait for
+    mates.reset(); // a period of 5 seconds (default)
+                // (actually the current boot timeout which is 5s by default)
+    ```
+
+=== "Specify Timeout"
+
+    ``` cpp
+    // Reset the display and wait for
+    mates.reset(4000); // a period of 4 seconds
+    ```
 
 
 ### softReset(waitPeriod)
@@ -256,15 +293,19 @@ The function finishes as soon as the display sends the ready signal or the wait 
 
     success or failure (_boolean_)
 
-``` cpp title="Example No. 1"
-// Reset the display and wait for
-mates.softReset(); // a period of 5 seconds (default boot timeout)
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-// Reset the display and wait for
-mates.softReset(4000); // a period of 4 seconds
-```
+    ``` cpp
+    // Reset the display and wait for
+    mates.softReset(); // a period of 5 seconds (default boot timeout)
+    ```
+
+=== "Specify Timeout"
+
+    ``` cpp
+    // Reset the display and wait for
+    mates.softReset(4000); // a period of 4 seconds
+    ```
 
 
 ### setBootTimeout(timeout)
@@ -309,72 +350,76 @@ This function can be used to attach and error handler function to the library.
 
     none
 
-``` cpp title="Example No. 1"
-MatesController mates = MatesController(Serial);
+=== "Simple"
 
-void matesErrorHandler(MatesError error) {
-    while (true) {
-        digitalWrite(LED_BUILTIN, HIGH);
-        delay(200);
-        digitalWrite(LED_BUILTIN, LOW);
-        delay(200);
-    } // Blink builtin LED and block project execution
-    // This is not ideal but can be used to as simple error indication
-    // Errors should be handled as shown in Example 2
-}
+    ``` cpp
+    MatesController mates = MatesController(Serial);
 
-void setup() {
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, LOW);
-
-    // Sets 'matesErrorHandler' as the function for handling possible MatesError
-    mates.attachErrorHandler(matesErrorHandler);
-    mates.begin(9600);
-
-    // do something...
-}
-
-void loop() {
-    // do something...
-}
-```
-
-``` cpp title="Example No. 2"
-MatesController mates = MatesController(Serial);
-
-void matesErrorHandler(MatesError error) {
-    switch (error) {
-        case MATES_ERROR_COMMAND_FAILED:
-            // Do something when last command is invalid
-            break;
-        case MATES_ERROR_RESPONSE_TIMEOUT:
-            // Do something when the expected response from
-            // the last command wasn't received on time
-            break;
-        case MATES_ERROR_COMMAND_TIMEOUT:
-            // Do something when the expected acknowledgement from
-            // the last command wasn't received on time
-            break;
-        case MATES_ERROR_NOT_INITIALIZED:
-            // Do something when the display is not yet ready
-            break;
-        default:
-            break;
+    void matesErrorHandler(MatesError error) {
+        while (true) {
+            digitalWrite(LED_BUILTIN, HIGH);
+            delay(200);
+            digitalWrite(LED_BUILTIN, LOW);
+            delay(200);
+        } // Blink builtin LED and block project execution
+        // This is not ideal but can be used to as simple error indication
+        // Errors should be handled as shown in Example 2
     }
-}
 
-void setup() {
-    // Sets 'matesErrorHandler' as the function for handling possible MatesError
-    mates.attachErrorHandler(matesErrorHandler);
-    mates.begin(9600);
+    void setup() {
+        pinMode(LED_BUILTIN, OUTPUT);
+        digitalWrite(LED_BUILTIN, LOW);
 
-    // do something...
-}
+        // Sets 'matesErrorHandler' as the function for handling possible MatesError
+        mates.attachErrorHandler(matesErrorHandler);
+        mates.begin(9600);
 
-void loop() {
-    // do something...
-}
-```
+        // do something...
+    }
+
+    void loop() {
+        // do something...
+    }
+    ```
+
+=== "Recommended"
+
+    ``` cpp
+    MatesController mates = MatesController(Serial);
+
+    void matesErrorHandler(MatesError error) {
+        switch (error) {
+            case MATES_ERROR_COMMAND_FAILED:
+                // Do something when last command is invalid
+                break;
+            case MATES_ERROR_RESPONSE_TIMEOUT:
+                // Do something when the expected response from
+                // the last command wasn't received on time
+                break;
+            case MATES_ERROR_COMMAND_TIMEOUT:
+                // Do something when the expected acknowledgement from
+                // the last command wasn't received on time
+                break;
+            case MATES_ERROR_NOT_INITIALIZED:
+                // Do something when the display is not yet ready
+                break;
+            default:
+                break;
+        }
+    }
+
+    void setup() {
+        // Sets 'matesErrorHandler' as the function for handling possible MatesError
+        mates.attachErrorHandler(matesErrorHandler);
+        mates.begin(9600);
+
+        // do something...
+    }
+
+    void loop() {
+        // do something...
+    }
+    ```
 
 
 ### setBacklight(value)
@@ -772,7 +817,7 @@ int16_t paramVal = mates.getWidgetParam(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR
 
 ### setBufferSize(size)
 
-This function can be used to adjust the max string buffer _size_ to be used when composing a string for a TextArea or a PrintArea. The string composition is done by [updateTextArea(index, format, ...)](#updatetextareaindex-format-), [updateDotMatrix(index, format, ...)](#updatedotmatrixindex-format) and [appendToPrintArea(index, format, ...)](#appendtoprintareaindex-format)
+This function can be used to adjust the max string buffer _size_ to be used when composing a string for a TextArea or a PrintArea. The string composition is done by [updateTextArea(index, format, ...)](#updatetextareaindex-format), [updateDotMatrix(index, format, ...)](#updatedotmatrixindex-format) and [appendToPrintArea(index, format, ...)](#appendtoprintareaindex-format)
 
 | Parameters | Type     | Description         |
 |:----------:|:--------:| ------------------- |
@@ -820,14 +865,18 @@ This function can be used to update the contents of the TextArea specified by _i
 
     success or failure (_boolean_)
 
-``` cpp title="Example No. 1"
-mates.updateTextArea(2, "Mates"); // Update TextArea2 to "Mates"
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-int value = 76;
-mates.updateTextArea(3, "Value is %d", 76); // Print value to TextArea3
-```
+    ``` cpp
+    mates.updateTextArea(2, "Mates"); // Update TextArea2 to "Mates"
+    ```
+
+=== "Text Formatting"
+
+    ``` cpp
+    int value = 76;
+    mates.updateTextArea(3, "Value is %d", value); // Print value to TextArea3
+    ```
 
 
 ### updateTextArea(index, str)
@@ -939,15 +988,19 @@ This function can be used to append contents to the PrintArea specified by _inde
 
     success or failure (_boolean_)
 
-``` cpp title="Example No. 1"
-mates.appendToPrintArea(8, "Mates"); // Append "Mates" to PrintArea8
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-int value = 108;
-// Append value as text to PrintArea9
-mates.appendToPrintArea(9, "Value: %d", 108);
-```
+    ``` cpp
+    mates.appendToPrintArea(8, "Mates"); // Append "Mates" to PrintArea8
+    ```
+
+=== "Text Formatting"
+
+    ``` cpp
+    int value = 108;
+    // Append value as text to PrintArea9
+    mates.appendToPrintArea(9, "Value: %d", value);
+    ```
 
 
 ### appendToPrintArea(index, str)
@@ -1003,14 +1056,18 @@ This function can be used to append contents to the DotMatrix specified by _inde
 
     success or failure (_boolean_)
 
-``` cpp title="Example No. 1"
-    mates.updateDotMatrix(8, "Mates"); // Update DotMatrix0 to "Mates"
-```
+=== "Simple"
 
-``` cpp title="Example No. 2"
-int value = 108;
-mates.updateDotMatrix(9, "Value: %d", 108); // Update DotMatrix0 to show value
-```
+    ``` cpp
+        mates.updateDotMatrix(8, "Mates"); // Update DotMatrix0 to "Mates"
+    ```
+
+=== "Text Formatting"
+
+    ``` cpp
+    int value = 108;
+    mates.updateDotMatrix(9, "Value: %d", value); // Update DotMatrix0 to show value
+    ```
 
 
 ### updateDotMatrix(index, str)

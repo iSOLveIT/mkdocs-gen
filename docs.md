@@ -9,9 +9,9 @@ GitHub.
 You can find the source codes and website of the sample in the links
 below:
 
--   Source code - [https://github.com/iSOLveIT/mkdocs-gen](https://github.com/iSOLveIT/mkdocs-gen)
+-   Source code - [https://github.com/BreadBoardMates/Breadboard-Mates-Resources](https://github.com/BreadBoardMates/Breadboard-Mates-Resources)
 
--   Website - [https://resources.breadboardmates.com](https://resources.breadboardmates.com/)
+-   Website - [https://resources.breadboardmates.com](https://resources.breadboardmates.com)
 
 Topics covered in this document are:
 
@@ -53,7 +53,7 @@ Python virtual environment and install MkDocs.
 Set up the Python virtual environment using this command:
 
 ```bash
-python --m venv <folder_name(e.g: .virenv)>
+python -m venv <folder_name(e.g: .virenv)>
 ```
 
 Install MkDocs using this command:

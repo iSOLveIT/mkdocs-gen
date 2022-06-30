@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# Welcome to Breadboard Mates Resources
+# Welcome to Breadboard Mates Resource Centre
 
 ## Our Focus
 

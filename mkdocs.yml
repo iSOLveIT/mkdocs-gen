@@ -1,4 +1,4 @@
-site_name: Breadboard Mates Resources
+site_name: Resource Centre
 site_url: https://resources.breadboardmates.com/
 copyright: Copyright &copy; 2022 Breadboard Mates
 extra:
@@ -7,8 +7,11 @@ extra:
     - icon: material/github
       link: https://github.com/BreadBoardMates
       name: Breadboard Mates on GitHub
+    - icon: material/forum-outline
+      link: https://forum.breadboardmates.com
+      name: Breadboard Mates Forum
     - icon: material/web
-      link: https://breadboardmates.com/
+      link: https://breadboardmates.com
       name: Breadboard Mates Website
   generator: false
 nav:
@@ -111,6 +114,10 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - attr_list
+  - md_in_html
+  - def_list
 plugins:
     - search
-    - pdf-export
+    - pdf-export:
+        enabled_if_env: ENABLE_PDF_EXPORT
