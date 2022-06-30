@@ -12,7 +12,7 @@ At Breadboard Mates, we create novel and exciting products that inspire creativi
 
 ## What We Provide
 
-An ever increasing range of hardware and continuously evolving software suite and tools to aid project development
+An ever-increasing range of hardware and continuously evolving software suite and tools to aid project development
 
 ## About Us
 

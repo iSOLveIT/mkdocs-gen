@@ -67,6 +67,9 @@ theme:
   name: material
   logo: full-logo.svg
   favicon: logo.svg
+  font:
+    text: Montserrat
+    code: Fira Mono
   features:
     - navigation.instant
     - navigation.tabs
@@ -110,7 +113,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - attr_list
   - md_in_html
   - def_list
