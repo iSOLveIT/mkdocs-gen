@@ -32,7 +32,7 @@ nav:
       - BBM Python: controller/bbm-python-mates-controller.md
       - RPi Python: controller/rpi-python-mates-controller.md
       - MicroPython: controller/micropython-mates-controller.md
-      - Errors: controller/keywords/errors.md
+      - Errors: controller/mates-controller-errors.md
   - Datasheets:
     - datasheets/index.md
     - TIMI:

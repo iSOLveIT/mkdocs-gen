@@ -1,6 +1,6 @@
-# Communication Errors
+# Mates Controller Libraries Error Codes
 
-The table below lists the possible errors after running a function from the library.
+The table below lists the possible errors after running a function/method from the libraries.
 
 | Value | Error                         | Description                                           |
 |:-----:|:-----------------------------:| ----------------------------------------------------- |

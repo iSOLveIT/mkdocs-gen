@@ -924,7 +924,7 @@ mates.printVersion()
 
 ### getError()
 
-This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in [here](keywords/errors.md).
+This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in [here](mates-controller-errors.md).
 
 !!!hint "Return"
 
