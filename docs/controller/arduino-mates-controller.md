@@ -488,7 +488,7 @@ mates.setWidgetValue(MediaGaugeB0, 50); // Set value of MediaGaugeB0 to 50
 
 !!! note
 
-    1. All applicable widget types are listed in [here](keywords/widgets.md).
+    1. All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
     2. This function is not applicable to _Int32_ and _Float_ LedDigits
 
 
@@ -511,7 +511,7 @@ int16_t widgetVal = mates.getWidgetValue(MediaLed4);
 
 !!! note
 
-    1. All applicable widget types are listed in [here](keywords/widgets.md).
+    1. All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
     2. This function is not applicable to _Int32_ and _Float_ LedDigits
 
 
@@ -536,7 +536,7 @@ mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50);
 
 !!! note
 
-    1. All applicable widget types are listed in [here](keywords/widgets.md).
+    1. All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
     2. This function is not applicable to _Int32_ and _Float_ LedDigits
 
 
@@ -560,7 +560,7 @@ int16_t widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4);
 
 !!! note
 
-    1. All applicable widget types are listed in [here](keywords/widgets.md).
+    1. All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
     2. This function is not applicable to _Int32_ and _Float_ LedDigits
 
 
@@ -740,7 +740,7 @@ mates.setWidgetParam(GaugeA3, MATES_GAUGE_A_BG_COLOR, BLACK);
 
 !!! note
 
-    All applicable widget types are listed in [here](keywords/widgets.md).
+    All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
 
 
 ### getWidgetParam(widget, param)
@@ -763,7 +763,7 @@ int16_t paramVal = mates.getWidgetParam(GaugeA3, MATES_GAUGE_A_BG_COLOR);
 
 !!! note
 
-    All applicable widget types are listed in [here](keywords/widgets.md).
+    All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
 
 
 ### setWidgetParam(type, index, param, value);
@@ -788,7 +788,7 @@ mates.setWidgetParam(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR, BLACK);
 
 !!! note
 
-    All applicable widget types are listed in [here](keywords/widgets.md).
+    All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
 
 
 ### getWidgetParam(type, index, param)
@@ -812,7 +812,7 @@ int16_t paramVal = mates.getWidgetParam(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR
 
 !!! note
 
-    All applicable widget types are listed in [here](keywords/widgets.md).
+    All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
 
 
 ### setBufferSize(size)

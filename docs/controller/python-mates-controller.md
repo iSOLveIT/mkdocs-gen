@@ -265,7 +265,7 @@ value: int
 
 !!!note
 
-    All applicable widget types are listed in [here](keywords/widgets.md).
+    All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
 
 
 ### getWidgetValueByIndex(widgetType, widgetIndex)
