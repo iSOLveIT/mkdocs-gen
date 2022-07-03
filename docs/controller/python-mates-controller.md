@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This library is developed to easily control Breadboard Mates modules using any device that can run Python boards by utilizing the [Mates Controller Command Protocol](../Mates Studio/mates-controller-command-protocol.md). This applies to projects developed using Commander and Architect environments.
+This library is developed to easily control Breadboard Mates modules using any device that can run Python by utilizing the [Mates Controller Command Protocol](../Mates Studio/mates-controller-command-protocol.md). This applies to projects developed using Commander and Architect environments.
 
 
 ## Supported Devices
@@ -30,34 +30,47 @@ This section serves to provide brief discussion about the constructors that can 
 Constructs all the necessary attributes associated with an instance
 of a Mates Controller Object.
 
-| Parameters                     | Type             | Description                                                            |
-|:------------------------------:|:----------------:| ---------------------------------------------------------------------- |
-| portName                       | str              | The name of the port to be opened. Example: `/dev/ttyUSB0` for linux   |
-| resetFunction                  | function         | Function used to perform a hard reset                                  |
-| debugStream<br/>(optional)     | io.TextIOWrapper | Text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
-| debugFileLength<br/>(optional) | int              | Determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
+| Parameters | Type | Description                                                            |
+|:----------:|:----:| ---------------------------------------------------------------------- |
+| portName   | str  | the name of the port to be opened. Example: `/dev/ttyUSB0` for linux   |
+| resetFunction | function | function used to perform a hard reset                           |
+| debugStream<br/>(optional) | io.TextIOWrapper | text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
+| debugFileLength<br/>(optional) | int | determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
 
-``` py title="Example No. 1"
-# Creates a new instance named 'mates' which utilizes: 
-#  - COM10 as the serial port
-#  - with no reset function and no output stream
-MatesController mates = MatesController("COM10") 
-```
+=== "Simple"
 
-``` py title="Example No. 2"
-def resetModule():
-    # perform reset of 100ms pulse to the RST pin
-    # set reset pulse
-    # wait for 100ms
-    # unset reset pulse
+    ``` py
+    # Creates a new instance named 'mates' which utilizes: 
+    #  - COM10 as the serial port
+    #  - with no reset function and no output stream
+    MatesController mates = MatesController("COM10") 
+    ```
 
-# Creates a new instance named 'mates' which utilizes: 
-#  - COM10 as the serial port
-#  - resetModule as the reset function
-#  - output_file as debug file stream
-#  - debugFileLength of zero indicating no circular logging
-MatesController mates = MatesController("COM10", resetFunction=resetModule,debugStream=output_file, debugFileLength=0) 
-```
+=== "Specify Reset Function"
+
+    ``` py
+    def resetModule():
+        # perform reset of 100ms pulse to the RST pin
+        # set reset pulse
+        # wait for 100ms
+        # unset reset pulse
+        pass
+
+    # Creates a new instance named 'mates' which utilizes: 
+    #  - COM4 as the serial port
+    #  - resetModule as the reset function
+    MatesController mates = MatesController("COM4", resetFunction=resetModule) 
+    ```
+
+=== "Specify Debug Output"
+
+    ``` py
+    # Creates a new instance named 'mates' which utilizes: 
+    #  - COM7 as the serial port
+    #  - output_file as debug file stream
+    #  - debugFileLength of zero indicating no circular logging
+    MatesController mates = MatesController("COM7", debugStream=output_file, debugFileLength=0) 
+    ```
 
 !!!note
 
@@ -81,12 +94,21 @@ Begins the serial connection if portname not supplied in constructor.
 
     None
 
-``` py title="Example"
-# Initializes display serial port 9600 baud
-# and resets the display if a reset function is provided
-mates.begin(9600) 
-```
+=== "Simple"
 
+    ``` py
+    # Initializes display serial port 9600 baud
+    # and resets the display if a reset function is provided
+    mates.begin() 
+    ```
+
+=== "Specify Baudrate"
+
+    ``` py
+    # Initializes display serial port 115200 baud
+    # and resets the display if a reset function is provided
+    mates.begin(115200) 
+    ```
 
 ### close()
 
@@ -94,11 +116,10 @@ Closes opened serial port.
 
 !!!hint "Return"
 
-    id
+    None
 
 ``` py title="Example"
-# Closes serial port
-mates.close()
+mates.close() # Closes serial port
 ```
 
 
@@ -106,61 +127,70 @@ mates.close()
 
 Uses hardware driven signal to hard reset companion device.
 
-**Args**:
-
-wait_period: int
-
-- determines how long to wait (milliseconds) before checking for connection. Value must be within the uint16 datatype range (default: 5000)
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| waitPeriod | int  | determines how long to wait (milliseconds) before checking for connection, must be within the uint16 datatype range (default: 5000) |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
-``` py title="Example"
-# Reset the display and wait for
-mates.reset()         # a period of 5 seconds (default)
-# Reset the display and wait for
-# mates.reset(4000)   # a period of 4 seconds
-```
+=== "Simple"
+
+    ``` py
+    # Reset the display and wait for a period of 5 seconds (default)
+    mates.reset()
+    ```
+
+=== "Specify Timeout"
+
+    ``` py
+    # Reset the display and wait for a period of 4 seconds
+    mates.reset(4000)
+    ```
 
 
 ### softReset(waitPeriod)
 
 Sends a serial command to the connected device to trigger a reset.
 
-**Args**:  
-waitPeriod: int
-
-- determines how long (milliseconds) to wait before timing out after no acknowledgement. Value must be within the uint16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| waitPeriod | int  | determines how long to wait (milliseconds) before checking for connection, must be within the uint16 datatype range (default: 5000) |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
-``` py title="Example"
-# Reset the display and wait for
-mates.softReset()       # a period of 5 seconds (default)
-# Reset the display and wait for
-mates.softReset(4000)   # a period of 4 seconds
-```
+=== "Simple"
+
+    ``` py
+    # Reset the display and wait for a period of 5 seconds (default)
+    mates.softReset()
+    ```
+
+=== "Specify Timeout"
+
+    ``` py
+    # Reset the display and wait for a period of 4 seconds
+    mates.softReset(4000)
+    ```
 
 
 ### setBacklight(backlightValue)
 
 Sets the intensity of the backlight of connected device.
 
-**Args**:  
-backlightValue: int
-
-- intensity of backlight. Value must be between 0 and 15, and within the uint8 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| backlightValue | int | intensity of backlight, must be between 0 and 15 |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
 ``` py title="Example"
-# set backlight value of 15 (max)
-mates.setBacklight(15)
+mates.setBacklight(15) # Set backlight value of 15 (max)
 ```    
 
 
@@ -168,10 +198,9 @@ mates.setBacklight(15)
 
 Sets the page to be displayed on the connected device.
 
-**Args**:  
-pageIndex: int
-
-- index of page to set as current. Value must be within the uint16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| pageIndex  | int  | index of page to set as current, must be within the uint16 datatype range |
 
 !!!hint "Return"
 
@@ -186,7 +215,6 @@ mates.setPage(1) # Navigate to Page1
 
 Returns the index of the current page displayed by the connected device.
 
-
 !!!hint "Return"
 
     Active page index (_int_)
@@ -200,22 +228,17 @@ activePage = mates.getPage() # Query active page
 
 Sets the value of a specific widget based on the provided widgetId.
 
-**Args**:  
-widgetId: int
-    - the unique id of the desired widget.
-    Value must exist within the int16 datatype range.
-
-value: int
-    the value the corresponding widget will be set to.
-    Value must exist within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
+| value      | int  | the value the corresponding widget will be set to, must be within the int16 datatype range |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
 ``` py title="Example"
-    mates.setWidgetValueById(MediaGaugeB0, 50) # Set value of MediaGaugeB0 to 50
-    # Note: The ID of MediaGaugeB0 can be copied or exported from Mates Studio
+mates.setWidgetValueById(MediaGaugeB0, 50) # Set value of MediaGaugeB0 to 50
 ```
 
 
@@ -223,18 +246,17 @@ value: int
 
 Gets the value of a specific widget based on the provided identifier.
 
-**Args**:  
-widgetId: int
-
-- the unique id of the target widget. Value must be within the uint16 datatype range  
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
 
 !!!hint "Return"
 
     Value of the widget specified by **widgetId** (_int_)
 
 ``` py title="Example"
-    widgetVal = mates.getWidgetValue(MediaLed4) # Query the current value of MediaLed4
-    # Note: The ID of MediaLed4 can be copied or exported from Mates Studio
+# Query the current value of MediaLed4
+widgetVal = mates.getWidgetValue(MediaLed4)
 ```
 
 
@@ -242,25 +264,19 @@ widgetId: int
 
 Sets the value of a specific widget based on the index within a widget type.
 
-**Args**:  
-widgetType: MatesWidget
-
-- the unique type of widget to be changed.
-
-widgetIndex: int
-
-- the index of the widget, of a specific type. Value must be within the uint8 datatype range.
-
-value: int
-
-- the value the corresponding widget will be set to. Value must be within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetType | MatesWidget | the type of the target widget            |
+| widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
+| value      | int  | the value the corresponding widget will be set to, must be within the int16 datatype range |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
 ``` py title="Example"
-    mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50) # Set value of MediaGaugeB0 to 50
+# Set value of MediaGaugeB0 to 50
+mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50)
 ```
 
 !!!note
@@ -272,22 +288,18 @@ value: int
 
 Gets the value of a specific widget based on the index within a widget type.
 
-**Args**:
-
-widgetType: MatesWidget
-
-- the unique type of widget to be changed.
-
-widgetIndex: int  
-
-- the index of the widget, of a specific type. Value must be within the uint8 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetType | MatesWidget | the type of the target widget            |
+| widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
 
 !!!hint "Return"
 
     Value of the widget specified by **widgetType** and **widgetIndex** (_int_)
 
-``` py title="Example No. 1"
-widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4) # Query the current value of MediaLed4
+``` py title="Example"
+# Query the current value of MediaLed4
+widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4)
 ```
 
 !!!note
@@ -299,16 +311,10 @@ widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4) # Query the current value o
 
 Sets the 16-bit integer value of the Led Digits widget specified by widgetIndex.
 
-**Args**:
-
-widgetIndex: int
-
-- the index of the LED Digits widget. Value must be within uint8 datatype range.
-
-value: int, float
-
-- the value the corresponding widget will be set to.
-Values must be within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetIndex | int | the index of the LedDigits, must be within the uint8 datatype range |
+| value      | int  | the value the corresponding LedDigits will be set to, must be within the int16 datatype range |
 
 !!!hint "Return"
 
@@ -327,15 +333,10 @@ mates.setLedDigitsShortValue(2, 50) # Set value of LedDigits2 to 50
 
 Sets the 32-bit integer value of the Led Digits widget specified by widgetIndex.
 
-**Args**:
-
-widgetIndex: int
-
-- the index of the LED Digits widget. Value must be within uint8 datatype range.
-
-value: int, float
-
-- the value the corresponding widget will be set to. Values must be within the int32 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetIndex | int | the index of the LedDigits, must be within the uint8 datatype range |
+| value      | int  | the value the corresponding LedDigits will be set to, must be within the int32 datatype range |
 
 !!!hint "Return"
 
@@ -354,14 +355,10 @@ mates.setLedDigitsLongValue(2, 50) # Set value of LedDigits2 to 50
 
 Sets the 32-bit float value of the Led Digits widget specified by widgetIndex.
 
-**Args**:
-
-widgetIndex: int
-- the index of the LED Digits widget. Value must be within uint8 datatype range.
-
-value: int, float
-- the value the corresponding widget will be set to.
-  Values must be within the float32 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetIndex | int | the index of the LedDigits, must be within the uint8 datatype range |
+| value      | int  | the value the corresponding LedDigits will be set to, must be within the 32-bit float datatype range |
 
 !!!hint "Return"
 
@@ -380,27 +377,19 @@ mates.setLedDigitsFloatValue(2, 9.989) # Set value of LedDigits2 to 9.989
 
 Sets the value of the column (specified by gaugeIndex) of the spectrum widget (specified by spectrumId).
 
-**Args**:
-
-spectrumId: int
-
-- the id of the relevant Spectrum widget. Value must be within the int16 datatype range.
-
-gaugeIndex: int
-
-- the gauge index within the target Spectrum widget. Value must be within the uint8 datatype range.
-
-value: int
-
-- the value the corresponding widget will be set to. Value must be within the uint8 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| spectrumId | int  | the unique id of the Spectrum widget, must be within the int16 datatype range |
+| gaugeIndex | int  | the gauge index/column of the Spectrum widget, must be within the uint8 datatype range |
+| value      | int  | the value the corresponding spectrum column will be set to, must be within the uint8 datatype range |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
 ``` py title="Example"
-mates.setSpectrumValue(MatesLedSpectrum5, 2, 64)
 # Set value of gauge index 2 of LedSpectrum5 to 64
+mates.setSpectrumValue(MatesLedSpectrum5, 2, 64)
 ```
 
 
@@ -408,26 +397,19 @@ mates.setSpectrumValue(MatesLedSpectrum5, 2, 64)
 
 Sets the value of the column (specified by gaugeIndex) of the Led Spectrum widget (specified by ledSpectrumIndex).
 
-**Args**:
-ledSpectrumIndex: int
-
-- the index of the desired LED Spectrum widget. Value must be within the uint8 datatype range.
-
-gaugeIndex: int
-
-- the gauge index within the target LED Spectrum widget. Value must be within the uint8 datatype range.
-
-value: int
-
-- the value the corresponding widget will be set to. Value must be within the uint8 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| ledSpectrumIndex | int | the index of the LedSpectrum widget, must be within the uint8 datatype range |
+| gaugeIndex | int  | the gauge index/column of the Spectrum widget, must be within the uint8 datatype range |
+| value      | int  | the value the corresponding spectrum column will be set to, must be within the uint8 datatype range |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
 ``` py title="Example"
-mates.setLedSpectrumValue(5, 2, 64)
 # Set value of gauge index 2 of LedSpectrum5 to 64
+mates.setLedSpectrumValue(5, 2, 64)
 ```
 
 
@@ -435,18 +417,11 @@ mates.setLedSpectrumValue(5, 2, 64)
 
 Sets the value of the column (specified by gaugeIndex) of the Media Spectrum widget (specified by ledSpectrumIndex).
 
-**Args**:
-mediaIndex: int
-
-- the index of the Media Spectrum widget. Value must be within the uint8 datatype range.
-
-gaugeIndex: int
-
-- the index of the desired gauge. Value must be within the uint8 datatype range.
-
-value: int
-
-- the value the corresponding widget will be set to. Value must be within the uint8 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| mediaIndex | int  | the index of the MediaSpectrum widget, must be within the uint8 datatype range |
+| gaugeIndex | int  | the gauge index/column of the Spectrum widget, must be within the uint8 datatype range |
+| value      | int  | the value the corresponding spectrum column will be set to, must be within the uint8 datatype range |
 
 !!!hint "Return"
 
@@ -462,18 +437,11 @@ mates.setMediaSpectrumValue(4, 3, 48)
 
 Sets the value of a widget parameter based on widget id and parameter id.
 
-**Args**:
-widgetId: int
-
-- the unique id of the target widget. Value must be within the int16 datatype range.
-
-param: int
-
-- the unique id of the target parameter. Value must be within the int16 datatype range.
-
-value: int
-
-- the value the corresponding parameter will be set to. Value must be within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
+| param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
+| value      | int  | the value the corresponding parameter will be set to, must be within the int16 datatype range |
 
 !!!hint "Return"
 
@@ -481,8 +449,7 @@ value: int
 
 ``` py title="Example"
 # Set GaugeA3's Background color to BLACK
-mates.setWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR, BLACK) 
-# Note: The ID of GaugeA3 can be copied or exported from Mates Studio
+mates.setWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR, BLACK)
 ```
 
 
@@ -490,14 +457,10 @@ mates.setWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR, BLACK)
 
 Gets the value of a widget parameter based on widget id and parameter id.
 
-**Args**:
-widgetId: int
-    - the unique id of the target widget.
-    Value must be within the int16 datatype range.
-
-param: int
-    - the unique id of the target parameter.
-    Value must be within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
+| param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
 
 !!!hint "Return"
 
@@ -505,8 +468,7 @@ param: int
 
 ``` py title="Example"
 # Query the background color of GaugeA3
-paramVal = mates.getWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR) 
-# Note: The ID of GaugeA3 can be copied or exported from Mates Studio
+paramVal = mates.getWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR)
 ```
 
 
@@ -514,22 +476,12 @@ paramVal = mates.getWidgetParamById(GaugeA3, MATES_GAUGE_A_BG_COLOR)
 
 Sets the value of a widget parameter based on widget index and parameter id.
 
-**Args**:
-widgetType: MatesWidget
-
-- the type of the target widget.
-
-widgetIndex: int
-
-- the index of the target widget. Value must be within the uint8 datatype range.
-
-param: int
-
-- the unique id of the target parameter. Value must be within the int16 datatype range.
-
-value: int
-
-- the value the corresponding parameter will be set to. Value must be within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetType | MatesWidget | the type of the target widget            |
+| widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
+| param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
+| value      | int  | the value the corresponding parameter will be set to, must be within the int16 datatype range |
 
 !!!hint "Return"
 
@@ -545,19 +497,11 @@ mates.setWidgetParamByIndex(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR, BLACK)
 
 Gets the value of a widget parameter based on widget index and parameter id.
 
-**Args**:
-
-widgetType: MatesWidget
-
-- the type of the target widget.
-
-widgetIndex: int
-
-- the index of the target widget. Value must be within the uint8 datatype range.
-
-param: int
-
-- the unique id of the target parameter. Value must be within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| widgetType | MatesWidget | the type of the target widget            |
+| widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
+| param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
 
 !!!hint "Return"
 
@@ -573,11 +517,9 @@ paramVal = mates.getWidgetParamByIndex(MATES_GAUGE_A, 3, MATES_GAUGE_A_BG_COLOR)
 
 Clears a targeted Text Area.
 
-**Args**:
-
-textAreaIndex: int
-
-- the index of the target Text Area widget. Value must be within the uint16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| textAreaIndex | int | the index of the target TextArea, must be within the uint16 datatype range |
 
 !!!hint "Return"
 
@@ -592,43 +534,37 @@ mates.clearTextArea(6) # Clear TextArea6
 
 Updates the text displayed within Text Area widget.
 
-**Args**:
-
-textAreaIndex: int
-
-- the index of the target Text Area widget. Value must be within the uint16 datatype range.
-
-textFormat: str
-
-- the string format to be displayed.
-
-formatArgs:
-
-- zero or more values to be formatted into the provided text format string.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| textAreaIndex | int | the index of the target TextArea, must be within the uint16 datatype range |
+| textFormat | str  | the string or text format to be written to the TextArea |
+| formatArgs |      | zero or more values to be formatted into the provided text format string |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
-``` py title="Example No. 1"
-mates.updateTextArea(2, "Mates") # Update TextArea2 to "Mates"
-```
+=== "Simple"
 
-``` py title="Example No. 2"
-value = 76
-mates.updateTextArea(3, "Value is {}", value) # Print value to TextArea3
-```
+    ``` py
+    mates.updateTextArea(2, "Mates") # Update TextArea2 to "Mates"
+    ```
+
+=== "Use Text Formatting"
+
+    ``` py
+    value = 76
+    mates.updateTextArea(3, "Value is {}", value) # Print value to TextArea3
+    ```
 
 
 ### clearPrintArea(printAreaIndex: int)
 
 Clears a targeted Print Area.
 
-**Args**:
-
-printAreaIndex: int
-- the index of the target Print Area widget.
-Value must be within the uint16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| printAreaIndex | int | the index of the target PrintArea, must be within the uint16 datatype range |
 
 !!!hint "Return"
 
@@ -642,17 +578,15 @@ mates.clearPrintArea(5) # Clear PrintArea5
 ### setPrintAreaColor565(printAreaIndex, rgb565)
 Sets the color of a PrintArea Widget based on an rgb565 value.
 
-**Args**:
-        
-printAreaIndex: int
-- index of widget, value must be within uint16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| printAreaIndex | int | the index of the target PrintArea, must be within the uint16 datatype range |
+| rgb565 | int | 16-bit color to set widget to, value must be within uint16 datatype range |
 
-rgb565: int
-- colour to set widget to, value must be within uint16 datatype range.
 
-Returns:
+!!!hint "Return"
 
-- boolean response indicating command success or failure.
+    success or failure (_boolean_)
 
 ``` py title="Example"
 mates.setPrintAreaColor(4, 0xF800) # Set print color of PrintArea4 to RED (0xF800)
@@ -661,32 +595,22 @@ mates.setPrintAreaColor(4, 0xF800) # Set print color of PrintArea4 to RED (0xF80
 
 ### setPrintAreaColorRGB(printAreaIndex, red, green, blue)
 
-Sets the colour of a targeted Print Area.
+Sets the color of a targeted Print Area.
 
-**Args**:
-
-printAreaIndex: int
-
-- the index of the target Print Area widget. Value must be within the uint16 datatype range.
-
-red: int
-
-- Unsigned 8 bit integer value of red concentration. Value must be within the uint8 datatype range.
-
-blue: int
-
-- Unsigned 8 bit integer value of green concentration. Value must be within the uint8 datatype range.
-
-green: int
-
-- Unsigned 8 bit integer value of blue concentration. Value must be within the uint8 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| printAreaIndex | int | the index of the target PrintArea, must be within the uint16 datatype range |
+| red        | int  | 8-bit red component of the target color, value must be within uint8 datatype range |
+| green      | int  | 8-bit green component of the target color, value must be within uint8 datatype range |
+| blue       | int  | 8-bit blue component of the target color, value must be within uint8 datatype range |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
 ``` py title="Example"
-mates.setPrintAreaColor(7, 0, 255, 0) # Set print color of PrintArea7 to GREEN
+# Set print color of PrintArea7 to GREEN
+mates.setPrintAreaColor(7, 0, 255, 0)
 ```
 
 
@@ -694,16 +618,10 @@ mates.setPrintAreaColor(7, 0, 255, 0) # Set print color of PrintArea7 to GREEN
 
 Appends an array of 8-bit integers to a targeted Print Area.
 
-**Args**:
-
-printAreaIndex: int
-
-- the index of the target Print Area widget.
-Value must be within the uint16 datatype range.
-
-buffer: \[int\]
-
-- the list of datapoints to be appended to scope widget. Values must be within the uint8 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| printAreaIndex | int | the index of the target PrintArea, must be within the uint16 datatype range |
+| buffer |  \[int\] | the list of values to be appended to PrintArea, values must be within the uint8 datatype range |
 
 !!!hint "Return"
 
@@ -719,51 +637,39 @@ mates.appendArrayToPrintArea(6, arr) # Append "0xAB, 0xCD, 0xEF" to PrintArea6
 
 Appends text to a targeted Print Area.
 
-**Args**:
-
-printAreaIndex: int
-
-- the index of the target Print Area widget.
-Value must be within the uint16 datatype range.
-
-textFormat: str
-
-- the string to be appended to the Print Area
-with zero or more format specifiers to be formatted.
-
-formatArgs:
-
-- zero or more args that can be formatted into the
-textFormat string.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| printAreaIndex | int | the index of the target PrintArea, must be within the uint16 datatype range |
+| textFormat | str  | the string or text format to be appended to the PrintArea |
+| formatArgs |      | zero or more values to be formatted into the provided text format string |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
-``` py title="Example No. 1"
-mates.appendStringToPrintArea(8, "Mates") # Append "Mates" to PrintArea8
-```
+=== "Simple"
 
-``` py title="Example No. 2"
-Example No. 2: 
-value = 108
-mates.appendStringToPrintArea(9, "Value: {}", value) # Append value as text to PrintArea9
-```
+    ``` py
+    mates.appendStringToPrintArea(8, "Mates") # Append "Mates" to PrintArea8
+    ```
+
+=== "Use Text Formatting"
+
+    ``` py
+    value = 108
+    # Append value as text to PrintArea9
+    mates.appendStringToPrintArea(9, "Value: {}", value)
+    ```
 
 
 ### appendToScopeWidget(scopeIndex, buffer)
 
 Appends a list of integers to a Scope widget.
 
-**Args**:
-
-scopeIndex: int
-
-- the index of the target Scope widget. Value must be within the uint16 datatype range.
-
-buffer: \[int\]
-
-- the list of datapoints to be appended to scope widget. Values must be within the int16 datatype range.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| scopeIndex | int  | the index of the target Scope, must be within the uint8 datatype range |
+| buffer |  \[int\] | the list of values to be appended to Scope, values must be within the int16 datatype range |
 
 !!!hint "Return"
 
@@ -779,33 +685,28 @@ mates.appendToScopeWidget(7, data, 3) # Append data to Scope Widget 7
 
 Changes the text displayed by the target Dot Matrix widget.
 
-**Args**:
-
-matrixIndex (int): matrix index.
-
-- The index of the target Scope widget.
-Value must be within the uint16 datatype range.
-
-textFormat: str
-
-- the string to be appended to the Scope widget with zero or more format specifiers to be formatted.
-
-formatArgs:
-
-- zero or more args that can be formatted into the text_format string.
+| Parameters | Type | Description                                     |
+|:----------:|:----:| ----------------------------------------------- |
+| matrixIndex | int | the index of the target DotMatrix, must be within the uint8 datatype range |
+| textFormat | str  | the string or text format to be appended to the DotMatrix |
+| formatArgs |      | zero or more values to be formatted into the provided text format string |
 
 !!!hint "Return"
 
     success or failure (_boolean_)
 
-``` py title="Example No. 1"
-mates.updateDotMatrix(8, "Mates") # Update DotMatrix0 to "Mates"
-```
+=== "Simple"
 
-``` py title="Example No. 2"
-value = 108
-mates.updateDotMatrix(9, "Value: {}", value) # Update DotMatrix0 to show value
-```
+    ``` py
+    mates.updateDotMatrix(8, "Mates") # Update DotMatrix0 to "Mates"
+    ```
+
+=== "Use Text Formatting"
+
+    ``` py
+    value = 108
+    mates.updateDotMatrix(9, "Value: {}", value) # Update DotMatrix0 to show value
+    ```
 
 
 ### getButtonEventCount()
@@ -865,7 +766,7 @@ Gets the next swipe event value.
 
 !!!hint "Return"
 
-    integer corresponding to the swipe event.
+    swipe event (_int_)
 
 ``` py title="Example"
 # If there is any event recorded
@@ -935,5 +836,6 @@ This function can be used to investigate errors that occurred while controlling 
 error = mates.getError()
 if error == MATES_ERROR_NONE:
     # Last command was successful
+    pass
 ```
 
