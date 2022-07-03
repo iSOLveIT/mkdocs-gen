@@ -33,8 +33,8 @@ of a Mates Controller Object.
 | Parameters | Type | Description                                                            |
 |:----------:|:----:| ---------------------------------------------------------------------- |
 | portName   | str  | the name of the port to be opened. Example: `/dev/ttyUSB0` for Linux   |
-| resetPinIndex | int, str | index of pin connected to reset pin of Mates device             |
-| resetActiveHigh | bool | whether the reset pin is driven from logic low or logic high to reset the device |
+| resetPinIndex<br/>(optional) | int, str | index of pin connected to reset pin of Mates device             |
+| resetActiveHigh<br/>(optional) | bool | whether the reset pin is driven from logic low or logic high to reset the device |
 | debugStream<br/>(optional) | io.TextIOWrapper | Text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
 | debugFileLength<br/>(optional) | int | Determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
 

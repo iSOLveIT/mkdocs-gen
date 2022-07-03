@@ -40,15 +40,6 @@ of a Mates Controller Object.
 === "Simple"
 
     ``` py
-    # Creates a new instance named 'mates' which utilizes: 
-    #  - COM10 as the serial port
-    #  - with no reset function and no output stream
-    MatesController mates = MatesController("COM10") 
-    ```
-
-=== "Specify Reset Function"
-
-    ``` py
     def resetModule():
         # perform reset of 100ms pulse to the RST pin
         # set reset pulse
@@ -65,11 +56,19 @@ of a Mates Controller Object.
 === "Specify Debug Output"
 
     ``` py
+    def resetModule():
+        # perform reset of 100ms pulse to the RST pin
+        # set reset pulse
+        # wait for 100ms
+        # unset reset pulse
+        pass
+
     # Creates a new instance named 'mates' which utilizes: 
     #  - COM7 as the serial port
+    #  - resetModule as the reset function
     #  - output_file as debug file stream
     #  - debugFileLength of zero indicating no circular logging
-    MatesController mates = MatesController("COM7", debugStream=output_file, debugFileLength=0) 
+    MatesController mates = MatesController("COM7", resetFunction=resetModule, debugStream=output_file, debugFileLength=0) 
     ```
 
 !!!note
