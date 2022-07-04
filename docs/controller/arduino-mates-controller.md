@@ -122,7 +122,7 @@ This function must be used once to initialize the Serial port at the start of th
     1. Baudrate is ignored when not using a HardwareSerial (or SoftwareSerial for AVR devices) to communicate with the display. In that case, the Serial/Stream instance needs to be initialize before using this function.
     2. If resetModule is false, this function will attempt to synchronize with the display.
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -158,7 +158,7 @@ This function must be used once to initialize the Serial port at the start of th
 
 This function can be used to determine if the module is in sync with the Arduino host.
 
-!!! hint "Return"
+!!! info "Return"
 
     Sync Status (_boolean_)
 
@@ -181,7 +181,7 @@ This function can be used to setup auto resynchronization when an error occurs.
 | attempts                  | uint8_t  | Number of resync attempts to perform              |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait for every resync attempt (default: boot timeout) |
 
-!!! hint "Return"
+!!! info "Return"
 
     none
 
@@ -209,7 +209,7 @@ This function can be used to establish synchronization between the BBM module an
 | resetToPage0              | bool     | Indicates whether to go to Page0 after a successful synchronization (default: true) |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -259,7 +259,7 @@ The function finishes as soon as the display sends the ready signal or the wait 
 |:-------------------------:|:--------:| ------------------------------------------------- |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -289,7 +289,7 @@ The function finishes as soon as the display sends the ready signal or the wait 
 |:-------------------------:|:--------:| ------------------------------------------------- |
 | waitPeriod<br/>(optional) | uint16_t | Timeout period to wait until the display is ready (default: boot timeout) |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -316,7 +316,7 @@ This function can be used to set the wait period during reset and softReset.
 |:-----------:|:--------:| ----------------------------------------------------- |
 | timeout     | uint32_t | New timeout period to wait until the display is ready |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -329,7 +329,7 @@ mates.setBootTimeout(10000); // sets boot timeout to a period of 10 seconds
 
 This function can be used to reset the wait period during reset and softReset to the default 5 seconds.
 
-!!! hint "Return"
+!!! info "Return"
 
     none
 
@@ -346,7 +346,7 @@ mates.resetBootTimeout(); // resets boot timeout to the default period
 
 This function can be used to attach and error handler function to the library.
 
-!!! hint "Return"
+!!! info "Return"
 
     none
 
@@ -430,7 +430,7 @@ This function can be used to set the backlight level to the _value_ specified.
 |:----------:|:-------:| -------------------------- |
 | value      | uint8_t | The target backlight level |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -447,7 +447,7 @@ This function can be used to navigate to the specified _page_.
 |:----------:|:--------:| --------------------- |
 | page       | uint16_t | The target page index |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -460,7 +460,7 @@ mates.setPage(1); // Navigate to Page1
 
 This function can be used to query the current active page.
 
-!!! hint "Return"
+!!! info "Return"
 
     Active page index (_uint16_t_)
 
@@ -478,7 +478,7 @@ This function can be used to set the 16-bit integer _value_ of the specified _wi
 | widget     | int16_t | The ID of the target widget  |
 | value      | int16_t | The new value for the widget |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -500,7 +500,7 @@ This function can be used to query the specified _widget_'s value.
 |:----------:|:-------:| --------------------------- |
 | widget     | int16_t | The ID of the target widget |
 
-!!! hint "Return"
+!!! info "Return"
 
     Value of the specified **widget** (_int16_t_)
 
@@ -525,7 +525,7 @@ This function can be used to set the 16-bit integer _value_ of the widget specif
 | index      | int8_t      | The index of the target widget |
 | value      | int16_t     | The new value for the widget   |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -549,7 +549,7 @@ This function can be used to query the value of the widget specified by _type_ a
 | type       | MatesWidget | The type of the target widget  |
 | index      | int8_t      | The index of the target widget |
 
-!!! hint "Return"
+!!! info "Return"
 
     Value of the widget specified by **type** and **index** (_int16_t_)
 
@@ -573,7 +573,7 @@ This function can be used to set the 16-bit integer _value_ of the LedDigits spe
 | index      | uint8_t | The index of the target LedDigits |
 | value      | int16_t | The new value for the LedDigits   |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -595,7 +595,7 @@ This function can be used to set the 32-bit integer _value_ of the LedDigits spe
 | index      | uint8_t | The index of the target LedDigits |
 | value      | int32_t | The new value for the LedDigits   |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -617,7 +617,7 @@ This function can be used to set the float _value_ of the LedDigits specified by
 | index      | uint8_t | The index of the target LedDigits |
 | value      | float   | The new value for the LedDigits   |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -641,7 +641,7 @@ This function can be used to set the _value_ of a specified gauge index of the s
 | gaugeIndex | uint8_t     | The gauge index of the target spectrum widget |
 | value      | uint8_t     | The new value for the widget                  |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -665,7 +665,7 @@ This function can be used to set the _value_ of a specified _gaugeIndex_ of the 
 | gaugeIndex | uint8_t     | The gauge index of the target Led Spectrum widget |
 | value      | uint8_t     | The new value for the column/row of the widget    |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -685,7 +685,7 @@ This function can be used to set the _value_ of a specified _gaugeIndex_ of the 
 | gaugeIndex | uint8_t     | The gauge index of the target Led Spectrum widget |
 | value      | uint8_t     | The new value for the column/row of the widget    |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -706,7 +706,7 @@ This function can be used to set the 32-bit integer _value_ of the LedDigits spe
 | g          | uint8_t | The green component of the new color of the MediaColorLed |
 | b          | uint8_t | The blue component of the new color of the MediaColorLed  |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -729,7 +729,7 @@ This function can be used to set the parameter (_param_) of the target _widget_ 
 | param      | int16_t | The target widget parameter            |
 | value      | int16_t | The new value for the widget parameter |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -752,7 +752,7 @@ This function can be used to query the parameter (_param_) of the target _widget
 | widget     | int16_t | The ID of the target widget |
 | param      | int16_t | The target widget parameter |
 
-!!! hint "Return"
+!!! info "Return"
 
     The current **param** value of the **widget** (int16_t)
 
@@ -777,7 +777,7 @@ This function can be used to set the parameter (_param_) of the target widget, d
 | param      | int16_t     | The target widget parameter            |
 | value      | int16_t     | The new value for the widget parameter |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -801,7 +801,7 @@ This function can be used to query the parameter (_param_) of the target widget,
 | index      | int8_t      | The index of the target widget  |
 | param      | int16_t     | The target widget parameter     |
 
-!!! hint "Return"
+!!! info "Return"
 
     The current **param** value of the widget specified by **type** and **index** (int16_t)
 
@@ -823,7 +823,7 @@ This function can be used to adjust the max string buffer _size_ to be used when
 |:----------:|:--------:| ------------------- |
 | size       | uint16_t | The new buffer size (max: 1000) |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (boolean)
 
@@ -842,7 +842,7 @@ This function can be used to clear the TextArea specified by _index_.
 |:----------:|:--------:| --------------------------------------- |
 | index      | uint16_t | The index of the target TextArea widget |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -861,7 +861,7 @@ This function can be used to update the contents of the TextArea specified by _i
 | format     | const char * | The text to be written to the Text Area                        |
 | ...        | -            | Additional values to replace the format specifiers in _format_ |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -888,7 +888,7 @@ This function can be used to update the contents of the TextArea specified by _i
 | index      | uint16_t     | The index of the target TextArea widget                        |
 | str     | String | The String to be written to the Text Area                        |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -906,7 +906,7 @@ This function can be used to clear the PrintArea specified by _index_.
 |:----------:|:--------:| ---------------------------------------- |
 | index      | uint16_t | The index of the target PrintArea widget |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -924,7 +924,7 @@ This function can be used to set the print color (_rgb565_) used by the PrintAre
 | index      | uint16_t | The index of the target PrintArea widget |
 | rgb565     | int16_t  | The color as a 16-bit RGB565 value       |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -945,7 +945,7 @@ This function can be used to set the print color used by the PrintArea specified
 | g          | uint8_t  | The green component of the new color value |
 | b          | uint8_t  | The blue component of the new color value  |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -964,7 +964,7 @@ This function can be used to append a number of bytes (_len_) from the data in _
 | buffer     | const int8_t * | The source of data to be appended         |
 | len        | uint16_t       | The number of bytes to be sent            |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -984,7 +984,7 @@ This function can be used to append contents to the PrintArea specified by _inde
 | format     | const char * | The text to be written to the PrintArea                        |
 | ...        | -            | Additional values to replace the format specifiers in _format_ |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -1012,7 +1012,7 @@ This function can be used to append contents to the PrintArea specified by _inde
 | index      | uint16_t     | The index of the target Print Area widget                      |
 | str        | String       | The text to be written to the PrintArea                        |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -1032,7 +1032,7 @@ This function can be used to append a number of 16-bit values (_len_) from the d
 | buffer     | const int16_t * | The source of data to be appended    |
 | len        | uint16_t        | The number of values to be sent      |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -1052,7 +1052,7 @@ This function can be used to append contents to the DotMatrix specified by _inde
 | format     | const char * | The text to be written to the DotMatrix                        |
 | ...        | -            | Additional values to replace the format specifiers in _format_ |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -1079,7 +1079,7 @@ This function can be used to update the contents of the DotMatrix specified by _
 | index      | uint16_t     | The index of the target DotMatrix widget                       |
 | str        | String       | The String to be written to the DotMatrix                      |
 
-!!! hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -1093,7 +1093,7 @@ mates.updateDotMatrix(2, str); // Update DotMatrix2 to 'str'
 
 This function can be used to query the number of button events recorded by a touch screen module
 
-!!! hint "Return"
+!!! info "Return"
 
     Number of recorded button events (_uint16_t_)
 
@@ -1107,7 +1107,7 @@ uint16_t btnEvents = mates.getButtonEventCount();
 
 This function can be used to query the source of next recorded button event
 
-!!! hint "Return"
+!!! info "Return"
 
     Widget ID of the next event button (_int16_t_)
 
@@ -1131,7 +1131,7 @@ if (mates.getButtonEventCount() > 0) {
 
 This function can be used to query the number of swipe events recorded by a touch screen module
 
-!!! hint "Return"
+!!! info "Return"
 
     Number of recorded swipe events (_uint16_t_)
 
@@ -1145,7 +1145,7 @@ uint16_t swipeEvents = mates.getSwipeEventCount();
 
 This function can be used to query the source of next recorded button event
 
-!!! hint "Return"
+!!! info "Return"
 
     Swipe event (int16_t)
 
@@ -1170,7 +1170,7 @@ if (mates.getSwipeEventCount() > 0) {
 
 This function can be used to query the version number of the library.
 
-!!! hint "Return"
+!!! info "Return"
 
     Version Information (_String_)
 
@@ -1184,7 +1184,7 @@ String matesVersion = mates.getVersion();
 
 This function can be used to query the version number of Mates Studio compatible with the version of the library.
 
-!!! hint "Return"
+!!! info "Return"
 
     Compatibility Version Information (_String_)
 
@@ -1198,7 +1198,7 @@ String compatVersion = mates.getCompatibility();
 
 This function can be used to print the version number of the library and the compatible Mates Studio version to the debug serial port. If no debug serial was specified in the constructor, this function does nothing.
 
-!!! hint "Return"
+!!! info "Return"
 
     none
 
@@ -1212,7 +1212,7 @@ mates.printVersion();
 
 This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in [here](mates-controller-errors.md).
 
-!!! hint "Return"
+!!! info "Return"
 
     Current error code (_MatesError_)
 

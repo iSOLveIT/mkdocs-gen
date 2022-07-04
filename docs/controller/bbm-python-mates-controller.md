@@ -55,7 +55,7 @@ of a Mates Controller Object.
     MatesController mates = MatesController("COM7", debugStream=output_file, debugFileLength=0) 
     ```
 
-!!!note
+!!! note
 
     If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library.
 

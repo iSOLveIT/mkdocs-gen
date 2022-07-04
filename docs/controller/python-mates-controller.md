@@ -71,7 +71,7 @@ of a Mates Controller Object.
     MatesController mates = MatesController("COM7", resetFunction=resetModule, debugStream=output_file, debugFileLength=0) 
     ```
 
-!!!note
+!!! note
 
     If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library.
 
@@ -89,7 +89,7 @@ Begins the serial connection if portname not supplied in constructor.
 |:----------:|:----:| ----------------------------------------------- |
 | baudrate   | str  | the baudrate of the serial port (default: 9600) |
 
-!!!hint "Return"
+!!! info "Return"
 
     None
 
@@ -113,7 +113,7 @@ Begins the serial connection if portname not supplied in constructor.
 
 Closes opened serial port.
 
-!!!hint "Return"
+!!! info "Return"
 
     None
 
@@ -130,7 +130,7 @@ Uses hardware driven signal to hard reset companion device.
 |:----------:|:----:| ----------------------------------------------- |
 | waitPeriod | int  | determines how long to wait (milliseconds) before checking for connection, must be within the uint16 datatype range (default: 5000) |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -157,7 +157,7 @@ Sends a serial command to the connected device to trigger a reset.
 |:----------:|:----:| ----------------------------------------------- |
 | waitPeriod | int  | determines how long to wait (milliseconds) before checking for connection, must be within the uint16 datatype range (default: 5000) |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -184,7 +184,7 @@ Sets the intensity of the backlight of connected device.
 |:----------:|:----:| ----------------------------------------------- |
 | backlightValue | int | intensity of backlight, must be between 0 and 15 |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -201,7 +201,7 @@ Sets the page to be displayed on the connected device.
 |:----------:|:----:| ----------------------------------------------- |
 | pageIndex  | int  | index of page to set as current, must be within the uint16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -214,7 +214,7 @@ mates.setPage(1) # Navigate to Page1
 
 Returns the index of the current page displayed by the connected device.
 
-!!!hint "Return"
+!!! info "Return"
 
     Active page index (_int_)
 
@@ -230,9 +230,9 @@ Sets the value of a specific widget based on the provided widgetId.
 | Parameters | Type | Description                                     |
 |:----------:|:----:| ----------------------------------------------- |
 | widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
-| value      | int  | the value the corresponding widget will be set to, must be within the int16 datatype range |
+| value      | int  | the value the target widget will be set to, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -249,7 +249,7 @@ Gets the value of a specific widget based on the provided identifier.
 |:----------:|:----:| ----------------------------------------------- |
 | widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     Value of the widget specified by **widgetId** (_int_)
 
@@ -267,9 +267,9 @@ Sets the value of a specific widget based on the index within a widget type.
 |:----------:|:----:| ----------------------------------------------- |
 | widgetType | MatesWidget | the type of the target widget            |
 | widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
-| value      | int  | the value the corresponding widget will be set to, must be within the int16 datatype range |
+| value      | int  | the value the target widget will be set to, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -278,7 +278,7 @@ Sets the value of a specific widget based on the index within a widget type.
 mates.setWidgetValue(MATES_MEDIA_GAUGE_B, 0, 50)
 ```
 
-!!!note
+!!! note
 
     All applicable widget types are listed in [here](../Mates Studio/mates-studio-graphics-editor.md#mates-widgets-compatibility).
 
@@ -292,7 +292,7 @@ Gets the value of a specific widget based on the index within a widget type.
 | widgetType | MatesWidget | the type of the target widget            |
 | widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     Value of the widget specified by **widgetType** and **widgetIndex** (_int_)
 
@@ -301,7 +301,7 @@ Gets the value of a specific widget based on the index within a widget type.
 widgetVal = mates.getWidgetValue(MATES_MEDIA_LED, 4)
 ```
 
-!!!note
+!!! note
 
     This function is not applicable to _Int32_ and _Float_ LedDigits
 
@@ -313,9 +313,9 @@ Sets the 16-bit integer value of the Led Digits widget specified by widgetIndex.
 | Parameters | Type | Description                                     |
 |:----------:|:----:| ----------------------------------------------- |
 | widgetIndex | int | the index of the LedDigits, must be within the uint8 datatype range |
-| value      | int  | the value the corresponding LedDigits will be set to, must be within the int16 datatype range |
+| value      | int  | the value the target LedDigits will be set to, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -323,7 +323,7 @@ Sets the 16-bit integer value of the Led Digits widget specified by widgetIndex.
 mates.setLedDigitsShortValue(2, 50) # Set value of LedDigits2 to 50
 ```
 
-!!!note
+!!! note
 
     This function is only applicable for _Int16_ LedDigits
 
@@ -335,9 +335,9 @@ Sets the 32-bit integer value of the Led Digits widget specified by widgetIndex.
 | Parameters | Type | Description                                     |
 |:----------:|:----:| ----------------------------------------------- |
 | widgetIndex | int | the index of the LedDigits, must be within the uint8 datatype range |
-| value      | int  | the value the corresponding LedDigits will be set to, must be within the int32 datatype range |
+| value      | int  | the value the target LedDigits will be set to, must be within the int32 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -345,7 +345,7 @@ Sets the 32-bit integer value of the Led Digits widget specified by widgetIndex.
 mates.setLedDigitsLongValue(2, 50) # Set value of LedDigits2 to 50
 ```
 
-!!!note
+!!! note
 
     This function is only applicable for _Int32_ LedDigits
 
@@ -357,9 +357,9 @@ Sets the 32-bit float value of the Led Digits widget specified by widgetIndex.
 | Parameters | Type | Description                                     |
 |:----------:|:----:| ----------------------------------------------- |
 | widgetIndex | int | the index of the LedDigits, must be within the uint8 datatype range |
-| value      | int  | the value the corresponding LedDigits will be set to, must be within the 32-bit float datatype range |
+| value      | int  | the value the target LedDigits will be set to, must be within the 32-bit float datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -367,7 +367,7 @@ Sets the 32-bit float value of the Led Digits widget specified by widgetIndex.
 mates.setLedDigitsFloatValue(2, 9.989) # Set value of LedDigits2 to 9.989
 ```
 
-!!!note
+!!! note
 
     This function is only applicable for _Float_ LedDigits
 
@@ -380,9 +380,9 @@ Sets the value of the column (specified by gaugeIndex) of the spectrum widget (s
 |:----------:|:----:| ----------------------------------------------- |
 | spectrumId | int  | the unique id of the Spectrum widget, must be within the int16 datatype range |
 | gaugeIndex | int  | the gauge index/column of the Spectrum widget, must be within the uint8 datatype range |
-| value      | int  | the value the corresponding spectrum column will be set to, must be within the uint8 datatype range |
+| value      | int  | the value the target spectrum column will be set to, must be within the uint8 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -400,9 +400,9 @@ Sets the value of the column (specified by gaugeIndex) of the Led Spectrum widge
 |:----------:|:----:| ----------------------------------------------- |
 | ledSpectrumIndex | int | the index of the LedSpectrum widget, must be within the uint8 datatype range |
 | gaugeIndex | int  | the gauge index/column of the Spectrum widget, must be within the uint8 datatype range |
-| value      | int  | the value the corresponding spectrum column will be set to, must be within the uint8 datatype range |
+| value      | int  | the value the target spectrum column will be set to, must be within the uint8 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -420,9 +420,9 @@ Sets the value of the column (specified by gaugeIndex) of the Media Spectrum wid
 |:----------:|:----:| ----------------------------------------------- |
 | mediaIndex | int  | the index of the MediaSpectrum widget, must be within the uint8 datatype range |
 | gaugeIndex | int  | the gauge index/column of the Spectrum widget, must be within the uint8 datatype range |
-| value      | int  | the value the corresponding spectrum column will be set to, must be within the uint8 datatype range |
+| value      | int  | the value the target spectrum column will be set to, must be within the uint8 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -440,9 +440,9 @@ Sets the value of a widget parameter based on widget id and parameter id.
 |:----------:|:----:| ----------------------------------------------- |
 | widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
 | param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
-| value      | int  | the value the corresponding parameter will be set to, must be within the int16 datatype range |
+| value      | int  | the value the target parameter will be set to, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -461,7 +461,7 @@ Gets the value of a widget parameter based on widget id and parameter id.
 | widgetId   | int  | the unique id of the target widget, must be within the int16 datatype range |
 | param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     The current **param** value of the widget specified by **widgetId** (_int_)
 
@@ -480,9 +480,9 @@ Sets the value of a widget parameter based on widget index and parameter id.
 | widgetType | MatesWidget | the type of the target widget            |
 | widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
 | param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
-| value      | int  | the value the corresponding parameter will be set to, must be within the int16 datatype range |
+| value      | int  | the value the target parameter will be set to, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -502,7 +502,7 @@ Gets the value of a widget parameter based on widget index and parameter id.
 | widgetIndex | int | the index of the target widget, must be within the uint8 datatype range |
 | param      | int  | the unique id of the target parameter, must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     The current **param** value of the widget specified by **widgetType** and **widgetIndex** (_int_)
 
@@ -520,7 +520,7 @@ Clears a targeted Text Area.
 |:----------:|:----:| ----------------------------------------------- |
 | textAreaIndex | int | the index of the target TextArea, must be within the uint16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -539,7 +539,7 @@ Updates the text displayed within Text Area widget.
 | textFormat | str  | the string or text format to be written to the TextArea |
 | formatArgs |      | zero or more values to be formatted into the provided text format string |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -565,7 +565,7 @@ Clears a targeted Print Area.
 |:----------:|:----:| ----------------------------------------------- |
 | printAreaIndex | int | the index of the target PrintArea, must be within the uint16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -583,7 +583,7 @@ Sets the color of a PrintArea Widget based on an rgb565 value.
 | rgb565 | int | 16-bit color to set widget to, value must be within uint16 datatype range |
 
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -603,7 +603,7 @@ Sets the color of a targeted Print Area.
 | green      | int  | 8-bit green component of the target color, value must be within uint8 datatype range |
 | blue       | int  | 8-bit blue component of the target color, value must be within uint8 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -622,7 +622,7 @@ Appends an array of 8-bit integers to a targeted Print Area.
 | printAreaIndex | int | the index of the target PrintArea, must be within the uint16 datatype range |
 | buffer |  \[int\] | the list of values to be appended to PrintArea, values must be within the uint8 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -642,7 +642,7 @@ Appends text to a targeted Print Area.
 | textFormat | str  | the string or text format to be appended to the PrintArea |
 | formatArgs |      | zero or more values to be formatted into the provided text format string |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -670,7 +670,7 @@ Appends a list of integers to a Scope widget.
 | scopeIndex | int  | the index of the target Scope, must be within the uint8 datatype range |
 | buffer |  \[int\] | the list of values to be appended to Scope, values must be within the int16 datatype range |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -690,7 +690,7 @@ Changes the text displayed by the target Dot Matrix widget.
 | textFormat | str  | the string or text format to be appended to the DotMatrix |
 | formatArgs |      | zero or more values to be formatted into the provided text format string |
 
-!!!hint "Return"
+!!! info "Return"
 
     success or failure (_boolean_)
 
@@ -713,7 +713,7 @@ Changes the text displayed by the target Dot Matrix widget.
 Gets the number of events recorded from applicable button widgets.
 
 
-!!!hint "Return"
+!!! info "Return"
 
     Number of recorded button events (_int_)
 
@@ -728,7 +728,7 @@ buttonEvents = mates.getButtonEventCount()
 Gets the next event source logged from applicable buttons.
 
 
-!!!hint "Return"
+!!! info "Return"
 
     Widget ID of the next event button (_int_)
 
@@ -748,7 +748,7 @@ if mates.getButtonEventCount() > 0:
 Gets the number of events recorded from swipe gestures.
 
 
-!!!hint "Return"
+!!! info "Return"
 
     Number of recorded swipe events (_int_)
 
@@ -763,7 +763,7 @@ swipeEvents = mates.getSwipeEventCount()
 Gets the next swipe event value.
 
 
-!!!hint "Return"
+!!! info "Return"
 
     swipe event (_int_)
 
@@ -784,7 +784,7 @@ if mates.getSwipeEventCount() > 0:
 
 Helper function to obtain the version of the Python Mates Controller library.
 
-!!!hint "Return"
+!!! info "Return"
 
     Version Information (_str_)
 
@@ -798,7 +798,7 @@ matesVersion = mates.getVersion()
 
 Helper function to obtain the version of the Mates Studio compatible with this library version.
 
-!!!hint "Return"
+!!! info "Return"
 
     Compatibility Version Information (_str_)
 
@@ -812,7 +812,7 @@ compatVersion = mates.getCompatibility()
 
 Debugging function to print the version of the Mates Studio compatible along with this specific library version.
 
-!!!hint "Return"
+!!! info "Return"
 
     None
 
@@ -826,7 +826,7 @@ mates.printVersion()
 
 This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in [here](mates-controller-errors.md).
 
-!!!hint "Return"
+!!! info "Return"
 
     Current error code (_MatesError_)
 
