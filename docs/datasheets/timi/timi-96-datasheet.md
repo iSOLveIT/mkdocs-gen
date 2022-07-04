@@ -36,7 +36,7 @@ TIMI’s main interface is a 3.3V level Asynchronous Serial UART and features 3 
 
 ## Hardware Detail
 
-TIMI-96 utilises the BBM MatesBus, which is a unique interface pinout designed to be simple and easy to use.
+TIMI-96 utilizes the BBM MatesBus, which is a unique interface pinout designed to be simple and easy to use.
 
 The MatesBus is made up of 2 rows of 5 pins, 0.1” (2.54mm) pitch, spaced 0.3” (7.62mm) apart, ideal for direct plug into a breadboard, or compatible adaptor or development board.
 
@@ -53,7 +53,7 @@ The H2 Header doubles as a programming interface and features Power and Serial U
 
 ![TIMI-96 Pinout](img/timi-96-pinout.png)
 
-!!!info "User I/O – Dual 5 way headers (H1 + H2)"
+!!! abstract "User I/O – Dual 5 way headers (H1 + H2)"
 
     | Header/Pin  | Symbol  | I/O Type | Description                                              |
     |:-----------:|:-------:|:--------:|:-------------------------------------------------------- |
@@ -80,7 +80,7 @@ _+5V (Device Supply Voltage)_
 
 :   Display supply voltage pin. This pin should be connected to a stable supply voltage in the range of 4.0 Volts to 5.5 Volts DC. Nominal operating voltage is 5.0 Volts for optimal display performance.
 
-    !!!note
+    !!! note
         If absolutely required, 3.3V can be applied to the +5V input, and the module will operate correctly, but with a lower backlight brightness. For this reason, it is not a recommended configuration, but for systems without 5V it enables compatibility. Note the 3.3V regulators will be passing the input voltage and not regulating themselves, so ensure you are using a clean power supply input.
 
 _3V3 (Device Output Voltage)_
@@ -171,9 +171,9 @@ These items are not required but will assist development in situations requiring
 
 ### Required Software
 
-All software development for the TIMI-96 module utilises the Mates Studio IDE.
+All software development for the TIMI-96 module utilizes the Mates Studio IDE.
 
-![Mates Studio Splashscreen](img/mates-studio-splashscreen.jpg)
+![Mates Studio Splash Screen](img/mates-studio-splashscreen.jpg)
 
 The latest version of Mates Studio can be downloaded from the [Breadboard Mates website](https://breadboardmates.com/) or directly from this link [here](https://breadboardmates.com/download/mates-studio).
 
@@ -187,18 +187,18 @@ Details specific about the Mates Studio IDE can be found in the Mates Studio IDE
 
 ### Overview
 
-TIMI utilises a USB-to-Serial programmer for application and firmware updates, which programs both the Processor Flash memory, along with the on-board SPI Flash memory.
+TIMI utilizes a USB-to-Serial programmer for application and firmware updates, which programs both the Processor Flash memory, along with the on-board SPI Flash memory.
 
 The programmer, dubbed BBM-Prog, is the official BBM Programmer and can also be used for testing and debugging of TIMI applications using the Mates Studio IDE.
 
 
 ### Detail
 
-The BBM-PROG utilises the Silicon Labs CP2104 USB to UART bridge, and uses the TIMI’s Serial UART to load applications, firmware/PmmC and media content.
+The BBM-PROG utilizes the Silicon Labs CP2104 USB to UART bridge, and uses the TIMI’s Serial UART to load applications, firmware/PmmC and media content.
 
 ![BBM Programmer](img/bbm-programmer.png){: class="custom-img-center" }
 
-The BBM-PROG features a 3-pin jumper with shunt, which is present to change the way the programmer handles the Reset line, utilised by TIMI and other devices.
+The BBM-PROG features a 3-pin jumper with shunt, which is present to change the way the programmer handles the Reset line, utilized by TIMI and other devices.
 
 TIMI requires the jumper to be positioned like the image above, closest to the 5-way female header. This makes the programmer compatible with programming the 4D Labs Pixxi-28 processor.
 
@@ -217,7 +217,7 @@ One of the simplest interfaces for TIMI is connecting TIMI to the bottom of a br
 
 ### Breadboard Interface to a Host
 
-TIMI can interface to virtually any microcontroller or Host, using a Serial UART interface. Simple wire connections can be achieved directly to TIMI or via a breadboard. If the microcontroller or Host utilises 3.3V or 5.0V UART, then TIMI can be easily connected.
+TIMI can interface to virtually any microcontroller or Host, using a Serial UART interface. Simple wire connections can be achieved directly to TIMI or via a breadboard. If the microcontroller or Host utilizes 3.3V or 5.0V UART, then TIMI can be easily connected.
 
 ![TIMI-96 Arduino/Atmel Connection](img/timi-96-connection-arduino-atmel.png){: class="custom-img-center" }
 
@@ -245,7 +245,7 @@ The same situation applies for Hosts/Development boards which also only have a s
 
 ## Specifications & Ratings
 
-!!!info "Recommended Operating Conditions"
+!!! abstract "Recommended Operating Conditions"
 
     | Parameter                 | Conditions / Information            | Min   | Typ | Max   | Units |
     |:------------------------- |:----------------------------------- |:----- |:--- |:----- |:----- |
@@ -263,14 +263,14 @@ The same situation applies for Hosts/Development boards which also only have a s
     | Output Current            | Output Current capability for User  | —     | 500 | —     | mA    |
     | GPIO Current              | Source / Sink                       | —     | —   | 15    | mA    |
 
-!!!info "Operating Characteristics"
+!!! abstract "Operating Characteristics"
 
     | Parameter            | Conditions / Information                                                | Min   | Typ | Max | Unit |
     |:-------------------- |:----------------------------------------------------------------------- |:-----:|:---:|:---:|:----:|
     | Supply Current (ICC) | 5V Supply – Normal Operation                                            | —     | 90  | —   | mA   |
     | Display Endurance    | Hours of operation, measured to when display is 50% original brightness | 30000 | —   | —   | H    |
 
-!!!info "LCD Display Information"
+!!! abstract "LCD Display Information"
 
     | Parameter                 | Conditions / Information            | Specification                   |
     |:------------------------- |:----------------------------------- |:------------------------------- |
@@ -289,7 +289,7 @@ The same situation applies for Hosts/Development boards which also only have a s
 ## Revision History
 
 
-!!!info "Document Revision"
+!!! abstract "Document Revision"
 
     | Revision Number | Date       | Description            |
     |:---------------:|:----------:|:---------------------- |
@@ -301,7 +301,7 @@ The same situation applies for Hosts/Development boards which also only have a s
     | 0.6             | 19/07/2021 | Formatting Update      |
     | 1.0             | 28/07/2021 | Initial Public Release |
 
-!!!info "Hardware Revision"
+!!! abstract "Hardware Revision"
 
     | Revision Number | Date       | Description                 |
     |:---------------:|:----------:|:--------------------------- |
