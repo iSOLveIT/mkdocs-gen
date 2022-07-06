@@ -36,29 +36,32 @@ of a Mates Controller Object.
 | debugStream<br/>(optional) | io.TextIOWrapper | text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
 | debugFileLength<br/>(optional) | int | determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
 
-=== "Simple"
-
-    ``` py
-    # Creates a new instance named 'mates' which utilizes: 
-    #  - COM10 as the serial port
-    #  - with no reset function and no output stream
-    MatesController mates = MatesController("COM10") 
-    ```
-
-=== "Specify Debug Output"
-
-    ``` py
-    # Creates a new instance named 'mates' which utilizes: 
-    #  - COM7 as the serial port
-    #  - output_file as debug file stream
-    #  - debugFileLength of zero indicating no circular logging
-    MatesController mates = MatesController("COM7", debugStream=output_file, debugFileLength=0) 
-    ```
-
 !!! note
 
     If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library.
 
+??? example
+
+    === "Simple"
+
+        ``` py
+        # Creates a new instance named 'mates' which utilizes: 
+        #  - COM10 as the serial port
+        #  - with no reset function and no output stream
+        MatesController mates = MatesController("COM10") 
+        ```
+
+    === "Specify Debug Output"
+
+        ``` py
+        # Creates a new instance named 'mates' which utilizes: 
+        #  - COM7 as the serial port
+        #  - output_file as debug file stream
+        #  - debugFileLength of zero indicating no circular logging
+        MatesController mates = MatesController("COM7", debugStream=output_file, debugFileLength=0) 
+        ```
+
+        
 ## Methods
 
 All methods are carried over from [Python Mates Controller library](python-mates-controller.md#methods) instance.
