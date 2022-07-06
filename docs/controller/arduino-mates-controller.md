@@ -710,10 +710,10 @@ This function can be used to set the _value_ of a specified _gaugeIndex_ of the 
 
 ??? example
 
-``` cpp
-// Set value of gauge index 2 of LedSpectrum5 to 64
-mates.setLedSpectrumValue(5, 2, 64);
-```
+    ``` cpp
+    // Set value of gauge index 2 of LedSpectrum5 to 64
+    mates.setLedSpectrumValue(5, 2, 64);
+    ```
 
 
 ### setMediaSpectrumValue(type, index, gaugeIndex, value)
