@@ -19,7 +19,7 @@ An ever-increasing range of hardware and continuously evolving software suite an
 
 Breadboard Mates was established in October 2020 to bring breadboard-friendly products to the market, significantly reducing the time and components required to develop and experiment with electronics.
 
-From hobbyist to engineering professional, Breadboard Mates cutting edge products can be utilised for seamless development with the help of the integrated products like [TIMI](https://breadboardmates.com/products/timi-96/) (Tiny Intelligent Modular Instrument) and the [Mates Studio](https://breadboardmates.com/products/mates-studio/) software development tool.
+From hobbyist to engineering professional, Breadboard Mates cutting edge products can be utilized for seamless development with the help of the integrated products like [TIMI](https://breadboardmates.com/products/timi-96/) (Tiny Intelligent Modular Instrument) and the [Mates Studio](https://breadboardmates.com/products/mates-studio/) software development tool.
 
 Mates Studio is unlike any other, offering four different programming methods with a library of hundreds of pre-designed pages and widgets. The result is an unprecedented increase in development speed for stand-alone, host driven or PC testing applications.
 
