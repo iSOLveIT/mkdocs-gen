@@ -29,17 +29,17 @@ For an added convenience, both Commander and Architect offers a simple controlle
 
 The Mates Controller tool can be divided into three separate columns.
 
-![Mates Controller Areas](img/mates-controller-areas.jpg)
+![Mates Controller Areas](img/mates-controller/areas.jpg)
 
-- Page Navigation
+1. Page Navigation
 
     :   This provides a simple way to change between the pages present in the project
 
-- Main Control Area
+2. Main Control Area
 
     :   This area displays all widgets that can be interacted with
 
-- Command Viewer Area
+3. Command Viewer Area
 
     :   This shows all the commands sent by during the simulation
 

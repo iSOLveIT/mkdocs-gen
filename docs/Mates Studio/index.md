@@ -251,6 +251,8 @@ The Tools Menu group includes helpful items that can be utilized during developm
 
 ### Help Menu
 
+The Help Menu group includes external references and support links.
+
 ![Help Menu](img/help-menu.jpg){: class="custom-img-center" }
 
 | Item                     | Description                                                                     |
@@ -261,7 +263,7 @@ The Tools Menu group includes helpful items that can be utilized during developm
 | Datasheets               | Opens Breadboard Mates Resource Centre Datasheets using the default web browser |
 | Tutorials                | Opens Breadboard Mates Resource Centre Tutorials using the default web browser  |
 | Projects                 | Opens Breadboard Mates Resource Centre Projects using the default web browser   |
-| About Mates Studio       | Shows the version information of Mates Studio                                    |
+| About Mates Studio       | Shows the version information of Mates Studio                                   |
 
 
 ## Release Notes

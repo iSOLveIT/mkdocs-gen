@@ -1,12 +1,75 @@
 ---
 tags:
-  - Commander
   - Architect
   - Genius
   - Builder
 ---
 
 # Mates Studio Graphics Editor
+
+## Introduction
+
+Mates Studio provides a graphics editor for its Architect, Genius and Builder environments. This provides the ability to create custom page designs using various widgets supported by the BBM display modules. The interface is composed a graphics toolbar and three main editor tools.
+
+![Graphics Editor Tools](img/graphics-editor/areas.jpg)
+
+1. [Page Selection](#page-selection)
+
+    :   Provides a simple interface to add pages and select a page for editing.
+
+2. [Visual Editor](#visual-editor)
+
+    :   Provides a drag-n-drop interface for selecting and positioning widgets.
+
+3. [Property Editor](#property-editor)
+
+    :   Provides an editable property table for editing page and widget parameters
+
+
+## Graphics Toolbar
+
+The graphics toolbar provides buttons and dropdown menus for managing pages and widgets.
+
+![Graphics Toolbar](img/graphics-editor/toolbar.jpg)
+
+From left to right, the toolbar items are described in the table below:
+
+| Item               | Description                                                                                 |
+|:------------------ |:------------------------------------------------------------------------------------------- |
+| Copy Page          | Copies the selected page for pasting                                                        |
+| Paste Page         | Pastes the recently copied page to the current project                                      |
+| Capture Page       | Saves a snapshot of the selected page as an image file                                      |
+| Delete Page        | Deletes the selected page                                                                   |
+| Add Widget         | Opens a Select Widget window                                                                |
+| Copy Widget        | Copies the selected widget for pasting                                                      |
+| Cut Widget         | Copies the selected widget for moving to another page                                       |
+| Paste Widget       | Pastes the recently copied widget                                                           |
+| Delete Widget      | Deletes the selected widget                                                                 |
+| Load Configuration | Loads a widget or page configuration file                                                   |
+| Save Configuration | Saves the selected a widget or page as a configuration file                                 |
+| Paste Code         | Pastes a code snippet for the widget/page in the current cursor position in the text editor |
+| Page/Widget Select | Lists the page and the widgets in the selected page for selection                           |
+
+
+## Page Selection
+
+
+### Adding a Blank Page
+
+
+### Adding a Page from Template
+
+
+## Visual Editor
+
+
+### Add from Selection
+
+
+### Add from Template
+
+
+## Property Editor
 
 
 ## Graphics Editor Widgets
