@@ -1,3 +1,13 @@
+---
+tags:
+  - Commander
+  - Architect
+  - Arduino
+  - C
+  - Python
+  - MicroPython
+---
+
 # Mates Controller Libraries Error Codes
 
 The table below lists the possible errors after running a function/method from the libraries.

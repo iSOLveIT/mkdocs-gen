@@ -1,6 +1,16 @@
-# Mates Studio Graphics Editor Manual
+---
+tags:
+  - Commander
+  - Architect
+  - Genius
+  - Builder
+---
+
+# Mates Studio Graphics Editor
+
 
 ## Graphics Editor Widgets
+
 
 ## Mates Widgets Compatibility
 

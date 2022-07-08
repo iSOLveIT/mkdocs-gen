@@ -1,8 +1,10 @@
 site_name: Resource Centre
 site_url: https://resources.breadboardmates.com/
+site_author: Breadboard Mates
+site_description: This Resource Centre provides all the latest manuals, datasheets, tutorials and projects from Breadboard Mates
 copyright: Copyright &copy; 2022 Breadboard Mates
 extra:
-  homepage: https://breadboardmates.com/
+  # homepage: https://breadboardmates.com/
   social:
     - icon: material/github
       link: https://github.com/BreadBoardMates
@@ -51,6 +53,7 @@ nav:
       - Wing Adaptor: datasheets/accessories/bbm-wing-adaptor-datasheet.md
     - MatesBUS: datasheets/matesbus-datasheet.md
   - Tutorials:
+    - tutorials/index.md
     - Commander:
       - tutorials/commander/index.md
       - Tutorial No.1: tutorials/commander/tutorial-1.md
@@ -65,15 +68,17 @@ nav:
       - Tutorial No.1: tutorials/builder/tutorial-1.md
   - Projects:
     - Standalone:
-      - Pacman: projects/standalone/reptor-pacman.md
+      - Pacman: projects/standalone/pacman.md
     - Arduino:
-      - RGB Controller: projects/arduino/reptor-rgb-controller.md
+      - RGB Controller: projects/arduino/rgb-controller.md
+    - Raspberry Pi:
+      - Status Monitor: projects/raspberrypi/status-monitor.md
 extra_css:
     - css/custom.css
 theme:
   name: material
-  logo: full-logo.svg
-  favicon: logo.svg
+  logo: img/full-logo.svg
+  favicon: img/logo.svg
   font:
     text: Montserrat
     code: Fira Mono
@@ -113,6 +118,9 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
 markdown_extensions:
+  - meta
+  - toc:
+      title: Table of Contents
   - admonition
   - pymdownx.details
   - pymdownx.highlight:
@@ -126,6 +134,8 @@ markdown_extensions:
   - md_in_html
   - def_list
 plugins:
+    - tags:
+        tags_file: index.md
     - search
     - pdf-export:
         enabled_if_env: ENABLE_PDF_EXPORT

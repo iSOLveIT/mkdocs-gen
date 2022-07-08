@@ -1,3 +1,9 @@
+---
+tags:
+  - TIMI
+  - TIMI-130
+---
+
 # Datasheet: TIMI-130
 
 
@@ -51,7 +57,7 @@ The TIMI-130 MatesBus has 10 physical pins, 5 on each side of the interface neck
 
 The H2 Header doubles as a programming interface and features Power and Serial UART, while the H1 Header features Power Output and 3 GPIO (General Purpose IO).
 
-![TIMI-130 Pinout](img/timi-130/pinout.png)
+![TIMI-130 Pinout](img/timi-130/pinout.svg)
 
 !!! abstract "User I/O – Dual 5 way headers (H1 + H2)"
 
@@ -212,7 +218,7 @@ The Programmer, dubbed BBM-Prog, is the official BBM Programmer and can also be 
 
 The BBM-PROG utilizes the Silicon Labs CP2104 USB to UART bridge, and uses the TIMI’s Serial UART to load applications, firmware/PmmC and media content.
 
-![BBM Programmer](img/bbm-prog/front-back.png){: class="custom-img-center" width="80%" }
+![BBM Programmer](img/bbm-prog/front-back.png){: class="custom-img-center" width="40%" }
 
 The BBM-PROG features a 3-pin jumper with shunt, which is present to change the way the programmer handles the Reset line, utilized by TIMI and other devices.
 
@@ -228,14 +234,14 @@ If the jumper is placed on the 2 pins closest to the USB connector, this will ma
 
 One of the simplest interfaces for TIMI-130 is connecting TIMI-130 to the bottom of a breadboard, connecting the 5-way right angle header into the breadboard next to the H2 header side of TIMI, and attaching the BBM-Programmer to the 5-way header.
 
-![TIMI-130 Programming Connection](img/timi-130/programming-connection.png){: class="custom-img-center" width="80%" }
+![TIMI-130 Programming Connection](img/timi-130/programming-connection.png){: class="custom-img-center" width="60%" }
 
 
 ### Breadboard Interface to a Host
 
 TIMI-130 can interface to virtually any microcontroller or Host, using a Serial UART interface. Simple wire connections can be achieved directly to TIMI or via a breadboard. If the microcontroller or Host utilizes 3.3V or 5.0V UART, then TIMI can be easily connected.
 
-![TIMI-130 Arduino/Atmel Connection](img/timi-130/arduino-atmel-connection.png){: class="custom-img-center" width="80%" }
+![TIMI-130 Arduino/Atmel Connection](img/timi-130/arduino-atmel-connection.png){: class="custom-img-center" }
 
 !!! note
 
@@ -255,7 +261,7 @@ The same situation applies for Hosts/Development boards which also only have a s
 
 ## Hardware Drawing
 
-![TIMI-130 Schematic Diagram](img/timi-130/mechanical.svg){: class="custom-img-enlarge" }
+![TIMI-130 Mechanical Drawing](img/timi-130/mechanical.svg){: class="custom-img-enlarge" }
 
 
 ## Hardware Schematic

@@ -1,1 +1,6 @@
-# Mates Studio Code Editor Manual
+---
+tags:
+  - Genius
+---
+
+# Mates Studio Code Editor

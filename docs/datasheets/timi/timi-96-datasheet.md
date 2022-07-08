@@ -1,9 +1,15 @@
+---
+tags:
+  - TIMI
+  - TIMI-96
+---
+
 # Datasheet: TIMI-96
 
 
 ## Introduction
 
-![TIMI-96](img/timi-96.png){: align=right width="40%" }
+![TIMI-96](img/timi-96.png){: align=right width="33%" }
 
 TIMI-96 (ref. TIMI) is a unique breadboard compatible display development module, aimed to speed up and reinvent the way electronic testing, development and projects are carried out, in either stand alone, host interfaced, PC tethered, or educational settings.
 
@@ -40,7 +46,7 @@ TIMI-96 utilizes the BBM MatesBus, which is a unique interface pinout designed t
 
 The MatesBus is made up of 2 rows of 5 pins, 0.1” (2.54mm) pitch, spaced 0.3” (7.62mm) apart, ideal for direct plug into a breadboard, or compatible adaptor or development board.
 
-![TIMI-96 Demos](img/timi-96-4demos.png)
+![TIMI-96 Demos](img/timi-96/4demos.png){: class="custom-img-center" width="80%" }
 
 While the TIMI-96 can be orientated in any of its 4 positions, Portrait, Landscape, Portrait Reversed and Landscape Reversed, its natural position forms an upside-down ‘T’ shape and is designed to interface with the bottom of a breadboard, sitting closest to the User, leaving the top part of the breadboard free for components and wiring.
 
@@ -51,7 +57,7 @@ The TIMI-96 MatesBus has 10 physical pins, 5 on each side of the interface neck,
 
 The H2 Header doubles as a programming interface and features Power and Serial UART, while the H1 Header features Power Output and 3 GPIO (General Purpose IO).
 
-![TIMI-96 Pinout](img/timi-96-pinout.png)
+![TIMI-96 Pinout](img/timi-96/pinout.svg)
 
 !!! abstract "User I/O – Dual 5 way headers (H1 + H2)"
 
@@ -81,6 +87,7 @@ _+5V (Device Supply Voltage)_
 :   Display supply voltage pin. This pin should be connected to a stable supply voltage in the range of 4.0 Volts to 5.5 Volts DC. Nominal operating voltage is 5.0 Volts for optimal display performance.
 
     !!! note
+
         If absolutely required, 3.3V can be applied to the +5V input, and the module will operate correctly, but with a lower backlight brightness. For this reason, it is not a recommended configuration, but for systems without 5V it enables compatibility. Note the 3.3V regulators will be passing the input voltage and not regulating themselves, so ensure you are using a clean power supply input.
 
 _3V3 (Device Output Voltage)_
@@ -128,7 +135,23 @@ _RX pin (Serial Receive)_
 :   Dedicated Asynchronous Serial port receive pin, RX. Connect this pin to external serial device transmit (TX) signal. This pin is 5.0V tolerant.
 
 !!! note
+
     The serial UART output at the level of TTL 3.3V, however is 5V tolerant on the RX pin, so can accept communications from 5V devices.
+
+
+### I2C Interface
+
+The I2C peripheral operates up to 1 MHz, supporting standard mode, full speed, and fast mode.
+
+I2C clock output pin, SCL (IO1). Connect this pin to the SCL pin of an external I2C device. This is 3.3V tolerant only and must not be connected to 5V I2C buses.
+
+I2C data input/output pin, SDA (IO2). Connect this pin to the SDA pin of an external I2C device. This is 3.3V tolerant only and must not be connected to 5V I2C buses.
+
+No pull-up resistors are provided on TIMI-96, therefore external pull up resistors are required to be added by the User on the Breadboard/Bus. Typical pull up resistors to 3.3V are in the region of 4.7Kohm.
+
+!!! note
+
+    The TIMI-96 can only function as a Master in an I2C bus, therefore it cannot be an I2C Slave to a Host at this time.
 
 
 ### PWM Audio Output
@@ -153,7 +176,7 @@ The TIMI-96 can also be used with various Adaptors and Development Boards which 
 - MicroUSB Cable (Standard Type A USB to microUSB – Not included)
 - Windows PC/Laptop running Windows 7 or higher, x86 or x64. ARM is currently not supported at this time.
 
-![What you will need](img/timi-96-need.png)
+![What you will need](img/timi-96/need.png)
 
 The BBM-Programmer does not come with the microUSB cable, this can be purchased from virtually any hardware/computer store.
 
@@ -179,7 +202,7 @@ The latest version of Mates Studio can be downloaded from the [Breadboard Mates 
 
 Details specific about the Mates Studio IDE can be found in the Mates Studio IDE [documentation](../../Mates%20Studio/index.md).
 
-![Mates Studio - Select Page Layout](img/mates-studio-commander-select-page-layout.png)
+![Mates Studio - Select Page Layout](img/timi-96/mates-studio-commander-select-page-layout.png)
 
 
 ## Programming Hardware
@@ -196,7 +219,7 @@ The programmer, dubbed BBM-Prog, is the official BBM Programmer and can also be 
 
 The BBM-PROG utilizes the Silicon Labs CP2104 USB to UART bridge, and uses the TIMI’s Serial UART to load applications, firmware/PmmC and media content.
 
-![BBM Programmer](img/bbm-programmer.png){: class="custom-img-center" }
+![BBM Programmer](img/bbm-prog/front-back.png){: class="custom-img-center" width="40%" }
 
 The BBM-PROG features a 3-pin jumper with shunt, which is present to change the way the programmer handles the Reset line, utilized by TIMI and other devices.
 
@@ -212,15 +235,19 @@ If the jumper is placed on the 2 pins closest to the USB connector, this will ma
 
 One of the simplest interfaces for TIMI is connecting TIMI to the bottom of a breadboard, connecting the 5-way right angle header into the breadboard next to the H2 header side of TIMI, and attaching the BBM-Programmer to the 5-way header.
 
-![TIMI-96 Programming Connection](img/timi-96-connection-programming.jpg){: class="custom-img-center" }
+![TIMI-96 Programming Connection](img/timi-96/programming-connection.jpg){: class="custom-img-center" width="60%" }
 
 
 ### Breadboard Interface to a Host
 
 TIMI can interface to virtually any microcontroller or Host, using a Serial UART interface. Simple wire connections can be achieved directly to TIMI or via a breadboard. If the microcontroller or Host utilizes 3.3V or 5.0V UART, then TIMI can be easily connected.
 
-![TIMI-96 Arduino/Atmel Connection](img/timi-96-connection-arduino-atmel.png){: class="custom-img-center" }
+![TIMI-96 Arduino/Atmel Connection](img/timi-96/arduino-atmel-connection.png){: class="custom-img-center" }
 
+!!! note
+
+    Wiring is simplified, showing main wires only.
+    
 
 ## Interface Notes
 
@@ -235,12 +262,12 @@ The same situation applies for Hosts/Development boards which also only have a s
 
 ## Hardware Drawing
 
-![TIMI-96 Schematic Diagram](img/timi-96-mechanical.svg){: class="custom-img-enlarge" }
+![TIMI-96 Mechanical Drawing](img/timi-96/mechanical.svg){: class="custom-img-enlarge" }
 
 
 ## Hardware Schematic
 
-![TIMI-96 Schematic Diagram](img/timi-96-schematic.svg){: class="custom-img-enlarge" }
+![TIMI-96 Schematic Diagram](img/timi-96/schematic.svg){: class="custom-img-enlarge" }
 
 
 ## Specifications & Ratings
@@ -258,8 +285,8 @@ The same situation applies for Hosts/Development boards which also only have a s
     | Input High Voltage (VIH)  | non 5V tolerant pins                | 0.8VP | —   | 3.3   | V     |
     | Input High Voltage (VIH)  | 5V Tolerant Pins, (RX pin)          | 0.8VP | —   | VCC   | V     |
     | Reset Pulse               | External Open Collector (RESET pin) | 1.3   | —   | —     | µs    |
-    | Operational Delay         | Power-Up or External Reset          | 500   | —   | 3000  | Ms    |
-    | Ms                        | Output Voltage for User             | —     | 3.3 | —     | V     |
+    | Operational Delay         | Power-Up or External Reset          | 500   | —   | 3000  | ms    |
+    | Output Voltage (3V3)      | Output Voltage for User             | —     | 3.3 | —     | V     |
     | Output Current            | Output Current capability for User  | —     | 500 | —     | mA    |
     | GPIO Current              | Source / Sink                       | —     | —   | 15    | mA    |
 
@@ -268,22 +295,24 @@ The same situation applies for Hosts/Development boards which also only have a s
     | Parameter            | Conditions / Information                                                | Min   | Typ | Max | Unit |
     |:-------------------- |:----------------------------------------------------------------------- |:-----:|:---:|:---:|:----:|
     | Supply Current (ICC) | 5V Supply – Normal Operation                                            | —     | 90  | —   | mA   |
+    | Supply Current (ICC) | 5V Supply – Sleep Mode                                                  | —     | 3   | —   | mA   |
+    | Supply Current (ICC) | 5V Supply – Deep Sleep Mode                                             | —     | 2   | —   | mA   |
     | Display Endurance    | Hours of operation, measured to when display is 50% original brightness | 30000 | —   | —   | H    |
 
 !!! abstract "LCD Display Information"
 
-    | Parameter                 | Conditions / Information            | Specification                   |
-    |:------------------------- |:----------------------------------- |:------------------------------- |
-    | Display Type              |                                     | TFT IPS LCD                     |
-    | Display Size              |                                     | 0.96” Diagonal                  |
-    | Display Resolution        |                                     | 160×80 pixels                   |
-    | Display Brightness        | 5V Supply                           | 120 cd/m2 (typical)             |
-    | Display Contrast Ratio    |                                     | 800:1 (typical)                 |
-    | Display Viewing Angles    | Above Centre                        | 80 Degrees                      |
-    | Display Viewing Direction |                                     | ALL (IPS Display)               |
-    | Display Backlighting      | White LED Backlighting              | 1 LED                           |
-    | Pixel Pitch               |                                     | 0.135 x 0.135mm (Square pixels) |
-    | Pixel Density             | Number of pixels in 1 row in 25.4mm | 187 DPI/PPI                     |
+    | Parameter                 | Conditions / Information               | Specification                   |
+    |:------------------------- |:-------------------------------------- |:------------------------------- |
+    | Display Type              |                                        | TFT IPS LCD                     |
+    | Display Size              |                                        | 0.96” Diagonal                  |
+    | Display Resolution        |                                        | 160×80 pixels                   |
+    | Display Brightness        | 5V Supply                              | 120 cd/m2 (typical)             |
+    | Display Contrast Ratio    |                                        | 800:1 (typical)                 |
+    | Display Viewing Angles    | Above, Below, Left and Right of Center | 80 Degrees                      |
+    | Display Viewing Direction |                                        | ALL (IPS Display)               |
+    | Display Backlighting      | White LED Backlighting                 | 1 LED                           |
+    | Pixel Pitch               |                                        | 0.135 x 0.135mm (Square pixels) |
+    | Pixel Density             | Number of pixels in 1 row in 25.4mm    | 187 DPI/PPI                     |
 
 
 ## Revision History

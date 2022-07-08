@@ -1,4 +1,9 @@
-# Mates Studio Blocks Editor Manual
+---
+tags:
+  - Builder
+---
+
+# Mates Studio Blocks Editor
 
 
 ## Introduction
@@ -347,15 +352,15 @@ This group provides useful blocks for designing program flow (conditions, loops,
 :   ??? example 
         === "Evaluate Value of Variable"
 
-            ![Evaluate Variable Value](img/block/logic_compare_variable.png){ class="custom-img-center" }
+            ![Evaluate Variable Value](img/block/logic_compare_variable.png){: class="custom-img-center" }
 
         === "Compare Two Variables"
 
-            ![Compare Two Variables](img/block/logic_compare_variables.png){ class="custom-img-center" }
+            ![Compare Two Variables](img/block/logic_compare_variables.png){: class="custom-img-center" }
 
         === "Store Result"
 
-            ![Store Result](img/block/logic_compare_store.png){ class="custom-img-center" }
+            ![Store Result](img/block/logic_compare_store.png){: class="custom-img-center" }
 
 
 #### Logical Operations
@@ -376,15 +381,15 @@ This group provides useful blocks for designing program flow (conditions, loops,
 :   ??? example
         === "Check if Both are True"
 
-            ![Check if Both are True](img/block/logic_operation_and.png){ class="custom-img-center" }
+            ![Check if Both are True](img/block/logic_operation_and.png){: class="custom-img-center" }
 
         === "Check if Any is True"
 
-            ![Check if Any is True](img/block/logic_operation_or.png){ class="custom-img-center" }
+            ![Check if Any is True](img/block/logic_operation_or.png){: class="custom-img-center" }
 
         === "Store Result"
 
-            ![Store Result](img/block/logic_operation_store.png){ class="custom-img-center" }
+            ![Store Result](img/block/logic_operation_store.png){: class="custom-img-center" }
 
 
 #### Logical Negate
@@ -401,15 +406,15 @@ This group provides useful blocks for designing program flow (conditions, loops,
 :   ??? example
         === "Negate Variable"
 
-            ![Negate Variable](img/block/logic_negate_variable.png){ class="custom-img-center" }
+            ![Negate Variable](img/block/logic_negate_variable.png){: class="custom-img-center" }
 
         === "Negate Logical Comparison"
 
-            ![Negate Logical Comparison](img/block/logic_negate_comparison.png){ class="custom-img-center" }
+            ![Negate Logical Comparison](img/block/logic_negate_comparison.png){: class="custom-img-center" }
 
         === "Store Result"
 
-            ![Store Result](img/block/logic_negate_store.png){ class="custom-img-center" }
+            ![Store Result](img/block/logic_negate_store.png){: class="custom-img-center" }
 
 
 #### Logical Ternary Operation
@@ -428,15 +433,15 @@ This group provides useful blocks for designing program flow (conditions, loops,
 :   ??? example
         === "Test Variable"
 
-            ![Test Variable](img/block/logic_test_variable.png){ class="custom-img-center" }
+            ![Test Variable](img/block/logic_test_variable.png){: class="custom-img-center" }
 
         === "Test Logical Comparison"
 
-            ![Test Logical Comparison](img/block/logic_test_comparison.png){ class="custom-img-center" }
+            ![Test Logical Comparison](img/block/logic_test_comparison.png){: class="custom-img-center" }
 
         === "Store Result"
 
-            ![Store Result](img/block/logic_test_store.png){ class="custom-img-center" }
+            ![Store Result](img/block/logic_test_store.png){: class="custom-img-center" }
 
 
 #### Conditional If-Else

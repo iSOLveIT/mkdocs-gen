@@ -101,3 +101,13 @@ img.custom-img-border {
 img.custom-img-shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+#custom-tag-index {
+    column-count: 3;
+    /* height: 970px; */
+    /* Adjust this for better index columns view */
+}
+
+#custom-tag-index > h2:first-of-type {
+    margin-top: 0;
+}

@@ -1,4 +1,11 @@
+---
+tags:
+  - Commander
+  - Architect
+---
+
 # Mates Controller Command Protocol
+
 
 ## Mates Commands
 
@@ -28,6 +35,7 @@ The table below lists the available commands to control the display module
 | MATES_CMD_SET_WIDGET_32VAL  | 0xFFFC |
 | MATES_CMD_APPEND_SCOPE_DATA | 0xFFFB |
 | MATES_CMD_UPDATE_DOT_MATRIX | 0xFFFA |
+
 
 ## Swipe Event Constants
 
