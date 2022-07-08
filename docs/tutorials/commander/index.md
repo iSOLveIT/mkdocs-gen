@@ -17,9 +17,9 @@ After adding pages to the project and uploading to the BBM module, each page can
 
 Start a new Commander project for the target module. For this tutorial, TIMI-96 in it's default orientation will be used.
 
-![Setup Window: TIMI-96 (Default Orientation)](img/getting-started/setup-window-timi-96-default.jpg)
+![Setup Window: TIMI-96 (Default Orientation)](img/getting-started/setup-window-timi-96-default.jpg){: class="custom-img-shadow" }
 
-![Setup Window: Commander Environment](img/getting-started/setup-window-commander.jpg)
+![Setup Window: Commander Environment](img/getting-started/setup-window-commander.jpg){: class="custom-img-shadow" }
 
 
 ### Adding Pages
