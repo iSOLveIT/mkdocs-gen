@@ -36,18 +36,24 @@ img.custom-img-center {
 
 img.custom-img-shadow {
     box-shadow: 0 0 8px 4px rgb(0 0 0 / 20%);
-    /* border: 1px solid slategray; */
 }
 
 #custom-tag-index {
     column-count: 3;
-    /* height: 970px; */
-    /* Adjust this for better index columns view */
 }
 
 #custom-tag-index > h2:first-of-type {
     margin-top: 0;
 }
+
+/* Fixes Table Width */
+.md-typeset__table {
+    width: 100%;
+}
+.md-typeset__table > table {
+    display: table!important;
+}
+
 
 /* Test Area */
 
