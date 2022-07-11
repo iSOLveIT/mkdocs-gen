@@ -28,6 +28,29 @@ h4 {
 }
 
 
+/* Test Area */
+img.custom-img-center {
+    display: block;
+    margin: auto;
+}
+
+img.custom-img-shadow {
+    box-shadow: 0 0 8px 4px rgb(0 0 0 / 20%);
+    /* border: 1px solid slategray; */
+}
+
+#custom-tag-index {
+    column-count: 3;
+    /* height: 970px; */
+    /* Adjust this for better index columns view */
+}
+
+#custom-tag-index > h2:first-of-type {
+    margin-top: 0;
+}
+
+/* Test Area */
+
 @media print{
     body, input {
         font-family: "Montserrat", sans-serif!important;
@@ -59,6 +82,12 @@ h4 {
         font-size: 16px !important;
     }
 
+    /* Test Area */
+    img.custom-img-shadow {
+        border: 1px solid slategray;
+    }
+    /* Test Area */
+
     code, kbd, pre {
         font-family: 'Fira Mono', monospace !important;
     }
@@ -77,7 +106,7 @@ h4 {
         counter-increment: page;
 
         @bottom-left {
-            content: '© 2022 Breadboard Mates';
+            content: 'Â© 2022 Breadboard Mates';
             font-size: 8pt;
         }
 
@@ -86,28 +115,5 @@ h4 {
             font-size: 8pt;
         }
     }
-}
 
-/* Test Area */
-img.custom-img-center {
-    display: block;
-    margin: auto;
-}
-
-img.custom-img-border {
-    border: 1px solid indigo;
-}
-
-img.custom-img-shadow {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#custom-tag-index {
-    column-count: 3;
-    /* height: 970px; */
-    /* Adjust this for better index columns view */
-}
-
-#custom-tag-index > h2:first-of-type {
-    margin-top: 0;
 }
