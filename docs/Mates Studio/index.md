@@ -210,6 +210,10 @@ The Project Menu group includes items that can be used for managing the project 
 | Baud Rate             | Provides option to set baud rate for communicating        |
 | Show Project Folder   | Opens the location of the project                         |
 
+!!! note
+
+    Baud Rate is only available in Architect Environment
+
 
 ### Edit Menu
 
@@ -231,7 +235,7 @@ The Edit Menu group includes items that can be used with the code/text editor of
 
 !!! note
 
-    This is only available in Genius Environment
+    Edit Manu is only available in Genius Environment
 
 
 ### Tools Menu
