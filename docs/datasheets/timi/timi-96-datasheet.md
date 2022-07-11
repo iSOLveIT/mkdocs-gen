@@ -200,7 +200,7 @@ All software development for the TIMI-96 module utilizes the Mates Studio IDE.
 
 The latest version of Mates Studio can be downloaded from the [Breadboard Mates website](https://breadboardmates.com/) or directly from this link [here](https://breadboardmates.com/download/mates-studio).
 
-Details specific about the Mates Studio IDE can be found in the Mates Studio IDE [documentation](../../Mates%20Studio/index.md).
+Details specific about the Mates Studio IDE can be found in the Mates Studio IDE [documentation](../../Mates Studio/index.md).
 
 ![Mates Studio - Select Page Layout](img/timi-96/mates-studio-commander-select-page-layout.png)
 
