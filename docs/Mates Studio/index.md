@@ -28,13 +28,13 @@ Mates Studio is currently available for 64-bit Windows PCs. Here are the require
 
 ## Installation
 
-Mates Studio can be installed for all users (system wide) or only for the current user.
+Mates Studio can be installed for all users (system-wide) or only for the current user.
 
-![Installation Options](img/install-option.jpg){: class="custom-img-center" }
+![!Installation Options](img/install-option.jpg){: class="custom-img-center" }
 
-By choosing to install for all users, the install will prompt for administrator privileges.
+By choosing to install for all users, the installation will prompt for administrator privileges.
 
-![Administrator Permissions](img/user-account-control.jpg){: class="custom-img-center" }
+![!Administrator Permissions](img/user-account-control.jpg){: class="custom-img-center" }
 
 Once approved, the application will be installed in Program Files directory. The full path is typically:
 
@@ -46,11 +46,11 @@ If the application is installed only for the current user, the application will 
 
 The installer will provide a visual progress bar until the installation completes.
 
-![Installation in Progress](img/install-progress.jpg){: class="custom-img-center" }
+![!Installation in Progress](img/install-progress.jpg){: class="custom-img-center" }
 
 After successfully installing Mates Studio, the installer will prompt to optionally launch the application.
 
-![Installation Completed](img/install-completed.jpg){: class="custom-img-center" }
+![!Installation Completed](img/install-completed.jpg){: class="custom-img-center" }
 
 Tick _Run Mates Studio_ to launch Mates Studio after installation if desired.
 
@@ -61,15 +61,15 @@ Selecting Product and Orientation
 
 :   When the application opens, it will show the splash screen followed by the setup window.
 
-:   ![Setup window](img/setup-window.jpg){: class="custom-img-shadow" }
+:   ![!Setup window](img/setup-window.jpg){: class="custom-img-shadow" }
 
 :   Products can be filtered by choosing the category tabs on the left-hand side. The center column provides a filtered selection of products. By selecting a product from the list shown in the center column of the window, a preview of the product will be shown on the right-hand side.
 
-:   ![Select Product](img/select-product.jpg){: class="custom-img-shadow" }
+:   ![!Select Product](img/select-product.jpg){: class="custom-img-shadow" }
 
 :   By clicking on the preview, the project orientation can be set.
 
-:   ![Select Orientation](img/select-product-orientation.jpg){: class="custom-img-shadow" }
+:   ![!Select Orientation](img/select-product-orientation.jpg){: class="custom-img-shadow" }
 
 :   After selecting the product and desired orientation, continue by clicking on the **CONFIRM** button.
 
@@ -77,7 +77,7 @@ Selecting Environment
 
 :   After confirming the product, the target environment needs to be selected to start a new project.
 
-:   ![Select Environment](img/select-environment.jpg){: class="custom-img-shadow" }
+:   ![!Select Environment](img/select-environment.jpg){: class="custom-img-shadow" }
 
 
 ## Opening Projects
@@ -86,19 +86,19 @@ Browsing Recent Projects
 
 :   While in the setup window, recent projects can be browsed by clicking on the Browse Recent Projects button.
 
-:   ![Browse Recent Projects](img/browse-recent-projects.jpg){: class="custom-img-shadow" }
+:   ![!Browse Recent Projects](img/browse-recent-projects.jpg){: class="custom-img-shadow" }
 
 :   Recent projects can be filtered by choosing the category tabs on the left-hand side.
 
-:   ![Recent Project Selection](img/recent-projects-selection.jpg){: class="custom-img-shadow" }
+:   ![!Recent Project Selection](img/recent-projects-selection.jpg){: class="custom-img-shadow" }
 
 :   By selecting a project from the list shown in the middle column of the window, a preview of the project will be shown on the right-hand side.
 
-:   ![Recent Project Selected](img/recent-projects-selected.jpg){: class="custom-img-shadow" }
+:   ![!Recent Project Selected](img/recent-projects-selected.jpg){: class="custom-img-shadow" }
 
 :   By clicking on the preview, the other project pages can be browsed.
 
-:   ![Browse Project Pages](img/browse-project-pages.jpg){: class="custom-img-shadow" }
+:   ![!Browse Project Pages](img/browse-project-pages.jpg){: class="custom-img-shadow" }
 
 :   After confirming the project, it can be opened by clicking on the **CONFIRM** button.
 
@@ -106,11 +106,11 @@ Browsing the Computer
 
 :   While in the setup window, the computer can be browsed for projects by clicking on the Browse Computer button.
 
-:   ![Browse Computer](img/browse-computer.jpg){: class="custom-img-shadow" }
+:   ![!Browse Computer](img/browse-computer.jpg){: class="custom-img-shadow" }
 
 :   Mates Studio will open a file selection window which can be utilized to find and open a project anywhere in the computer.
 
-:   ![Open Project Window](img/open-project-window.jpg)
+:   ![!Open Project Window](img/open-project-window.jpg)
 
 
 ## Environments
@@ -156,7 +156,7 @@ Excluding Commander, all Mates Studio environments use a traditional dropdown me
 
 The File Menu group includes items that can be used for file management. It includes the following:
 
-![File Menu](img/file-menu.jpg){: class="custom-img-center" }
+![!File Menu](img/file-menu.jpg){: class="custom-img-center" }
 
 | Item         | Description                                                    |
 |:------------ |:-------------------------------------------------------------- |
@@ -175,7 +175,7 @@ The File Menu group includes items that can be used for file management. It incl
 
 The Graphics Menu group includes items that can be used for managing the UI design. This includes page and widget management tools and options as shown:
 
-![Graphics Menu](img/graphics-menu.jpg){: class="custom-img-center" }
+![!Graphics Menu](img/graphics-menu.jpg){: class="custom-img-center" }
 
 | Item             | Description                                                    |
 |:---------------- |:-------------------------------------------------------------- |
@@ -197,7 +197,7 @@ The Graphics Menu group includes items that can be used for managing the UI desi
 
 The Project Menu group includes items that can be used for managing the project itself. This includes project compilation, upload and project settings as shown:
 
-![Project Menu](img/project-menu.jpg){: class="custom-img-center" }
+![!Project Menu](img/project-menu.jpg){: class="custom-img-center" }
 
 | Item                  | Description                                               |
 |:--------------------- |:--------------------------------------------------------- |
@@ -219,7 +219,7 @@ The Project Menu group includes items that can be used for managing the project 
 
 The Edit Menu group includes items that can be used with the code/text editor of the Genius environment. This includes basic editing functionalities such as copying and pasting, undo and redo, etc.
 
-![Edit Menu](img/edit-menu.jpg){: class="custom-img-center" }
+![!Edit Menu](img/edit-menu.jpg){: class="custom-img-center" }
 
 | Item          | Description                                                |
 |:------------- |:---------------------------------------------------------- |
@@ -242,7 +242,7 @@ The Edit Menu group includes items that can be used with the code/text editor of
 
 The Tools Menu group includes helpful items that can be utilized during development.
 
-![Tools Menu](img/tools-menu.jpg){: class="custom-img-center" }
+![!Tools Menu](img/tools-menu.jpg){: class="custom-img-center" }
 
 | Item             | Description                                                                  |
 |:---------------- |:---------------------------------------------------------------------------- |
@@ -257,7 +257,7 @@ The Tools Menu group includes helpful items that can be utilized during developm
 
 The Help Menu group includes external references and support links.
 
-![Help Menu](img/help-menu.jpg){: class="custom-img-center" }
+![!Help Menu](img/help-menu.jpg){: class="custom-img-center" }
 
 | Item                     | Description                                                                     |
 |:------------------------ |:------------------------------------------------------------------------------- |
