@@ -75,32 +75,10 @@ img.custom-img-shadow {
     margin: auto;
 }
 
-<<<<<<< HEAD
-.admonition.abstract .md-typeset__table {
+.admonition .md-typeset__table {
     width: 100%;
 }
 
-/* Try to Match Old/Current Resource Centre Sizing and Style */
-
-.md-grid {
-    max-width: 82.5rem;
-}
-
-nav.md-tabs {
-    line-height: 1;
-}
-
-.md-tabs__link {
-    font-size: 20px;
-}
-
-.md-main__inner.md-grid .md-content {
-    margin: 0 2rem 2.5rem 2rem;
-    padding: 2.5rem;
-    border-radius: 2rem;
-    box-shadow: 0 2px 8px 4px rgb(0 0 0 / 20%);
-    
-=======
 /* Increase Image size for gallery */
 
 /*For larger desktops*/
@@ -130,7 +108,28 @@ nav.md-tabs {
 
 div#lg-counter{
     display:none!important;
->>>>>>> 55f1e569ca93e123a46c1d5c27322c4285c155de
+}
+
+
+/* Try to Match Old/Current Resource Centre Sizing and Style */
+
+.md-grid {
+    max-width: 82.5rem;
+}
+
+nav.md-tabs {
+    line-height: 1;
+}
+
+.md-tabs__link {
+    font-size: 20px;
+}
+
+.md-main__inner.md-grid .md-content {
+    margin: 0 2rem 2.5rem 2rem;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 8px 4px rgb(0 0 0 / 20%);
 }
 
 /* Test Area */
