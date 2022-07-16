@@ -125,6 +125,14 @@ This group contains blocks used for backlight, page and widget control and query
 :   | Input | Type      | Description                                      |
     |:-----:|:---------:|:------------------------------------------------ |
     | level | value     | intensity of backlight, must be between 0 and 15 |
+:   !!! example 
+        === "Set Backlight to Integer Value"
+
+            ![Set Backlight to Integer Value](img/block/set_brightness.png){: class="custom-img-center" }
+
+        === "Set Backlight to Variable Value"
+
+            ![Set Backlight to Variable Value](img/block/set_brightness_variable.png){: class="custom-img-center" }
 
 
 #### Set Page
@@ -133,16 +141,37 @@ This group contains blocks used for backlight, page and widget control and query
 :   This block changes the project to the selected page. The page dropdown input lists all pages included in the project.
 :   | Input | Type      | Description                                      |
     |:-----:|:---------:|:------------------------------------------------ |
-    | page  | dropdown  | target page to change into                       |
+    | page  | value     | target page to change into                       |
+:   !!! example 
+        === "Set Page to Existing Page"
+
+            ![Set Page to Existing Page](img/block/set_page.png){: class="custom-img-center" }
+
+        === "Set Page to Variable Value"
+
+            ![Set Page to Variable Value](img/block/set_page_variable.png){: class="custom-img-center" }
 
 
-#### Get Page
+#### Get Page Index
+
+:   ![Get Page Index](img/block/get_page.png)
+:   This block can be used to query the current page of the running project.
+:   !!! info "Return"
+
+        Selected page
+
+
+#### Get Current Page
 
 :   ![Get Page](img/block/get_page.png)
 :   This block can be used to query the current page of the running project.
 :   !!! info "Return"
 
         Active page
+
+:   !!! example "Example: Evaluate Page"
+
+        ![Evaluate Page](img/block/evaluate_page.png){: class="custom-img-center" }
 
 
 #### Get Number of Pages
@@ -153,6 +182,9 @@ This group contains blocks used for backlight, page and widget control and query
 
         Number of pages in project
 
+:   !!! example "Example: Increment Page and Loop to Page0"
+
+        ![Increment Page and Loop to Page0](img/block/increment_page_loop.png){: class="custom-img-center" }
 
 #### Set Widget Value
 
@@ -162,6 +194,22 @@ This group contains blocks used for backlight, page and widget control and query
     |:------:|:---------:|:------------------------------------------------ |
     | widget | dropdown  | the target widget                                |
     | value  | value     | the value the target widget will be set to       |
+:   !!! example 
+        === "Set Gauge to Integer Value"
+
+            ![Set Gauge to Integer Value](img/block/set_gauge_value.png){: class="custom-img-center" }
+
+        === "Set Gauge to Variable Value"
+
+            ![Set Gauge to Variable Value](img/block/set_gauge_value_variable.png){: class="custom-img-center" }
+
+        === "Set Gauge to Slider Value"
+
+            ![Set Gauge to Slider Value](img/block/set_gauge_value_slider.png){: class="custom-img-center" }
+
+            !!! note
+
+                It is recommended to simply link values of widgets by setting their properties as discussed [here](mates-studio-graphics-editor.md#linking-widgets).
 
 
 #### Get Widget Value
@@ -174,6 +222,19 @@ This group contains blocks used for backlight, page and widget control and query
 :   !!! info "Return"
 
         Value of the target widget
+
+:   !!! example 
+        === "Store Slider Value"
+
+            ![Store Slider Value](img/block/store_slider_value.png){: class="custom-img-center" }
+
+        === "Set Gauge to Slider Value"
+
+            ![Set Gauge to Slider Value](img/block/set_gauge_value_slider.png){: class="custom-img-center" }
+
+            !!! note
+
+                It is recommended to simply link values of widgets by setting their properties as discussed [here](mates-studio-graphics-editor.md#linking-widgets).
 
 
 #### Set Spectrum Column Value
@@ -349,7 +410,7 @@ This group provides useful blocks for designing program flow (conditions, loops,
 
         Result of the comparison, true or false
 
-:   ??? example 
+:   !!! example 
         === "Evaluate Value of Variable"
 
             ![Evaluate Variable Value](img/block/logic_compare_variable.png){: class="custom-img-center" }
@@ -378,7 +439,7 @@ This group provides useful blocks for designing program flow (conditions, loops,
 
         Result of the operation, true or false
 
-:   ??? example
+:   !!! example
         === "Check if Both are True"
 
             ![Check if Both are True](img/block/logic_operation_and.png){: class="custom-img-center" }
@@ -403,7 +464,7 @@ This group provides useful blocks for designing program flow (conditions, loops,
 
         Negated value of the test condition
 
-:   ??? example
+:   !!! example
         === "Negate Variable"
 
             ![Negate Variable](img/block/logic_negate_variable.png){: class="custom-img-center" }
@@ -430,7 +491,7 @@ This group provides useful blocks for designing program flow (conditions, loops,
 
         The evaluated return value
 
-:   ??? example
+:   !!! example
         === "Test Variable"
 
             ![Test Variable](img/block/logic_test_variable.png){: class="custom-img-center" }
