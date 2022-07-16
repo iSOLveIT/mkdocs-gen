@@ -12,13 +12,13 @@ Mates Studio's Commander is the simplest among all the environments. Providing a
 
 Commander environment offers two main parts, a project editor and a [host simulator](mates-controller-interface.md). This manual will focus on the project editor including how to add built-in and custom pages and checking a short documentation for the page.
 
-![Commander Editor](img/commander-editor/animation.gif){: class="custom-img-shadow" }
+![Commander Editor](img/commander-editor/animation.gif){: class="custom-img-shadow custom-img-center" }
 
 ## User Interface
 
 The Commander Editor can be divided into two separate columns.
 
-![Commander Editor Areas](img/commander-editor/areas.jpg){: class="custom-img-shadow" }
+![Commander Editor Areas](img/commander-editor/areas.jpg){: class="custom-img-shadow custom-img-center" }
 
 1. [Project Editor](#project-editor)
 

@@ -61,15 +61,15 @@ Selecting Product and Orientation
 
 :   When the application opens, it will show the splash screen followed by the setup window.
 
-:   ![Setup window](img/setup-window.jpg){: class="custom-img-shadow" }
+:   ![Setup window](img/setup-window.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   Products can be filtered by choosing the category tabs on the left-hand side. The center column provides a filtered selection of products. By selecting a product from the list shown in the center column of the window, a preview of the product will be shown on the right-hand side.
 
-:   ![Select Product](img/select-product.jpg){: class="custom-img-shadow" }
+:   ![Select Product](img/select-product.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   By clicking on the preview, the project orientation can be set.
 
-:   ![Select Orientation](img/select-product-orientation.jpg){: class="custom-img-shadow" }
+:   ![Select Orientation](img/select-product-orientation.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   After selecting the product and desired orientation, continue by clicking on the **CONFIRM** button.
 
@@ -77,7 +77,7 @@ Selecting Environment
 
 :   After confirming the product, the target environment needs to be selected to start a new project.
 
-:   ![Select Environment](img/select-environment.jpg){: class="custom-img-shadow" }
+:   ![Select Environment](img/select-environment.jpg){: class="custom-img-shadow custom-img-center" }
 
 
 ## Opening Projects
@@ -86,19 +86,19 @@ Browsing Recent Projects
 
 :   While in the setup window, recent projects can be browsed by clicking on the Browse Recent Projects button.
 
-:   ![Browse Recent Projects](img/browse-recent-projects.jpg){: class="custom-img-shadow" }
+:   ![Browse Recent Projects](img/browse-recent-projects.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   Recent projects can be filtered by choosing the category tabs on the left-hand side.
 
-:   ![Recent Project Selection](img/recent-projects-selection.jpg){: class="custom-img-shadow" }
+:   ![Recent Project Selection](img/recent-projects-selection.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   By selecting a project from the list shown in the middle column of the window, a preview of the project will be shown on the right-hand side.
 
-:   ![Recent Project Selected](img/recent-projects-selected.jpg){: class="custom-img-shadow" }
+:   ![Recent Project Selected](img/recent-projects-selected.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   By clicking on the preview, the other project pages can be browsed.
 
-:   ![Browse Project Pages](img/browse-project-pages.jpg){: class="custom-img-shadow" }
+:   ![Browse Project Pages](img/browse-project-pages.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   After confirming the project, it can be opened by clicking on the **CONFIRM** button.
 
@@ -106,7 +106,7 @@ Browsing the Computer
 
 :   While in the setup window, the computer can be browsed for projects by clicking on the Browse Computer button.
 
-:   ![Browse Computer](img/browse-computer.jpg){: class="custom-img-shadow" }
+:   ![Browse Computer](img/browse-computer.jpg){: class="custom-img-shadow custom-img-center" }
 
 :   Mates Studio will open a file selection window which can be utilized to find and open a project anywhere in the computer.
 
