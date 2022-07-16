@@ -37,12 +37,12 @@ This section serves to provide brief discussion about the constructors that can 
 Constructs all the necessary attributes associated with an instance
 of a Mates Controller Object.
 
-| Parameters | Type | Description                                                            |
-|:----------:|:----:| ---------------------------------------------------------------------- |
-| portName   | str  | the name of the port to be opened. Example: `/dev/ttyUSB0` for linux   |
-| resetFunction | function | function used to perform a hard reset                           |
-| debugStream<br/>(optional) | io.TextIOWrapper | text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')` |
-| debugFileLength<br/>(optional) | int | determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
+|           Parameters           |       Type       | Description                                                                                                                                                                                                               |
+|:------------------------------:|:----------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|            portName            |       str        | the name of the port to be opened. Example: `/dev/ttyUSB0` for linux                                                                                                                                                      |
+|         resetFunction          |     function     | function used to perform a hard reset                                                                                                                                                                                     |
+|   debugStream<br/>(optional)   | io.TextIOWrapper | text file object to write debugging code to, supply of none will result in no debugging. Ex. `sys.stdout`, `open('log.txt', 'r+')`                                                                                        |
+| debugFileLength<br/>(optional) |       int        | determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively |
 
 !!! note
 

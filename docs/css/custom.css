@@ -18,6 +18,10 @@ body, input {
     display: table;
 }
 
+/* h1:not([class="md-search-result__title"]) {
+    font-size: 34px !important;
+} */
+
 .md-typeset h1, .md-typeset h2 {
     font-weight: 700;
 }
@@ -71,6 +75,7 @@ img.custom-img-shadow {
     margin: auto;
 }
 
+<<<<<<< HEAD
 .admonition.abstract .md-typeset__table {
     width: 100%;
 }
@@ -95,6 +100,37 @@ nav.md-tabs {
     border-radius: 2rem;
     box-shadow: 0 2px 8px 4px rgb(0 0 0 / 20%);
     
+=======
+/* Increase Image size for gallery */
+
+/*For larger desktops*/
+@media only screen and (min-width: 1024px) {
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 45.5vw !important;
+    }
+}
+/*For Laptops and larger tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 80.5vw !important;
+    }
+}
+/*For Tablets and larger smartphones*/
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 85.5vw !important;
+    }
+}
+/*For Smaller smartphones*/
+@media only screen and (max-width: 480px) {
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 95.5vw !important;
+    }
+}
+
+div#lg-counter{
+    display:none!important;
+>>>>>>> 55f1e569ca93e123a46c1d5c27322c4285c155de
 }
 
 /* Test Area */
@@ -117,8 +153,13 @@ nav.md-tabs {
         line-height: 1.4;
     }
 
+<<<<<<< HEAD
     h1 {
         font-size: 34px;
+=======
+    h1:not([class="md-search-result__title"]) {
+        font-size: 34px !important;
+>>>>>>> 55f1e569ca93e123a46c1d5c27322c4285c155de
     }
     h2 {
         font-size: 24px;

@@ -28,11 +28,11 @@ Mates Studio is currently available for 64-bit Windows PCs. Here are the require
 
 ## Installation
 
-Mates Studio can be installed for all users (system wide) or only for the current user.
+Mates Studio can be installed for all users (system-wide) or only for the current user.
 
 ![Installation Options](img/install-option.jpg){: class="custom-img-center" }
 
-By choosing to install for all users, the install will prompt for administrator privileges.
+By choosing to install for all users, the installation will prompt for administrator privileges.
 
 ![Administrator Permissions](img/user-account-control.jpg){: class="custom-img-center" }
 
@@ -110,7 +110,7 @@ Browsing the Computer
 
 :   Mates Studio will open a file selection window which can be utilized to find and open a project anywhere in the computer.
 
-:   ![Open Project Window](img/open-project-window.jpg)
+:   ![Open Project Window](img/open-project-window.jpg){: class="custom-img-shadow custom-img-center" }
 
 
 ## Environments
