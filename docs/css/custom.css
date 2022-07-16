@@ -1,31 +1,45 @@
+* {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
 
 body, input {
-    font-size: 14px !important;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 1.5 !important;
+    line-height: 1.5;
 }
-.md-typeset, .md-nav, .md-typeset table:not([class])  {
-    font-size: 14px!important;
-    line-height: 1.5!important;
-}
-
-h1, h2, h3, h4 {
-    font-weight: 500!important;
-    line-height: 1.4 !important;
+.md-typeset, .md-nav  {
+    font-size: 18px;
+    line-height: 1.5;
 }
 
-h1 {
-    font-size: 34px !important;
+.md-typeset table:not([class]) {
+    font-size: 14px;
+    line-height: 1.5;
+    display: table;
 }
-h2 {
-    font-size: 24px !important;
+
+.md-typeset h1, .md-typeset h2 {
+    font-weight: 700;
 }
-h3 {
-    font-size: 18px !important;
+
+.md-typeset h3, .md-typeset h4 {
+    font-weight: 600;
 }
-h4 {
-    font-size: 16px !important;
+
+.md-typeset h1 {
+    font-size: 50px;
 }
+.md-typeset h2 {
+    font-size: 36px;
+}
+.md-typeset h3 {
+    font-size: 28px;
+}
+.md-typeset h4 {
+    font-size: 22px;
+}
+
+/* Removed !important as it affects everything and added .md-typeset class to header formatting */
 
 
 /* Test Area */
@@ -48,44 +62,72 @@ img.custom-img-shadow {
 
 /* Fixes Table Width */
 .md-typeset__table {
-    width: 100%;
+    /* width: 100%; */
+    display: table;
+    margin: auto;
 }
 .md-typeset__table > table {
-    display: table!important;
+    display: table;
+    margin: auto;
 }
 
+.admonition.abstract .md-typeset__table {
+    width: 100%;
+}
+
+/* Try to Match Old/Current Resource Centre Sizing and Style */
+
+.md-grid {
+    max-width: 82.5rem;
+}
+
+nav.md-tabs {
+    line-height: 1;
+}
+
+.md-tabs__link {
+    font-size: 20px;
+}
+
+.md-main__inner.md-grid .md-content {
+    margin: 0 2rem 2.5rem 2rem;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 8px 4px rgb(0 0 0 / 20%);
+    
+}
 
 /* Test Area */
 
-@media print{
+@media print {
     body, input {
-        font-family: "Montserrat", sans-serif!important;
-        font-size: 14px !important;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
         font-weight: 400;
-        line-height: 1.5 !important;
+        line-height: 1.5;
     }
-    .md-typeset, .md-nav, .md-typeset table:not([class])  {
-        font-size: 14px!important;
-        line-height: 1.5!important;
+    .md-typeset, .md-nav, .md-typeset table:not([class]) {
+        font-size: 14px;
+        line-height: 1.5;
     }
 
     h1, h2, h3, h4 {
-        font-family: "Montserrat", sans-serif!important;
-        font-weight: 500!important;
-        line-height: 1.4 !important;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        line-height: 1.4;
     }
 
     h1 {
-        font-size: 34px !important;
+        font-size: 34px;
     }
     h2 {
-        font-size: 24px !important;
+        font-size: 24px;
     }
     h3 {
-        font-size: 18px !important;
+        font-size: 18px;
     }
     h4 {
-        font-size: 16px !important;
+        font-size: 16px;
     }
 
     /* Test Area */
@@ -95,7 +137,7 @@ img.custom-img-shadow {
     /* Test Area */
 
     code, kbd, pre {
-        font-family: 'Fira Mono', monospace !important;
+        font-family: 'Fira Mono', monospace;
     }
 
     div[data-md-component="skip"], div[data-md-component="announce"],
@@ -103,7 +145,7 @@ img.custom-img-shadow {
         display: none;
     }
     div[class="md-main__inner md-grid"]{
-        margin-top: 0!important;
+        margin-top: 0;
     }
 
 	@page {
@@ -112,7 +154,7 @@ img.custom-img-shadow {
         counter-increment: page;
 
         @bottom-left {
-            content: 'Â© 2022 Breadboard Mates';
+            content: '© 2022 Breadboard Mates';
             font-size: 8pt;
         }
 
