@@ -152,13 +152,11 @@ nav.md-tabs {
         line-height: 1.4;
     }
 
-<<<<<<< HEAD
+    /* h1:not([class="md-search-result__title"]) {
+        font-size: 34px !important;
+    } */
     h1 {
         font-size: 34px;
-=======
-    h1:not([class="md-search-result__title"]) {
-        font-size: 34px !important;
->>>>>>> 55f1e569ca93e123a46c1d5c27322c4285c155de
     }
     h2 {
         font-size: 24px;
