@@ -261,12 +261,12 @@ The same situation applies for Hosts/Development boards which also only have a s
 
 ## Hardware Drawing
 
-![TIMI-130 Mechanical Drawing](img/timi-130/mechanical.svg){: class="custom-img-enlarge" }
+![!TIMI-130 Mechanical Drawing](img/timi-130/mechanical.svg){: class="custom-img-enlarge" }
 
 
 ## Hardware Schematic
 
-![TIMI-130 Schematic Diagram](img/timi-130/schematic.svg){: class="custom-img-enlarge" }
+![!TIMI-130 Schematic Diagram](img/timi-130/schematic.svg){: class="custom-img-enlarge" }
 
 
 ## Specifications & Ratings
