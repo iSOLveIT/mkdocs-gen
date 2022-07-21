@@ -36,7 +36,7 @@ nav:
       - RPi Python: Mates Controller Libraries/rpi-python-mates-controller.md
       - MicroPython: Mates Controller Libraries/micropython-mates-controller.md
   - Datasheets:
-    - datasheets/index.md
+    # - datasheets/index.md
     - TIMI:
       - TIMI-96: datasheets/timi/timi-96-datasheet.md
       - TIMI-130: datasheets/timi/timi-130-datasheet.md
@@ -53,7 +53,7 @@ nav:
       - Wing Adaptor: datasheets/accessories/bbm-wing-adaptor-datasheet.md
     - MatesBUS: datasheets/matesbus-datasheet.md
   - Tutorials:
-    - tutorials/index.md
+    # - tutorials/index.md
     - Commander:
       - tutorials/commander/index.md
       - Tutorial No.1: tutorials/commander/tutorial-1.md
@@ -67,7 +67,7 @@ nav:
       - tutorials/builder/index.md
       - Tutorial No.1: tutorials/builder/tutorial-1.md
   - Projects:
-    - projects/index.md
+    # - projects/index.md
     - Standalone:
       - Pacman: projects/standalone/pacman.md
     - Arduino:
