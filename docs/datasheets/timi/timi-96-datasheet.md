@@ -242,7 +242,7 @@ One of the simplest interfaces for TIMI is connecting TIMI to the bottom of a br
 
 TIMI can interface to virtually any microcontroller or Host, using a Serial UART interface. Simple wire connections can be achieved directly to TIMI or via a breadboard. If the microcontroller or Host utilizes 3.3V or 5.0V UART, then TIMI can be easily connected.
 
-![TIMI-96 Arduino/Atmel Connection](img/timi-96/arduino-atmel-connection.png){: class="custom-img-center" }
+![!TIMI-96 Arduino/Atmel Connection](img/timi-96/arduino-atmel-connection.png){: class="custom-img-center" }
 
 !!! note
 
@@ -262,12 +262,12 @@ The same situation applies for Hosts/Development boards which also only have a s
 
 ## Hardware Drawing
 
-![!TIMI-96 Mechanical Drawing](img/timi-96/mechanical.svg){: class="custom-img-enlarge" }
+[![TIMI-96 Mechanical Drawing](img/timi-96/mechanical.svg){: class="custom-img-enlarge" }](pdf/timi-96/timi-96-mechanical.pdf)
 
 
 ## Hardware Schematic
 
-![!TIMI-96 Schematic Diagram](img/timi-96/schematic.svg){: class="custom-img-enlarge" }
+[![TIMI-96 Schematic Diagram](img/timi-96/schematic.svg){: class="custom-img-enlarge" }](pdf/timi-96/timi-96-schematic.pdf)
 
 
 ## Specifications & Ratings
