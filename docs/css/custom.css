@@ -164,6 +164,7 @@ body[data-md-color-scheme="default"] .md-main__inner.md-grid .md-content {
 /* For pages with hidden sidebars */
 .md-sidebar.md-sidebar--primary[hidden] + .md-sidebar.md-sidebar--secondary[hidden] + .md-content {
     box-shadow: none;
+    padding: 0;
 }
 
 .md-main {
