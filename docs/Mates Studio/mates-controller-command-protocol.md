@@ -396,7 +396,7 @@ Update the Dot Matrix with the specified string
 
     Update "Mates" [0x4D61746573] to Dot Matrix index 11 [0x000B]
 
-    ![Update Dot Matrix](img/protocol/update_dot_matrix.jpg.jpg){: class="custom-img-center custom-img-shadow" }
+    ![Update Dot Matrix](img/protocol/update_dot_matrix.jpg){: class="custom-img-center custom-img-shadow" }
 
 
 ## Touch Input Commands
