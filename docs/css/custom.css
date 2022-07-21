@@ -1,8 +1,5 @@
-* {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
-}
-
 body, input {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
@@ -12,17 +9,31 @@ body, input {
     line-height: 1.5;
 }
 
+.md-typeset .admonition,
+.md-content__inner.md-typeset details {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.md-typeset .tabbed-labels>label {
+    font-size: 14px;
+}
+
 .md-typeset table:not([class]) {
     font-size: 14px;
     line-height: 1.5;
     display: table;
 }
 
-/* h1:not([class="md-search-result__title"]) {
-    font-size: 34px !important;
-} */
+.md-typeset h1 {
+    font-weight: 500;
+}
 
-.md-typeset h1, .md-typeset h2 {
+body[data-md-color-scheme="default"] .md-typeset h1 {
+    color: black;
+}
+
+.md-typeset h2 {
     font-weight: 700;
 }
 
@@ -45,7 +56,6 @@ body, input {
 
 /* Removed !important as it affects everything and added .md-typeset class to header formatting */
 
-
 /* Test Area */
 img.custom-img-center {
     display: block;
@@ -54,6 +64,10 @@ img.custom-img-center {
 
 img.custom-img-shadow {
     box-shadow: 0 0 8px 4px rgb(0 0 0 / 20%);
+}
+
+img.custom-img-enlarge {
+    width: 100%;
 }
 
 #custom-tag-index {
@@ -66,7 +80,6 @@ img.custom-img-shadow {
 
 /* Fixes Table Width */
 .md-typeset__table {
-    /* width: 100%; */
     display: table;
     margin: auto;
 }
@@ -75,8 +88,19 @@ img.custom-img-shadow {
     margin: auto;
 }
 
-.admonition .md-typeset__table {
+.admonition .md-typeset__table,
+.md-content__inner.md-typeset details .md-typeset__table {
     width: 100%;
+}
+
+.md-typeset table:not([class]) td {
+    vertical-align: middle;
+}
+
+.admonition code,
+.md-typeset__table code {
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* Increase Image size for gallery */
@@ -114,7 +138,7 @@ div#lg-counter{
 /* Try to Match Old/Current Resource Centre Sizing and Style */
 
 .md-grid {
-    max-width: 82.5rem;
+    max-width: 83.5rem;
 }
 
 nav.md-tabs {
@@ -129,7 +153,21 @@ nav.md-tabs {
     margin: 0 2rem 2.5rem 2rem;
     padding: 2.5rem;
     border-radius: 2rem;
-    box-shadow: 0 2px 8px 4px rgb(0 0 0 / 20%);
+    box-shadow: 0px 2px 9px 0px rgb(160 160 160 / 20%);
+}
+
+body[data-md-color-scheme="default"] .md-main__inner.md-grid .md-content {
+    background-color: white;
+    box-shadow: 0px 2px 9px 0px  rgb(0 0 0 / 20%);
+}
+
+/* For pages with hidden sidebars */
+.md-sidebar.md-sidebar--primary[hidden] + .md-sidebar.md-sidebar--secondary[hidden] + .md-content {
+    box-shadow: none;
+}
+
+.md-main {
+    background-color: rgba(0, 0, 0, 0.01);
 }
 
 /* Test Area */
