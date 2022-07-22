@@ -1,27 +1,111 @@
-site_name: Markdown Docs Sample
-site_url: https://example.com/
+site_name: Resource Centre
+site_url: https://resources.breadboardmates.com/
+site_author: Breadboard Mates
+site_description: This Resource Centre provides all the latest manuals, datasheets, tutorials and projects from Breadboard Mates
+copyright: Copyright &copy; 2022 Breadboard Mates
+extra:
+  # homepage: https://breadboardmates.com/
+  social:
+    - icon: material/github
+      link: https://github.com/BreadBoardMates
+      name: Breadboard Mates on GitHub
+    - icon: material/forum-outline
+      link: https://forum.breadboardmates.com
+      name: Breadboard Mates Forum
+    - icon: material/web
+      link: https://breadboardmates.com
+      name: Breadboard Mates Website
+  generator: false
 nav:
-  - Home: README.md
-  - Docs: docs.md
+  - Home: index.md
+  - Manuals:
+    - Mates Studio: 
+      - Mates Studio/index.md
+      - Commander Editor: Mates Studio/mates-studio-commander-editor.md
+      - Graphics Editor: Mates Studio/mates-studio-graphics-editor.md
+      - Code Editor: Mates Studio/mates-studio-code-editor.md
+      - Blocks Editor: Mates Studio/mates-studio-blocks-editor.md
+      - Controller Interface: Mates Studio/mates-controller-interface.md
+      - Command Protocol: Mates Studio/mates-controller-command-protocol.md
+    - Mates Controller Libraries:
+      - Mates Controller Libraries/index.md
+      - Arduino: Mates Controller Libraries/arduino-mates-controller.md
+      - C: Mates Controller Libraries/c-mates-controller.md
+      - Python: Mates Controller Libraries/python-mates-controller.md
+      - BBM Python: Mates Controller Libraries/bbm-python-mates-controller.md
+      - RPi Python: Mates Controller Libraries/rpi-python-mates-controller.md
+      - MicroPython: Mates Controller Libraries/micropython-mates-controller.md
+  - Datasheets:
+    # - datasheets/index.md
+    - TIMI:
+      - TIMI-96: datasheets/timi/timi-96-datasheet.md
+      - TIMI-130: datasheets/timi/timi-130-datasheet.md
+      - TIMI-MB: datasheets/timi/timi-mb-datasheet.md
+    - TED:
+      - TED-96: datasheets/ted/ted-96-datasheet.md
+      - TED-130: datasheets/ted/ted-130-datasheet.md
+    - REPTOR:
+      - REPTOR-250: datasheets/reptor/reptor-250-datasheet.md
+    - Accessories:
+      - Mates Programmer: datasheets/accessories/bbm-programmer-datasheet.md
+      - Pi Adaptor: datasheets/accessories/bbm-pi-adaptor-datasheet.md
+      - MB Adaptor: datasheets/accessories/bbm-mb-adaptor-datasheet.md
+      - Wing Adaptor: datasheets/accessories/bbm-wing-adaptor-datasheet.md
+    - MatesBUS: datasheets/matesbus-datasheet.md
+  - Tutorials:
+    # - tutorials/index.md
+    - Commander:
+      - tutorials/commander/index.md
+      - Tutorial No.1: tutorials/commander/tutorial-1.md
+    - Architect:
+      - tutorials/architect/index.md
+      - Tutorial No.1: tutorials/architect/tutorial-1.md
+    - Genius:
+      - tutorials/genius/index.md
+      - Tutorial No.1: tutorials/genius/tutorial-1.md
+    - Builder:
+      - tutorials/builder/index.md
+      - Tutorial No.1: tutorials/builder/tutorial-1.md
+  - Projects:
+    # - projects/index.md
+    - Standalone:
+      - Pacman: projects/standalone/pacman.md
+    - Arduino:
+      - RGB Controller: projects/arduino/rgb-controller.md
+    - Raspberry Pi:
+      - Status Monitor: projects/raspberrypi/status-monitor.md
 extra_css:
     - css/custom.css
 theme:
   name: material
+  custom_dir: 'theme'
+  logo: img/full-logo.svg
+  favicon: img/logo.svg
+  font:
+    text: Montserrat
+    code: Fira Mono
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: 'indigo'
-      accent: 'deep orange'
+      primary: 'black'
+      accent: 'indigo'
       toggle:
         icon: material/weather-night
-        name: Switch to dark mode
+        name: Switch to Dark Mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: 'deep orange'
+      primary: 'black'
       accent: 'indigo'
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Switch to Light Mode
   icon:
     admonition:
       note: octicons/tag-16
@@ -37,12 +121,24 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
 markdown_extensions:
+  - meta
+  - toc:
+      title: Table of Contents
   - admonition
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - def_list
 plugins:
+    - tags:
+        tags_file: index.md
     - search
-    - pdf-export
+    - pdf-export:
+        enabled_if_env: ENABLE_PDF_EXPORT
