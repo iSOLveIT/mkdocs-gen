@@ -136,7 +136,6 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - def_list
-  - lightgallery
 plugins:
     - tags:
         tags_file: index.md
