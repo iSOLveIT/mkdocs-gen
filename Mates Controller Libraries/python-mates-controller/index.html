@@ -1,0 +1,3666 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This Resource Centre provides all the latest manuals, datasheets, tutorials and projects from Breadboard Mates">
+      
+      
+        <meta name="author" content="Breadboard Mates">
+      
+      
+        <link rel="canonical" href="https://resources.breadboardmates.com/Mates%20Controller%20Libraries/python-mates-controller/">
+      
+      <link rel="icon" href="../../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Python - Resource Centre</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 0 1 .25-.25h5.025a.25.25 0 0 1 .177.073l6.25 6.25a.25.25 0 0 1 0 .354l-5.025 5.025a.25.25 0 0 1-.354 0l-6.25-6.25a.25.25 0 0 1-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 0 1 .25-.25h8.5a.25.25 0 0 1 .25.25v7.736a.75.75 0 1 0 1.5 0V1.75A1.75 1.75 0 0 0 11.25 0h-8.5A1.75 1.75 0 0 0 1 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 0 0 0-1.5H2.75a.25.25 0 0 1-.25-.25V1.75zM4.75 4a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5zM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75zm11.774 3.537a.75.75 0 0 0-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 0 0-1.062 1.058l1.943 1.95a.75.75 0 0 0 1.055.008l4.557-4.45z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm6.5-.25A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75zM8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.489 4.489 0 0 1-.563-1.191 3.833 3.833 0 0 1-.05-2.063 4.636 4.636 0 0 1-2.025-.293.75.75 0 1 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.748.748 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.404 2.404 0 0 1-.507-.441 3.063 3.063 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.753.753 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768a85.08 85.08 0 0 0-.317-.265c-.814-.68-1.75-1.462-2.692-2.619a3.74 3.74 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm9 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 0 1 9 6.25c0 .177-.04.264-.077.318a.956.956 0 0 1-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 0 0-.313.195 2.416 2.416 0 0 0-.692.661.75.75 0 0 0 1.248.832.956.956 0 0 1 .276-.245 6.3 6.3 0 0 1 .26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 0 0 8 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 1 0 1.342.67z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.404 12.596a6.5 6.5 0 1 1 9.192-9.192 6.5 6.5 0 0 1-9.192 9.192zM2.344 2.343a8 8 0 1 0 11.313 11.314A8 8 0 0 0 2.343 2.343zM6.03 4.97a.75.75 0 0 0-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 1 0 1.06 1.06L8 9.06l1.97 1.97a.75.75 0 1 0 1.06-1.06L9.06 8l1.97-1.97a.75.75 0 1 0-1.06-1.06L8 6.94 6.03 4.97z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 0 0-.01.004L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.02.02 0 0 0-.004-.009.02.02 0 0 0-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.492 3.492 0 0 1 2.441 0l.999-1a.75.75 0 1 1 1.06 1.061l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.013 5.013 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.684 1.684 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06zM6.173 5h3.654A.173.173 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173zM5.25 6.5a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75h-5.5z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458L5 5.782zM9.5 2.5h-3V6a.75.75 0 0 1-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6V2.5zm-6.9 9.847L3.775 10.5h8.45l1.175 1.847a.75.75 0 0 1-.633 1.153H3.233a.75.75 0 0 1-.633-1.153z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 2.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H1.75zm4 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zm0 5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zM2.5 7.75a.75.75 0 0 0-1.5 0v6a.75.75 0 0 0 1.5 0v-6z"/></svg>');}</style>
+
+    
+    <link rel="stylesheet" href="../../css/lightgallery.min.css">
+
+    
+    
+    <script async src="../../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-mates-controller-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Resource Centre" class="md-header__button md-logo" aria-label="Resource Centre" data-md-component="logo">
+      
+  <img src="../../img/full-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Resource Centre
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to Dark Mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to Light Mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Mates%20Studio/" class="md-tabs__link md-tabs__link--active">
+        Manuals
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../datasheets/timi/timi-96-datasheet/" class="md-tabs__link">
+        Datasheets
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorials/commander/" class="md-tabs__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../projects/standalone/pacman/" class="md-tabs__link">
+        Projects
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Resource Centre" class="md-nav__button md-logo" aria-label="Resource Centre" data-md-component="logo">
+      
+  <img src="../../img/full-logo.svg" alt="logo">
+
+    </a>
+    Resource Centre
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Manuals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Manuals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Manuals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../Mates%20Studio/">Mates Studio</a>
+          
+            <label for="__nav_2_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Mates Studio" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Mates Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mates%20Studio/mates-studio-commander-editor/" class="md-nav__link">
+        Commander Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mates%20Studio/mates-studio-graphics-editor/" class="md-nav__link">
+        Graphics Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mates%20Studio/mates-studio-code-editor/" class="md-nav__link">
+        Code Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mates%20Studio/mates-studio-blocks-editor/" class="md-nav__link">
+        Blocks Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mates%20Studio/mates-controller-interface/" class="md-nav__link">
+        Controller Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mates%20Studio/mates-controller-command-protocol/" class="md-nav__link">
+        Command Protocol
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Mates Controller Libraries</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Mates Controller Libraries" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mates Controller Libraries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arduino-mates-controller/" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c-mates-controller/" class="md-nav__link">
+        C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-devices" class="md-nav__link">
+    Supported Devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerportname-resetfunction-debugstream-debugfilelength" class="md-nav__link">
+    MatesController(portName, resetFunction, debugStream, debugFileLength)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginbaudrate" class="md-nav__link">
+    begin(baudrate)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    close()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetwaitperiod" class="md-nav__link">
+    reset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softresetwaitperiod" class="md-nav__link">
+    softReset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbacklightbacklightvalue" class="md-nav__link">
+    setBacklight(backlightValue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpagepageindex" class="md-nav__link">
+    setPage(pageIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpage" class="md-nav__link">
+    getPage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyidwidgetid-value" class="md-nav__link">
+    setWidgetValueById(widgetId, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyidwidgetid" class="md-nav__link">
+    getWidgetValueById(widgetId)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyindexwidgettype-widgetindex-value" class="md-nav__link">
+    setWidgetValueByIndex(widgetType, widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyindexwidgettype-widgetindex" class="md-nav__link">
+    getWidgetValueByIndex(widgetType, widgetIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsshortvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsShortValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitslongvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsLongValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsfloatvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsFloatValue(widgetIndex, value):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setspectrumvaluespectrumid-gaugeindex-value" class="md-nav__link">
+    setSpectrumValue(spectrumId, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setledspectrumvalueledspectrumindex-gaugeindex-value" class="md-nav__link">
+    setLedSpectrumValue(ledSpectrumIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediaspectrumvaluemediaindex-gaugeindex-value" class="md-nav__link">
+    setMediaSpectrumValue(mediaIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyidwidgetid-param-value" class="md-nav__link">
+    setWidgetParamById(widgetId, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyidwidgetid-param" class="md-nav__link">
+    getWidgetParamById(widgetId, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyindexwidgettype-widgetindex-param-value" class="md-nav__link">
+    setWidgetParamByIndex(widgetType, widgetIndex, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyindexwidgettype-widgetindex-param" class="md-nav__link">
+    getWidgetParamByIndex(widgetType, widgetIndex, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartextareatextareaindex" class="md-nav__link">
+    clearTextArea(textAreaIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareatextareaindex-textformat-formatargs" class="md-nav__link">
+    updateTextArea(textAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearprintareaprintareaindex-int" class="md-nav__link">
+    clearPrintArea(printAreaIndex: int)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolor565printareaindex-rgb565" class="md-nav__link">
+    setPrintAreaColor565(printAreaIndex, rgb565)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorrgbprintareaindex-red-green-blue" class="md-nav__link">
+    setPrintAreaColorRGB(printAreaIndex, red, green, blue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendarraytoprintareaprintareaindex-array" class="md-nav__link">
+    appendArrayToPrintArea(printAreaIndex, array)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendstringtoprintareaprintareaindex-textformat-formatargs" class="md-nav__link">
+    appendStringToPrintArea(printAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoscopewidgetscopeindex-buffer" class="md-nav__link">
+    appendToScopeWidget(scopeIndex, buffer)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixwidgetmatrixindex-textformat-formatargs" class="md-nav__link">
+    updateDotMatrixWidget(matrixIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoneventcount" class="md-nav__link">
+    getButtonEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getswipeeventcount" class="md-nav__link">
+    getSwipeEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextswipeevent" class="md-nav__link">
+    getNextSwipeEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversion" class="md-nav__link">
+    getVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcompatibility" class="md-nav__link">
+    getCompatibility()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printversion" class="md-nav__link">
+    printVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geterror" class="md-nav__link">
+    getError()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bbm-python-mates-controller/" class="md-nav__link">
+        BBM Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rpi-python-mates-controller/" class="md-nav__link">
+        RPi Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../micropython-mates-controller/" class="md-nav__link">
+        MicroPython
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Datasheets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Datasheets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Datasheets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          TIMI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TIMI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          TIMI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/timi/timi-96-datasheet/" class="md-nav__link">
+        TIMI-96
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/timi/timi-130-datasheet/" class="md-nav__link">
+        TIMI-130
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/timi/timi-mb-datasheet/" class="md-nav__link">
+        TIMI-MB
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          TED
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TED" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          TED
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/ted/ted-96-datasheet/" class="md-nav__link">
+        TED-96
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/ted/ted-130-datasheet/" class="md-nav__link">
+        TED-130
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          REPTOR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="REPTOR" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          REPTOR
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/reptor/reptor-250-datasheet/" class="md-nav__link">
+        REPTOR-250
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Accessories
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Accessories" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Accessories
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/accessories/bbm-programmer-datasheet/" class="md-nav__link">
+        Mates Programmer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/accessories/bbm-pi-adaptor-datasheet/" class="md-nav__link">
+        Pi Adaptor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/accessories/bbm-mb-adaptor-datasheet/" class="md-nav__link">
+        MB Adaptor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/accessories/bbm-wing-adaptor-datasheet/" class="md-nav__link">
+        Wing Adaptor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasheets/matesbus-datasheet/" class="md-nav__link">
+        MatesBUS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../tutorials/commander/">Commander</a>
+          
+            <label for="__nav_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Commander" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Commander
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/commander/tutorial-1/" class="md-nav__link">
+        Tutorial No.1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../tutorials/architect/">Architect</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Architect" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architect
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/architect/tutorial-1/" class="md-nav__link">
+        Tutorial No.1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../tutorials/genius/">Genius</a>
+          
+            <label for="__nav_4_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Genius" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Genius
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/genius/tutorial-1/" class="md-nav__link">
+        Tutorial No.1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../tutorials/builder/">Builder</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Builder" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Builder
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/builder/tutorial-1/" class="md-nav__link">
+        Tutorial No.1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_1">
+          Standalone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Standalone" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Standalone
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/standalone/pacman/" class="md-nav__link">
+        Pacman
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Arduino
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Arduino" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Arduino
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/arduino/rgb-controller/" class="md-nav__link">
+        RGB Controller
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Raspberry Pi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raspberry Pi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Raspberry Pi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/raspberrypi/status-monitor/" class="md-nav__link">
+        Status Monitor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-devices" class="md-nav__link">
+    Supported Devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matescontrollerportname-resetfunction-debugstream-debugfilelength" class="md-nav__link">
+    MatesController(portName, resetFunction, debugStream, debugFileLength)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginbaudrate" class="md-nav__link">
+    begin(baudrate)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    close()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetwaitperiod" class="md-nav__link">
+    reset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softresetwaitperiod" class="md-nav__link">
+    softReset(waitPeriod)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbacklightbacklightvalue" class="md-nav__link">
+    setBacklight(backlightValue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpagepageindex" class="md-nav__link">
+    setPage(pageIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpage" class="md-nav__link">
+    getPage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyidwidgetid-value" class="md-nav__link">
+    setWidgetValueById(widgetId, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyidwidgetid" class="md-nav__link">
+    getWidgetValueById(widgetId)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetvaluebyindexwidgettype-widgetindex-value" class="md-nav__link">
+    setWidgetValueByIndex(widgetType, widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetvaluebyindexwidgettype-widgetindex" class="md-nav__link">
+    getWidgetValueByIndex(widgetType, widgetIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsshortvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsShortValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitslongvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsLongValue(widgetIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setleddigitsfloatvaluewidgetindex-value" class="md-nav__link">
+    setLedDigitsFloatValue(widgetIndex, value):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setspectrumvaluespectrumid-gaugeindex-value" class="md-nav__link">
+    setSpectrumValue(spectrumId, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setledspectrumvalueledspectrumindex-gaugeindex-value" class="md-nav__link">
+    setLedSpectrumValue(ledSpectrumIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmediaspectrumvaluemediaindex-gaugeindex-value" class="md-nav__link">
+    setMediaSpectrumValue(mediaIndex, gaugeIndex, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyidwidgetid-param-value" class="md-nav__link">
+    setWidgetParamById(widgetId, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyidwidgetid-param" class="md-nav__link">
+    getWidgetParamById(widgetId, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwidgetparambyindexwidgettype-widgetindex-param-value" class="md-nav__link">
+    setWidgetParamByIndex(widgetType, widgetIndex, param, value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwidgetparambyindexwidgettype-widgetindex-param" class="md-nav__link">
+    getWidgetParamByIndex(widgetType, widgetIndex, param)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartextareatextareaindex" class="md-nav__link">
+    clearTextArea(textAreaIndex)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatetextareatextareaindex-textformat-formatargs" class="md-nav__link">
+    updateTextArea(textAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearprintareaprintareaindex-int" class="md-nav__link">
+    clearPrintArea(printAreaIndex: int)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolor565printareaindex-rgb565" class="md-nav__link">
+    setPrintAreaColor565(printAreaIndex, rgb565)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintareacolorrgbprintareaindex-red-green-blue" class="md-nav__link">
+    setPrintAreaColorRGB(printAreaIndex, red, green, blue)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendarraytoprintareaprintareaindex-array" class="md-nav__link">
+    appendArrayToPrintArea(printAreaIndex, array)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendstringtoprintareaprintareaindex-textformat-formatargs" class="md-nav__link">
+    appendStringToPrintArea(printAreaIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendtoscopewidgetscopeindex-buffer" class="md-nav__link">
+    appendToScopeWidget(scopeIndex, buffer)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedotmatrixwidgetmatrixindex-textformat-formatargs" class="md-nav__link">
+    updateDotMatrixWidget(matrixIndex, textFormat, *formatArgs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoneventcount" class="md-nav__link">
+    getButtonEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextbuttonevent" class="md-nav__link">
+    getNextButtonEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getswipeeventcount" class="md-nav__link">
+    getSwipeEventCount()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnextswipeevent" class="md-nav__link">
+    getNextSwipeEvent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getversion" class="md-nav__link">
+    getVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcompatibility" class="md-nav__link">
+    getCompatibility()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printversion" class="md-nav__link">
+    printVersion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geterror" class="md-nav__link">
+    getError()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="python-mates-controller.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+              
+                
+
+  
+
+  <nav class="md-tags" >
+    
+      
+        <a href="../../.#commander" class="md-tag">
+          Commander
+        </a>
+      
+    
+      
+        <a href="../../.#architect" class="md-tag">
+          Architect
+        </a>
+      
+    
+      
+        <a href="../../.#python" class="md-tag">
+          Python
+        </a>
+      
+    
+  </nav>
+
+
+
+<h1 id="python-mates-controller-library">Python Mates Controller Library</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This library is developed to easily control Breadboard Mates modules using any device that can run Python by utilizing the <a href="../../Mates%20Studio/mates-controller-command-protocol/">Mates Controller Command Protocol</a>. This applies to projects developed using Commander and Architect environments.</p>
+<h2 id="supported-devices">Supported Devices</h2>
+<p>This library is developed for Python3 and designed to be used with any operating system as long as it is supported by the <code>pyserial</code> library.</p>
+<h2 id="installation">Installation</h2>
+<p>This library can be installed from the Python Packaging Index (PyPI) by running the command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip3 install mates-controller
+</code></pre></div>
+<h2 id="constructors">Constructors</h2>
+<p>This section serves to provide brief discussion about the constructors that can be used to initialize the library.</p>
+<h3 id="matescontrollerportname-resetfunction-debugstream-debugfilelength">MatesController(portName, resetFunction, debugStream, debugFileLength)</h3>
+<p>Constructs all the necessary attributes associated with an instance
+of a Mates Controller Object.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">portName</td>
+<td align="center">str</td>
+<td>the name of the port to be opened. Example: <code>/dev/ttyUSB0</code> for linux</td>
+</tr>
+<tr>
+<td align="center">resetFunction</td>
+<td align="center">function</td>
+<td>function used to perform a hard reset</td>
+</tr>
+<tr>
+<td align="center">debugStream<br/>(optional)</td>
+<td align="center">io.TextIOWrapper</td>
+<td>text file object to write debugging code to, supply of none will result in no debugging. Ex. <code>sys.stdout</code>, <code>open('log.txt', 'r+')</code></td>
+</tr>
+<tr>
+<td align="center">debugFileLength<br/>(optional)</td>
+<td align="center">int</td>
+<td>determines the extent of debug history kept with respect to lines in a file, given a circular log. O indicates full history kept with no circular logging. Users must be careful here to manage storage space effectively</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a debug file is specified, it should be opened using either 'w+' or 'r+' before running the begin() function of this library.</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Simple</label><label for="__tabbed_1_2">Specify Debug Output</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">resetModule</span><span class="p">():</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1"># perform reset of 100ms pulse to the RST pin</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="c1"># set reset pulse</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="c1"># wait for 100ms</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="c1"># unset reset pulse</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">pass</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Creates a new instance named &#39;mates&#39; which utilizes: </span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">#  - COM4 as the serial port</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#  - resetModule as the reset function</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">MatesController</span> <span class="n">mates</span> <span class="o">=</span> <span class="n">MatesController</span><span class="p">(</span><span class="s2">&quot;COM4&quot;</span><span class="p">,</span> <span class="n">resetFunction</span><span class="o">=</span><span class="n">resetModule</span><span class="p">)</span> 
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">resetModule</span><span class="p">():</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1"># perform reset of 100ms pulse to the RST pin</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c1"># set reset pulse</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="c1"># wait for 100ms</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1"># unset reset pulse</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">pass</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Creates a new instance named &#39;mates&#39; which utilizes: </span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#  - COM7 as the serial port</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#  - resetModule as the reset function</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#  - output_file as debug file stream</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">#  - debugFileLength of zero indicating no circular logging</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">MatesController</span> <span class="n">mates</span> <span class="o">=</span> <span class="n">MatesController</span><span class="p">(</span><span class="s2">&quot;COM7&quot;</span><span class="p">,</span> <span class="n">resetFunction</span><span class="o">=</span><span class="n">resetModule</span><span class="p">,</span> <span class="n">debugStream</span><span class="o">=</span><span class="n">output_file</span><span class="p">,</span> <span class="n">debugFileLength</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="methods">Methods</h2>
+<p>This section serves to provide brief discussion about the methods that can be used with a <a href="#constructors">MatesController</a> instance.</p>
+<h3 id="beginbaudrate">begin(baudrate)</h3>
+<p>Begins the serial connection if portname not supplied in constructor.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">baudrate</td>
+<td align="center">str</td>
+<td>the baudrate of the serial port (default: 9600)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>None</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Simple</label><label for="__tabbed_2_2">Specify Baudrate</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Initializes display serial port 9600 baud</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># and resets the display if a reset function is provided</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">mates</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> 
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Initializes display serial port 115200 baud</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># and resets the display if a reset function is provided</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">mates</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">)</span> 
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="close">close()</h3>
+<p>Closes opened serial port.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>None</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Closes serial port</span>
+</code></pre></div>
+</details>
+<h3 id="resetwaitperiod">reset(waitPeriod)</h3>
+<p>Uses hardware driven signal to hard reset companion device.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">waitPeriod</td>
+<td align="center">int</td>
+<td>determines how long to wait (milliseconds) before checking for connection, must be within the uint16 datatype range (default: 5000)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Simple</label><label for="__tabbed_3_2">Specify Timeout</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Reset the display and wait for a period of 5 seconds (default)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Reset the display and wait for a period of 4 seconds</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="softresetwaitperiod">softReset(waitPeriod)</h3>
+<p>Sends a serial command to the connected device to trigger a reset.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">waitPeriod</td>
+<td align="center">int</td>
+<td>determines how long to wait (milliseconds) before checking for connection, must be within the uint16 datatype range (default: 5000)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Simple</label><label for="__tabbed_4_2">Specify Timeout</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Reset the display and wait for a period of 5 seconds (default)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">softReset</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Reset the display and wait for a period of 4 seconds</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">softReset</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="setbacklightbacklightvalue">setBacklight(backlightValue)</h3>
+<p>Sets the intensity of the backlight of connected device.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">backlightValue</td>
+<td align="center">int</td>
+<td>intensity of backlight, must be between 0 and 15</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setBacklight</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># Set backlight value of 15 (max)</span>
+</code></pre></div>
+</details>
+<h3 id="setpagepageindex">setPage(pageIndex)</h3>
+<p>Sets the page to be displayed on the connected device.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">pageIndex</td>
+<td align="center">int</td>
+<td>index of page to set as current, must be within the uint16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setPage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Navigate to Page1</span>
+</code></pre></div>
+</details>
+<h3 id="getpage">getPage()</h3>
+<p>Returns the index of the current page displayed by the connected device.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Active page index (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">activePage</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getPage</span><span class="p">()</span> <span class="c1"># Query active page</span>
+</code></pre></div>
+</details>
+<h3 id="setwidgetvaluebyidwidgetid-value">setWidgetValueById(widgetId, value)</h3>
+<p>Sets the value of a specific widget based on the provided widgetId.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetId</td>
+<td align="center">int</td>
+<td>the unique id of the target widget, must be within the int16 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target widget will be set to, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setWidgetValueById</span><span class="p">(</span><span class="n">MediaGaugeB0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Set value of MediaGaugeB0 to 50</span>
+</code></pre></div>
+</details>
+<h3 id="getwidgetvaluebyidwidgetid">getWidgetValueById(widgetId)</h3>
+<p>Gets the value of a specific widget based on the provided identifier.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetId</td>
+<td align="center">int</td>
+<td>the unique id of the target widget, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Value of the widget specified by <strong>widgetId</strong> (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Query the current value of MediaLed4</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">widgetVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetValue</span><span class="p">(</span><span class="n">MediaLed4</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="setwidgetvaluebyindexwidgettype-widgetindex-value">setWidgetValueByIndex(widgetType, widgetIndex, value)</h3>
+<p>Sets the value of a specific widget based on the index within a widget type.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetType</td>
+<td align="center">MatesWidget</td>
+<td>the type of the target widget</td>
+</tr>
+<tr>
+<td align="center">widgetIndex</td>
+<td align="center">int</td>
+<td>the index of the target widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target widget will be set to, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All applicable widget types are listed in <a href="../../Mates%20Studio/mates-studio-graphics-editor/#mates-widgets-compatibility">here</a>.</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Set value of MediaGaugeB0 to 50</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setWidgetValue</span><span class="p">(</span><span class="n">MATES_MEDIA_GAUGE_B</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="getwidgetvaluebyindexwidgettype-widgetindex">getWidgetValueByIndex(widgetType, widgetIndex)</h3>
+<p>Gets the value of a specific widget based on the index within a widget type.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetType</td>
+<td align="center">MatesWidget</td>
+<td>the type of the target widget</td>
+</tr>
+<tr>
+<td align="center">widgetIndex</td>
+<td align="center">int</td>
+<td>the index of the target widget, must be within the uint8 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Value of the widget specified by <strong>widgetType</strong> and <strong>widgetIndex</strong> (<em>int</em>)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is not applicable to <em>Int32</em> and <em>Float</em> LedDigits</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Query the current value of MediaLed4</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">widgetVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetValue</span><span class="p">(</span><span class="n">MATES_MEDIA_LED</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="setleddigitsshortvaluewidgetindex-value">setLedDigitsShortValue(widgetIndex, value)</h3>
+<p>Sets the 16-bit integer value of the Led Digits widget specified by widgetIndex.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetIndex</td>
+<td align="center">int</td>
+<td>the index of the LedDigits, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target LedDigits will be set to, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Int16</em> LedDigits</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedDigitsShortValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Set value of LedDigits2 to 50</span>
+</code></pre></div>
+</details>
+<h3 id="setleddigitslongvaluewidgetindex-value">setLedDigitsLongValue(widgetIndex, value)</h3>
+<p>Sets the 32-bit integer value of the Led Digits widget specified by widgetIndex.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetIndex</td>
+<td align="center">int</td>
+<td>the index of the LedDigits, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target LedDigits will be set to, must be within the int32 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Int32</em> LedDigits</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedDigitsLongValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Set value of LedDigits2 to 50</span>
+</code></pre></div>
+</details>
+<h3 id="setleddigitsfloatvaluewidgetindex-value">setLedDigitsFloatValue(widgetIndex, value):</h3>
+<p>Sets the 32-bit float value of the Led Digits widget specified by widgetIndex.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetIndex</td>
+<td align="center">int</td>
+<td>the index of the LedDigits, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target LedDigits will be set to, must be within the 32-bit float datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only applicable for <em>Float</em> LedDigits</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedDigitsFloatValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">9.989</span><span class="p">)</span> <span class="c1"># Set value of LedDigits2 to 9.989</span>
+</code></pre></div>
+</details>
+<h3 id="setspectrumvaluespectrumid-gaugeindex-value">setSpectrumValue(spectrumId, gaugeIndex, value)</h3>
+<p>Sets the value of the column (specified by gaugeIndex) of the spectrum widget (specified by spectrumId).</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">spectrumId</td>
+<td align="center">int</td>
+<td>the unique id of the Spectrum widget, must be within the int16 datatype range</td>
+</tr>
+<tr>
+<td align="center">gaugeIndex</td>
+<td align="center">int</td>
+<td>the gauge index/column of the Spectrum widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target spectrum column will be set to, must be within the uint8 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Set value of gauge index 2 of LedSpectrum5 to 64</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setSpectrumValue</span><span class="p">(</span><span class="n">MatesLedSpectrum5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="setledspectrumvalueledspectrumindex-gaugeindex-value">setLedSpectrumValue(ledSpectrumIndex, gaugeIndex, value)</h3>
+<p>Sets the value of the column (specified by gaugeIndex) of the Led Spectrum widget (specified by ledSpectrumIndex).</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ledSpectrumIndex</td>
+<td align="center">int</td>
+<td>the index of the LedSpectrum widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">gaugeIndex</td>
+<td align="center">int</td>
+<td>the gauge index/column of the Spectrum widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target spectrum column will be set to, must be within the uint8 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Set value of gauge index 2 of LedSpectrum5 to 64</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setLedSpectrumValue</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="setmediaspectrumvaluemediaindex-gaugeindex-value">setMediaSpectrumValue(mediaIndex, gaugeIndex, value)</h3>
+<p>Sets the value of the column (specified by gaugeIndex) of the Media Spectrum widget (specified by ledSpectrumIndex).</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">mediaIndex</td>
+<td align="center">int</td>
+<td>the index of the MediaSpectrum widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">gaugeIndex</td>
+<td align="center">int</td>
+<td>the gauge index/column of the Spectrum widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target spectrum column will be set to, must be within the uint8 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setMediaSpectrumValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">48</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1"># Set value of gauge index 3 of MediaSpectrum4 to 48</span>
+</code></pre></div>
+</details>
+<h3 id="setwidgetparambyidwidgetid-param-value">setWidgetParamById(widgetId, param, value)</h3>
+<p>Sets the value of a widget parameter based on widget id and parameter id.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetId</td>
+<td align="center">int</td>
+<td>the unique id of the target widget, must be within the int16 datatype range</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int</td>
+<td>the unique id of the target parameter, must be within the int16 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target parameter will be set to, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Set GaugeA3&#39;s Background color to BLACK</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setWidgetParamById</span><span class="p">(</span><span class="n">GaugeA3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="getwidgetparambyidwidgetid-param">getWidgetParamById(widgetId, param)</h3>
+<p>Gets the value of a widget parameter based on widget id and parameter id.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetId</td>
+<td align="center">int</td>
+<td>the unique id of the target widget, must be within the int16 datatype range</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int</td>
+<td>the unique id of the target parameter, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>The current <strong>param</strong> value of the widget specified by <strong>widgetId</strong> (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Query the background color of GaugeA3</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">paramVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetParamById</span><span class="p">(</span><span class="n">GaugeA3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="setwidgetparambyindexwidgettype-widgetindex-param-value">setWidgetParamByIndex(widgetType, widgetIndex, param, value)</h3>
+<p>Sets the value of a widget parameter based on widget index and parameter id.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetType</td>
+<td align="center">MatesWidget</td>
+<td>the type of the target widget</td>
+</tr>
+<tr>
+<td align="center">widgetIndex</td>
+<td align="center">int</td>
+<td>the index of the target widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int</td>
+<td>the unique id of the target parameter, must be within the int16 datatype range</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="center">int</td>
+<td>the value the target parameter will be set to, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Set GaugeA3&#39;s Background color to BLACK</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setWidgetParamByIndex</span><span class="p">(</span><span class="n">MATES_GAUGE_A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">)</span> 
+</code></pre></div>
+</details>
+<h3 id="getwidgetparambyindexwidgettype-widgetindex-param">getWidgetParamByIndex(widgetType, widgetIndex, param)</h3>
+<p>Gets the value of a widget parameter based on widget index and parameter id.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">widgetType</td>
+<td align="center">MatesWidget</td>
+<td>the type of the target widget</td>
+</tr>
+<tr>
+<td align="center">widgetIndex</td>
+<td align="center">int</td>
+<td>the index of the target widget, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">int</td>
+<td>the unique id of the target parameter, must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>The current <strong>param</strong> value of the widget specified by <strong>widgetType</strong> and <strong>widgetIndex</strong> (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Query the background color of GaugeA3</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">paramVal</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getWidgetParamByIndex</span><span class="p">(</span><span class="n">MATES_GAUGE_A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MATES_GAUGE_A_BG_COLOR</span><span class="p">)</span> 
+</code></pre></div>
+</details>
+<h3 id="cleartextareatextareaindex">clearTextArea(textAreaIndex)</h3>
+<p>Clears a targeted Text Area.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">textAreaIndex</td>
+<td align="center">int</td>
+<td>the index of the target TextArea, must be within the uint16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">clearTextArea</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Clear TextArea6</span>
+</code></pre></div>
+</details>
+<h3 id="updatetextareatextareaindex-textformat-formatargs">updateTextArea(textAreaIndex, textFormat, *formatArgs)</h3>
+<p>Updates the text displayed within Text Area widget.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">textAreaIndex</td>
+<td align="center">int</td>
+<td>the index of the target TextArea, must be within the uint16 datatype range</td>
+</tr>
+<tr>
+<td align="center">textFormat</td>
+<td align="center">str</td>
+<td>the string or text format to be written to the TextArea</td>
+</tr>
+<tr>
+<td align="center">formatArgs</td>
+<td align="center"></td>
+<td>zero or more values to be formatted into the provided text format string</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Simple</label><label for="__tabbed_5_2">Use Text Formatting</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateTextArea</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Mates&quot;</span><span class="p">)</span> <span class="c1"># Update TextArea2 to &quot;Mates&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">76</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateTextArea</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c1"># Print value to TextArea3</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="clearprintareaprintareaindex-int">clearPrintArea(printAreaIndex: int)</h3>
+<p>Clears a targeted Print Area.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">printAreaIndex</td>
+<td align="center">int</td>
+<td>the index of the target PrintArea, must be within the uint16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">clearPrintArea</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Clear PrintArea5</span>
+</code></pre></div>
+</details>
+<h3 id="setprintareacolor565printareaindex-rgb565">setPrintAreaColor565(printAreaIndex, rgb565)</h3>
+<p>Sets the color of a PrintArea Widget based on an rgb565 value.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">printAreaIndex</td>
+<td align="center">int</td>
+<td>the index of the target PrintArea, must be within the uint16 datatype range</td>
+</tr>
+<tr>
+<td align="center">rgb565</td>
+<td align="center">int</td>
+<td>16-bit color to set widget to, value must be within uint16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">setPrintAreaColor</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mh">0xF800</span><span class="p">)</span> <span class="c1"># Set print color of PrintArea4 to RED (0xF800)</span>
+</code></pre></div>
+</details>
+<h3 id="setprintareacolorrgbprintareaindex-red-green-blue">setPrintAreaColorRGB(printAreaIndex, red, green, blue)</h3>
+<p>Sets the color of a targeted Print Area.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">printAreaIndex</td>
+<td align="center">int</td>
+<td>the index of the target PrintArea, must be within the uint16 datatype range</td>
+</tr>
+<tr>
+<td align="center">red</td>
+<td align="center">int</td>
+<td>8-bit red component of the target color, value must be within uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">green</td>
+<td align="center">int</td>
+<td>8-bit green component of the target color, value must be within uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">blue</td>
+<td align="center">int</td>
+<td>8-bit blue component of the target color, value must be within uint8 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Set print color of PrintArea7 to GREEN</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">setPrintAreaColor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="appendarraytoprintareaprintareaindex-array">appendArrayToPrintArea(printAreaIndex, array)</h3>
+<p>Appends an array of 8-bit integers to a targeted Print Area.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">printAreaIndex</td>
+<td align="center">int</td>
+<td>the index of the target PrintArea, must be within the uint16 datatype range</td>
+</tr>
+<tr>
+<td align="center">buffer</td>
+<td align="center">[int]</td>
+<td>the list of values to be appended to PrintArea, values must be within the uint8 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0xCD</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">]</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendArrayToPrintArea</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> <span class="c1"># Append &quot;0xAB, 0xCD, 0xEF&quot; to PrintArea6</span>
+</code></pre></div>
+</details>
+<h3 id="appendstringtoprintareaprintareaindex-textformat-formatargs">appendStringToPrintArea(printAreaIndex, textFormat, *formatArgs)</h3>
+<p>Appends text to a targeted Print Area.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">printAreaIndex</td>
+<td align="center">int</td>
+<td>the index of the target PrintArea, must be within the uint16 datatype range</td>
+</tr>
+<tr>
+<td align="center">textFormat</td>
+<td align="center">str</td>
+<td>the string or text format to be appended to the PrintArea</td>
+</tr>
+<tr>
+<td align="center">formatArgs</td>
+<td align="center"></td>
+<td>zero or more values to be formatted into the provided text format string</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Simple</label><label for="__tabbed_6_2">Use Text Formatting</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendStringToPrintArea</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Mates&quot;</span><span class="p">)</span> <span class="c1"># Append &quot;Mates&quot; to PrintArea8</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">108</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="c1"># Append value as text to PrintArea9</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendStringToPrintArea</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;Value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="appendtoscopewidgetscopeindex-buffer">appendToScopeWidget(scopeIndex, buffer)</h3>
+<p>Appends a list of integers to a Scope widget.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">scopeIndex</td>
+<td align="center">int</td>
+<td>the index of the target Scope, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">buffer</td>
+<td align="center">[int]</td>
+<td>the list of values to be appended to Scope, values must be within the int16 datatype range</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0xF8</span><span class="p">,</span> <span class="mh">0x7F</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">}</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">appendToScopeWidget</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Append data to Scope Widget 7</span>
+</code></pre></div>
+</details>
+<h3 id="updatedotmatrixwidgetmatrixindex-textformat-formatargs">updateDotMatrixWidget(matrixIndex, textFormat, *formatArgs)</h3>
+<p>Changes the text displayed by the target Dot Matrix widget.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameters</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">matrixIndex</td>
+<td align="center">int</td>
+<td>the index of the target DotMatrix, must be within the uint8 datatype range</td>
+</tr>
+<tr>
+<td align="center">textFormat</td>
+<td align="center">str</td>
+<td>the string or text format to be appended to the DotMatrix</td>
+</tr>
+<tr>
+<td align="center">formatArgs</td>
+<td align="center"></td>
+<td>zero or more values to be formatted into the provided text format string</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>success or failure (<em>boolean</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Simple</label><label for="__tabbed_7_2">Use Text Formatting</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateDotMatrix</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Mates&quot;</span><span class="p">)</span> <span class="c1"># Update DotMatrix0 to &quot;Mates&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">108</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">updateDotMatrix</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;Value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c1"># Update DotMatrix0 to show value</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h3 id="getbuttoneventcount">getButtonEventCount()</h3>
+<p>Gets the number of events recorded from applicable button widgets.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Number of recorded button events (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># Get the number of logged button events</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="n">buttonEvents</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getButtonEventCount</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h3 id="getnextbuttonevent">getNextButtonEvent()</h3>
+<p>Gets the next event source logged from applicable buttons.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Widget ID of the next event button (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1"># If there is any event recorded</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="k">if</span> <span class="n">mates</span><span class="o">.</span><span class="n">getButtonEventCount</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="n">button</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getNextButtonEvent</span><span class="p">()</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">button</span> <span class="o">==</span> <span class="n">MediaButton1</span><span class="p">):</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>        <span class="c1"># if the button pressed is MediaButton1</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>        <span class="c1"># do something</span>
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>    <span class="c1"># add more possible cases here...</span>
+</code></pre></div>
+</details>
+<h3 id="getswipeeventcount">getSwipeEventCount()</h3>
+<p>Gets the number of events recorded from swipe gestures.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Number of recorded swipe events (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Get the number of logged swipe events</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">swipeEvents</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getSwipeEventCount</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h3 id="getnextswipeevent">getNextSwipeEvent()</h3>
+<p>Gets the next swipe event value.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>swipe event (<em>int</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1"># If there is any event recorded</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="k">if</span> <span class="n">mates</span><span class="o">.</span><span class="n">getSwipeEventCount</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>    <span class="n">swipe</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getNextSwipeEvent</span><span class="p">()</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>    <span class="k">if</span> <span class="p">((</span><span class="n">swipe</span> <span class="o">&amp;</span> <span class="n">MATES_SWIPE_SOUTH</span><span class="p">)</span> <span class="o">==</span> <span class="n">MATES_SWIPE_SOUTH</span><span class="p">):</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>        <span class="c1"># if swipe is towards from top to bottom</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>    <span class="k">if</span> <span class="p">((</span><span class="n">swipe</span> <span class="o">&amp;</span> <span class="n">MATES_SWIPE_EAST</span><span class="p">)</span> <span class="o">==</span> <span class="n">MATES_SWIPE_EAST</span><span class="p">):</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>        <span class="c1"># if swipe is towards from left to right</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>    <span class="k">if</span> <span class="p">((</span><span class="n">swipe</span> <span class="o">&amp;</span> <span class="n">MATES_SWIPE_TLBR</span><span class="p">)</span> <span class="o">==</span> <span class="n">MATES_SWIPE_TLBR</span><span class="p">):</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>        <span class="c1"># if swipe is towards from top left to bottom right</span>
+</code></pre></div>
+</details>
+<h3 id="getversion">getVersion()</h3>
+<p>Helper function to obtain the version of the Python Mates Controller library.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Version Information (<em>str</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1"># Get the library version number as string</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">matesVersion</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getVersion</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h3 id="getcompatibility">getCompatibility()</h3>
+<p>Helper function to obtain the version of the Mates Studio compatible with this library version.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Compatibility Version Information (<em>str</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="c1"># Get the compatible Mates Studio version number as string</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="n">compatVersion</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getCompatibility</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h3 id="printversion">printVersion()</h3>
+<p>Debugging function to print the version of the Mates Studio compatible along with this specific library version.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>None</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1"># Prints library version and compatible Mates Studio version to debug serial</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="n">mates</span><span class="o">.</span><span class="n">printVersion</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h3 id="geterror">getError()</h3>
+<p>This function can be used to investigate errors that occurred while controlling the display module. Description of the possible errors is discussed in <a href="../#error-codes">here</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Return</p>
+<p>Current error code (<em>MatesError</em>)</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1"># Checks the last error that occurred</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="n">error</span> <span class="o">=</span> <span class="n">mates</span><span class="o">.</span><span class="n">getError</span><span class="p">()</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="k">if</span> <span class="n">error</span> <span class="o">==</span> <span class="n">MATES_ERROR_NONE</span><span class="p">:</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>    <span class="c1"># Last command was successful</span>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>    <span class="k">pass</span>
+</code></pre></div>
+</details>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../c-mates-controller/" class="md-footer__link md-footer__link--prev" aria-label="Previous: C" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              C
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../bbm-python-mates-controller/" class="md-footer__link md-footer__link--next" aria-label="Next: BBM Python" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              BBM Python
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Breadboard Mates
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/BreadBoardMates" target="_blank" rel="noopener" title="Breadboard Mates on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://forum.breadboardmates.com" target="_blank" rel="noopener" title="Breadboard Mates Forum" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 4v7H5.17L4 12.17V4h11m1-2H3a1 1 0 0 0-1 1v14l4-4h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1m5 4h-2v9H6v2a1 1 0 0 0 1 1h11l4 4V7a1 1 0 0 0-1-1Z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://breadboardmates.com" target="_blank" rel="noopener" title="Breadboard Mates Website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+    <script>
+        var elements = document.getElementsByClassName("lightgallery");
+        for(var i=0; i<elements.length; i++) {
+           lightGallery(elements[i]);
+        }
+    </script>
+
+  </body>
+</html>

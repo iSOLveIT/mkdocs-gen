@@ -1,26 +1,244 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,300&display=swap');
+body, input {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.md-typeset, .md-nav  {
+    font-size: 18px;
+    line-height: 1.5;
+}
 
-@media print{
-    *{
-        font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+.md-typeset .admonition,
+.md-content__inner.md-typeset details {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.md-typeset .tabbed-labels>label {
+    font-size: 14px;
+}
+
+.md-typeset table:not([class]) {
+    font-size: 14px;
+    line-height: 1.5;
+    display: table;
+}
+
+.md-typeset h1 {
+    font-weight: 500;
+}
+
+body[data-md-color-scheme="default"] .md-typeset h1 {
+    color: black;
+}
+
+.md-typeset h2 {
+    font-weight: 700;
+}
+
+.md-typeset h3, .md-typeset h4 {
+    font-weight: 600;
+}
+
+.md-typeset h1 {
+    font-size: 50px;
+}
+.md-typeset h2 {
+    font-size: 36px;
+}
+.md-typeset h3 {
+    font-size: 28px;
+}
+.md-typeset h4 {
+    font-size: 22px;
+}
+
+/* Removed !important as it affects everything and added .md-typeset class to header formatting */
+
+/* Test Area */
+img.custom-img-center {
+    display: block;
+    margin: auto;
+}
+
+img.custom-img-shadow {
+    box-shadow: 0 0 8px 4px rgb(0 0 0 / 20%);
+}
+
+img.custom-img-enlarge {
+    width: 100%;
+}
+
+#custom-tag-index {
+    column-count: 3;
+}
+
+#custom-tag-index > h2:first-of-type {
+    margin-top: 0;
+}
+
+/* Fixes Table Width */
+.md-typeset__table {
+    display: table;
+    margin: auto;
+}
+.md-typeset__table > table {
+    display: table;
+    margin: auto;
+}
+
+.admonition .md-typeset__table,
+.md-content__inner.md-typeset details .md-typeset__table {
+    width: 100%;
+}
+
+.md-typeset table:not([class]) td {
+    vertical-align: middle;
+}
+
+.admonition code,
+.md-typeset__table code {
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Increase Image size for gallery */
+
+/*For larger desktops*/
+@media only screen and (min-width: 1024px) {
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 45.5vw !important;
     }
+}
+/*For Laptops and larger tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 80.5vw !important;
+    }
+}
+/*For Tablets and larger smartphones*/
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 85.5vw !important;
+    }
+}
+/*For Smaller smartphones*/
+@media only screen and (max-width: 480px) {
+    div.lg-img-wrap img.lg-object.lg-image {
+        width: 95.5vw !important;
+    }
+}
+
+div#lg-counter{
+    display:none!important;
+}
+
+
+/* Try to Match Old/Current Resource Centre Sizing and Style */
+
+.md-grid {
+    max-width: 83.5rem;
+}
+
+nav.md-tabs {
+    line-height: 1;
+}
+
+.md-tabs__link {
+    font-size: 20px;
+}
+
+.md-main__inner.md-grid .md-content {
+    margin: 0 2rem 2.5rem 2rem;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0px 2px 9px 0px rgb(160 160 160 / 20%);
+}
+
+body[data-md-color-scheme="default"] .md-main__inner.md-grid .md-content {
+    background-color: white;
+    box-shadow: 0px 2px 9px 0px  rgb(0 0 0 / 20%);
+}
+
+/* For pages with hidden sidebars */
+.md-sidebar.md-sidebar--primary[hidden] + .md-sidebar.md-sidebar--secondary[hidden] + .md-content {
+    box-shadow: none;
+    padding: 0;
+}
+
+.md-main {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+/* Test Area */
+
+@media print {
+    body, input {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    .md-typeset, .md-nav, .md-typeset table:not([class]) {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    /* h1:not([class="md-search-result__title"]) {
+        font-size: 34px !important;
+    } */
+    h1 {
+        font-size: 34px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    h4 {
+        font-size: 16px;
+    }
+
+    /* Test Area */
+    img.custom-img-shadow {
+        border: 1px solid slategray;
+    }
+    /* Test Area */
+
+    code, kbd, pre {
+        font-family: 'Fira Mono', monospace;
+    }
+
     div[data-md-component="skip"], div[data-md-component="announce"],
     div[data-md-component="header"], label[class="md-overlay"]{
         display: none;
     }
     div[class="md-main__inner md-grid"]{
-        margin-top: 0!important;
+        margin-top: 0;
     }
 
 	@page {
         size: a4 portrait;
-        margin: 10mm;
+        margin: 10mm 10mm 15mm 10mm;
         counter-increment: page;
-        font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+        @bottom-left {
+            content: '© 2022 Breadboard Mates';
+            font-size: 8pt;
+        }
+
         @bottom-right {
             content: 'Page ' counter(page);
             font-size: 8pt;
         }
     }
-}
 
+}
